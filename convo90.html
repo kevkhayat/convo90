@@ -1,0 +1,5366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <link rel="apple-touch-icon-precomposed" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAPaUlEQVR4nO3deXgUZZ4H8Leq7yvp7hzkIBckkUCQwwEFxDAw6AgzyDXjSPQZUccDFmTdVXQ9VlCXHZzZ0VFHl3FVHkXYFWYFFwENh7OgcgYNGM6EJJCEHH2nq6+q2j+yD/JA/9630t3VuM/+Pn9h6lfv+yb5prv6fd8quWNzCwhC8fDXegDohwvDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUAYDgTCcCAQhgOBMBwIhOFAIAwHAmE4EAjDgUDaaz0AQgghHG8sG2EqH2UqG6kbVKTLLtTanJzByOkMcjQs9flFwR/zdIdbT4ZaGkMt34XOfiuLsST71Fjt1tE1psqxxpLhuuxCbaaT05uILEuhYMzbHelsCTU19B3/Mvjd/uT7iovXG83VEy3VE40lVfq8Mo3NwRvNRJKkcDDmvhjpOCecOdp37MvgqcNEltUYABN3bG7BNemYEEI4zjqqJnPyHNvYqZoMp/LzxD5foH6X/1Cd/+BnUqhvoN1aR9U4Z9xnHftjjtcwi2PeHs+ejb1b3op5ugfaEUQ/qCR79qLMyXfwJhuzONpzwV233rX1bTHoT9UAFLo24eA0Wvu0X2Xf8Yg+rzSZdsSg37NzvevTdyNdrUrqDYMrCx7+Z3PVjQPtSAoL3Rtf7f34T7IkDnyY3+N0hkG1TzlnLOQ0A3vNFgOei++/5K77MJneB+oahMNy/eT837xkKBiashZl6cxj08OtJ+hVjum1+fe/yOn0CfcTPHGw9bf3iT5XYqfr80qKn1prGFyR8AB8+7ddeHWJFBYSbmFA0npByml1efetLH1ufSqTQQjheF5noJfk3vVEwcOrk0kGIcQ8bNyQVZ/onHkJnGssqSr7py3JJIMQknHj7aUrPlLyZpQS6QuHxppZ8tz6rJn3E45LW6f9smY9lDP/0ZQ0pc8rLXl2ncaSMaCzdNkFJc+s02ZmJz8AU8WY4uVvD/RdKTFpCofGai974S+WERPS093lzFU3Drrn6RQ2aCgeVvDI75TXc7ym6O/XaJ2DUjUAy8ibc2ufSlVrFOkIB28wlzzzgaF4WBr6ugKn1RU8slrJp5IByZgwM/OWuQqLs+csNlWMSe0Asmc9aK4an9o2r5aOV6f8B1cp/+nEPN2B+t3+IzsjHc0xT7foc/Emi8bq0NgcxuJh5mHjzFXj9fllCluzT/mFobCcXhPpbOnd8mbgm/+OuToJr9HlFtlumJY962H6p+tB9zzt37+NeW2otedmz1tCrxGDfvf297x7N0e62jid3lAw1PGTBZk182iZ5vi8hc83LZ+p6hSI6uHInDzHPmW+ksqYr7d7w8vuzz+84uOiGPCKAS/pPCecrnfvXE8I0eeX2WvmO269m/ku7pxxP70gUL+7bfUDUiR06Svh1hPh1hOe3R+VPr/BUHQddKLOmee49Z7eT9bQ28+Zt4Q3mCkF0Z72lhcWhM+f/t//FkjQ5wqeOOg7sKPosTcpV9CmoaMyxv/Ut38bfQDJUPdthTdZ8+59Tkml/9DnpxdNcu14X8lEQqSjuWvDy6ceGtfx9jMxbw9UZhhcaSyhvZfFvD3nX1l8eTK+P+Tpavv9I/S5UeeMhYSj/QB5k83+419SCogsn3/lb75PxmX8B7Z3f/QH2rmEOGcyop8kdcORPWex1p7LLPN8sbFt9QOSMLAZQDkacW179/TiSb1b/02W4vwWLdffTG/B/fk6MeCFjobbTvoPfkY5XZ9bbKmmXWJn3jyLN1kpBd6v/ivYuB862rP5zWhvB+V0y4gJSc4i0qkYDt5gdt72a2ZZ8LuvL7z2twmvX0hCoPOd50LNx68+ZBp6Pf3cQP1uRsHRPfSCjAk/px29aQb9dE/despRORb1/nUTawAz6QXJUDEcmTVzNdZMeo0k+M+/tozIkhoD0A8qoRcwJ1VDLY30AuuYGugQrzdaqidRzpWj4b7jX9LbD9TvoRfYbphGL0iGmuGYdAezpnvT69GuNpUGoMnMoh2WJVEI0FuQ4DedfvrcYmjC1FQxhtPqKOcKTQ1yLEpvXzhzlP6XYyofTe8lGWqFQ2O1m4cz1rfkaNhdt06lARBCeL0x2SYUTOYay0fF/bqp8gb6ieG2U8zGpbAQuUj74+F0BmNZNbOdxKgVDvOwHzGnnrz7toh+t0oDIITIMep1DMdrqFeLhBBewTS5oTD+comhiLGMErmoaCU5ylpwTnK9hkKtcJgqxjJrAke/UKn3fmKfh15AmcboZ1Qwq2soGAJ8nbG4GHPRPolcEnV1MgbAmuVLmFrhMBYzfu6EEOHkYZV67xelviATQqxjpjAKRjMKCCFae07cr+uyGHshFL5qMst0WflK2kmAWuHQ5QymF4g+l8IdOgkTmr6lFzim12rM4PK3obDcNv42Zi9QOBiXw4Qo3Nkl9jEuijWpWOyNS61waFmbHqLuiyp1fUngm7/SC7T23MJlb3Dx9oJo7TmD/+5flayM80ZLnC+abMxzFe7ZYZZprHYl7SRArXDQZwYJIWLAo1LXl4SaGsIXztBrbDdMK//DTsf0u/V5JZzOwBvMhqLrsmcvGvovdfSp90viLn/wesbmI0KIHI0oaZ/5cVdJX4lRa+GNuTVL6vOp1PXlej/5c8HDv6XX6PPLmDUUnCbONIOiLWcKt6Oy5o7jvvKlxDW8byUd2+09uzYwp0GTJMcUvQDEoXBHHLtMrZ11aoVDioYZHVsYM+spIYux839cKrMGk4y4i7qK3jIUbkFilckxtb471cLBup1Ek5ZwEEJCzcfPv7IkyVsKKKR4HzqkCPsXxivb7cx8g5YV9JUYtcIR62VM3aRwTyWT7+utravupazO08gyfcU47iSVFAow15k5vUlJ/5yBURZTbZZZrXBEuxkTUNqMLF1ukUq9Xy1wZNfZx28TTtcP6KxoT/u5lXfRr53jb7mQZdHbS29c4RZ2ZpkIb3dKklrhCClYVTKzlqZSK9rV1vTkz1pX/Vo4dYRZHPP2dG14+cyyqaGmBvpm0vD5+N8pfZ8OIUThHaDMMmZHCVPro6ySX4B1dI1378cqDQDiP1TnP1SnLxhiHTnJXD3JkF+msTn7fwGi3x3zdAknDwca9gXqd/dfxjJvpwgDez7C7WdMFaMpJyq8OUrnZMyOh9vPKmknAWqFI3jykCyJ9IXZjEmzOt9bkYbZsKtF2ptc7U2uHe8zK61jp1KOytGw0HQs7qHwecb8m8Idfvo81pYlBS/SiVHrbUX0u4ONBxh9642OnyxQaQCpQl9eCTYegD4nC6cYy4qGokpm77zJRl/Ak6OR0Lk4WyRTQsVJMN++zcya7HlLddmF6o0hSbZxt9JX3v2H6qBDwul6+gcWY+kI5uSmuXIMfRJMOHNU4TR8AlQMh2fPJpE1R64x2wqXvJL+u2eV4DTa3F89TimQxRjlmkkKC33H9tHa1+osI2mbTAkh1jG0NzVCiP8wmM7kqRgOKRx071jLLLNUTyxc9PuE71jkTda8hc8by0YkdjpF3sIVxtLhlAL/wR2Uu2YIIb6vPqV34Zh2F+UopzNkTp5Nb8H3NaOLZKi7ttL9lzeUPBDHPvXOosfXMBdyr8Dp9M7b7614fW/Wz37D8bQr69KVGwd2DzfH5y5Y7rz9XnpV96bX6AXevZvpM8UZN82gDCxn/qPQZpF+fce/inQ008eQDHXDIQn+i2tfUFJpG//Titf3OqbXKnkJ0ecW5/zyscq39uc/8BL9x9fPMmJC6cqNZS/+p71mPv3mREKIsXR4ybPrcuYtpZf5vv401NRAr5EEv2fXv9NrCpe9Hne3YubEn2fPWUw/1/XpO/SCJKXjyT6Fj/7Rfss8hcUxT5f/yK7A4V2RjqaYt1f0u3ijuf9GakNRpfm6H5mrxhkGX3md3/TEDOHsN1CbIzZduPRvKdQXOLon2HhQOH0k2tsp+l2yJGltDm1WnrnqRuvoKdZRtzAHKYX6ziytUTL7pHXkVryxj55ISfC7tr3n3bs5crGV0+kNheWOW++23zKXfq+lcPbbpuUzVL2ROh3h4I2W0hX/YSofrV4XysOREhdeW+bZ85HC4px5S3MXLE/tAIgsNT87jzlZkKR07OeQQn0tL94NTTP/n+PavlZ5MgghPR//aaBrOuw2t6xROxkkbZt9RL+7+ek5afh+1Obd+3HH288M6BRZjLX97sGYuytVY+hr2Ne1blWqWqNI304wMeA5t+JO13b2h9sfLNeO9y+8ujSBO3ujPe0tL9bGfIx1WiWE0/Vtq+9X6bm5V0jrNkE5Gun48z+0vFCb4g9gssTceJYkSQi0v/VEx5onE940FDr3XfNTs+I+ikM5/4Ht5/7xF2l7Wu01e0itY3pt1qyHmDfC00mC371zg2vrO/RbYMzDb8qZv9Q6CrwjnkaWvF9tvbh2ZbSnPcFRXobXG3Nrn3TentBDaj9Y5f78g+THoNy1fbw1bx0zJXPybNvYaQO6+UIS/IH6L/wHP/Md2K788dbGISMdU+/MuGmm1sF+ngwhRPS5vF9+4tr2bpJ/7lfT55Vkz16UebPCx1u3u+s+/H/0eOsrB8FrjGXVpvJRxrJq/aBiXXahxubg9EZeb5AiYUnwi0G/6O0JtZ4KtzaGWhqFU0cSf9PleHPlWFPlWNOQkYai6zQ2h8aSwRvNUiQkCX0xV2eks0Voagg27meunCWJN5gsIydZRkw0lFTp80u1Nsf3T+b3dEU6moWz3/Q17AuePKzS80uYfhDhQD9M+P9bQSAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwJhOBAIw4FAGA4EwnAgEIYDgTAcCIThQCAMBwL9D2kiLoUNPTwgAAAAAElFTkSuQmCC">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Convo90">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Convo90">
+<meta name="theme-color" content="#faf9f6">
+<title>Convo90</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════
+   DESIGN SYSTEM
+═══════════════════════════════════════════════════════════════════ */
+:root {
+  /* Palette — light theme */
+  --bg-0:        #faf9f6;
+  --bg-1:        #f2f0eb;
+  --bg-2:        #e8e5de;
+  --bg-3:        #dedad2;
+  --border:      #dedad2;
+  --border-mid:  #c8c4bc;
+  --muted:       #9a9588;
+  --dim:         #6e6a60;
+  --text:        #1e1d1a;
+  --text-soft:   #4a4840;
+  --accent:      #d4521a;   /* blood orange */
+  --accent-dim:  #f0845a;   /* blood orange light */
+  --accent-2:    #3a8fc4;   /* sky blue */
+  --danger:      #c0503a;
+  --success:     #3a8a5a;
+
+  /* Vocab colour system — tuned for light backgrounds */
+  --noun:        #2272b0;   /* sky blue, deeper on white */
+  --verb:        #c03030;   /* red */
+  --b1-1:        #16622e;   /* dark green  — 1st sight  */
+  --b1-2:        #1e9448;   /* light green — 2nd sight  */
+  --b1-3:        #b85e14;   /* orange      — 3rd sight  */
+  --b1-4:        #9e8800;   /* yellow-gold — 4th sight  */
+  /* 5th+ = --text (learned, no highlight) */
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --safe-top:    env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  background: var(--bg-0);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow: hidden;
+  /* Subtle grain */
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(212,82,26,0.04) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 15%, rgba(58,143,196,0.04) 0%, transparent 50%);
+}
+
+/* ── Scrollable inner containers ── */
+.scrollable {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   APP SHELL
+═══════════════════════════════════════════════════════════════════ */
+#app {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+/* ── Top bar ── */
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-0);
+  position: relative;
+  z-index: 10;
+}
+
+.topbar-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.topbar-logo span {
+  font-weight: 300;
+  color: var(--dim);
+  font-size: 14px;
+  margin-left: 6px;
+  letter-spacing: 0.12em;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-week {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dim);
+  padding: 4px;
+  line-height: 1;
+  font-size: 16px;
+  transition: color 0.15s;
+}
+.btn-icon:hover { color: var(--text); }
+
+/* ── Bottom nav ── */
+.bottomnav {
+  flex-shrink: 0;
+  display: flex;
+  background: var(--bg-0);
+  border-top: 1px solid var(--border);
+  padding-bottom: max(var(--safe-bottom), 4px);
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px 8px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--muted);
+  transition: color 0.15s;
+  gap: 4px;
+  position: relative;
+}
+
+.nav-item.active {
+  color: var(--accent);
+}
+
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 0 0 2px 2px;
+}
+
+.nav-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.nav-label {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+/* ── Screen container ── */
+.screens {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  animation: screenIn 0.2s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.m1-mode-tab {
+  flex: 1;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+.m1-mode-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.m1-mode-tab.active div { color: rgba(255,255,255,0.8) !important; }
+
+.m1b-stem {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+.m1b-line {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--text);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.3s ease;
+  line-height: 1.4;
+}
+.m1b-line:last-of-type { border-bottom: none; }
+.m1b-line.active { color: var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN: SETTINGS (first run)
+═══════════════════════════════════════════════════════════════════ */
+#screen-settings {
+  background: var(--bg-0);
+}
+
+.settings-inner {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 32px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.settings-header {
+  text-align: center;
+}
+
+.settings-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.settings-title strong {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.settings-sub {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-group-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.field-input {
+  background: var(--bg-2);
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+.field-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(212,82,26,0.12);
+}
+
+.field-input::placeholder {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.field-hint {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+select.field-input {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c5c54' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  width: 100%;
+}
+
+.btn-primary:hover  { opacity: 0.88; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--dim);
+  border: 1px solid var(--border-mid);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.msg-error {
+  font-size: 11px;
+  color: var(--danger);
+  text-align: center;
+  min-height: 16px;
+}
+
+.msg-success {
+  font-size: 11px;
+  color: var(--success);
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN: HOME DASHBOARD
+═══════════════════════════════════════════════════════════════════ */
+#screen-home {
+  background: var(--bg-0);
+}
+
+.home-inner {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── B1 Readiness card ── */
+.b1-card {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.b1-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent), var(--accent-2));
+}
+
+.b1-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.b1-score-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.b1-percent {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.b1-percent sup {
+  font-size: 28px;
+  font-weight: 300;
+  vertical-align: super;
+}
+
+.b1-meta {
+  padding-bottom: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.b1-trend {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--success);
+}
+
+.b1-trend.plateau { color: var(--dim); }
+.b1-trend.attention { color: var(--danger); }
+
+.b1-week {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Progress bar ── */
+.b1-bar-wrap {
+  margin-bottom: 16px;
+}
+
+.b1-bar-track {
+  height: 3px;
+  background: var(--bg-3);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.b1-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dim));
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.b1-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* ── Skill breakdown ── */
+.b1-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.skill-item {
+  background: var(--bg-2);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.skill-name {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.skill-bar-track {
+  height: 2px;
+  background: var(--bg-3);
+  border-radius: 1px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 1px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-bar-fill.speaking  { background: var(--noun); }
+.skill-bar-fill.writing   { background: var(--accent); }
+.skill-bar-fill.verbs     { background: var(--verb); }
+.skill-bar-fill.fluency   { background: var(--accent-2); }
+
+.skill-score {
+  font-size: 11px;
+  color: var(--text-soft);
+}
+
+/* ── Today's session card ── */
+.today-card {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.today-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.today-theme {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.today-verbs {
+  font-size: 11px;
+  color: var(--dim);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+}
+
+.today-verbs span {
+  color: var(--verb);
+}
+
+.today-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Mode launcher buttons ── */
+.mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+}
+
+.mode-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-1);
+}
+
+.mode-btn:active {
+  transform: scale(0.99);
+}
+
+.mode-btn.done {
+  border-color: var(--success);
+  opacity: 0.7;
+}
+
+.mode-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.mode-icon.m1 { background: rgba(212,82,26,0.10); }
+.mode-icon.m2 { background: rgba(90,159,212,0.12); }
+.mode-icon.m3a { background: rgba(196,88,88,0.12); }
+.mode-icon.m3b { background: rgba(58,170,96,0.12); }
+
+.mode-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mode-name {
+  font-size: 12px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.mode-desc {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.mode-status {
+  font-size: 10px;
+  color: var(--muted);
+  flex-shrink: 0;
+  letter-spacing: 0.06em;
+}
+
+.mode-status.done-status { color: var(--success); }
+
+/* ── Streak / stats row ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat-box {
+  background: var(--bg-0);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Assessment nudge ── */
+.assess-nudge {
+  background: rgba(212,82,26,0.04);
+  border: 1px solid rgba(212,82,26,0.18);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.assess-nudge:hover {
+  background: rgba(212,82,26,0.08);
+}
+
+.assess-nudge-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.assess-nudge-text {
+  flex: 1;
+}
+
+.assess-nudge-title {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.assess-nudge-sub {
+  font-size: 10px;
+  color: var(--dim);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN: MODE 1 PLACEHOLDER
+═══════════════════════════════════════════════════════════════════ */
+#screen-mode1, #screen-mode2, #screen-mode3, #screen-b1 {
+  background: var(--bg-0);
+}
+
+.placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  text-align: center;
+}
+
+.placeholder-icon {
+  font-size: 40px;
+  opacity: 0.4;
+  margin-bottom: 8px;
+}
+
+.placeholder-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-soft);
+}
+
+.placeholder-sub {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  max-width: 280px;
+  line-height: 1.7;
+}
+
+.placeholder-badge {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--border-mid);
+  border-radius: 20px;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SETTINGS PANEL (overlay, from any screen)
+═══════════════════════════════════════════════════════════════════ */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: overlayIn 0.2s ease;
+}
+
+.overlay.active {
+  display: flex;
+  align-items: flex-end;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.sheet {
+  background: var(--bg-0);
+  border-radius: 16px 16px 0 0;
+  border-top: 1px solid var(--border-mid);
+  padding: 0 0 max(var(--safe-bottom), 24px);
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: sheetUp 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes sheetUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.sheet-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border-mid);
+  border-radius: 2px;
+  margin: 12px auto 20px;
+}
+
+.sheet-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  padding: 0 24px 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.sheet-body {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sheet-footer {
+  padding: 20px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* ── Danger zone ── */
+.danger-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid rgba(192,80,58,0.3);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.danger-btn:hover {
+  background: rgba(192,80,58,0.1);
+  border-color: var(--danger);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   VOCAB COLOUR LEGEND (shared)
+═══════════════════════════════════════════════════════════════════ */
+.vocab-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  background: var(--bg-2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════════════════════════════ */
+.w-noun  { color: var(--noun); font-weight: 500; }
+.w-verb  { color: var(--verb); font-weight: 500; }
+.w-b1-1  { color: var(--b1-1); }
+.w-b1-2  { color: var(--b1-2); }
+.w-b1-3  { color: var(--b1-3); }
+.w-b1-4  { color: var(--b1-4); }
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--bg-3);
+  color: var(--dim);
+  border: 1px solid var(--border);
+}
+
+.tag.gold   { background: rgba(212,82,26,0.10);  color: var(--accent); border-color: rgba(212,82,26,0.25);  }
+.tag.blue   { background: rgba(90,159,212,0.12); color: var(--noun);   border-color: rgba(90,159,212,0.25); }
+.tag.red    { background: rgba(196,88,88,0.12);  color: var(--verb);   border-color: rgba(196,88,88,0.25);  }
+.tag.green  { background: rgba(74,222,128,0.1);  color: var(--b1-2);  border-color: rgba(74,222,128,0.2);  }
+
+/* Hide scrollbars but keep scroll */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODE 1 — AUDIO DRILLING
+═══════════════════════════════════════════════════════════════════ */
+
+/* Config screen */
+.m1-inner {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.m1-config-header {
+  padding-bottom: 4px;
+}
+
+.m1-config-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.m1-config-sub {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.m1-cached-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(58,138,90,0.06);
+  border: 1px solid rgba(58,138,90,0.2);
+  border-radius: 8px;
+}
+
+.m1-cached-sub {
+  font-size: 10px;
+  color: var(--muted);
+  flex: 1;
+}
+
+/* Loading screen */
+#screen-mode1-loading {
+  background: var(--bg-0);
+}
+
+.m1-loading-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px;
+}
+
+.m1-loading-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.m1-loading-track {
+  width: 220px;
+  height: 2px;
+  background: var(--bg-3);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.m1-loading-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.4s ease;
+}
+
+.m1-loading-sub {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* Playback screen */
+#screen-mode1-play {
+  background: var(--bg-0);
+}
+
+.m1-progress-bar {
+  flex-shrink: 0;
+  height: 3px;
+  background: var(--bg-3);
+}
+
+.m1-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.m1-controls {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.m1-counter {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.m1-phase-badge {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--bg-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.m1-phase-badge.phase-en  { background: rgba(58,143,196,0.1); color: var(--accent-2); border-color: rgba(58,143,196,0.25); }
+.m1-phase-badge.phase-de  { background: rgba(212,82,26,0.1);  color: var(--accent);   border-color: rgba(212,82,26,0.25);  }
+.m1-phase-badge.phase-de2 { background: rgba(212,82,26,0.06); color: var(--accent);   border-color: rgba(212,82,26,0.15);  }
+.m1-phase-badge.phase-pause { background: rgba(58,138,90,0.1); color: var(--success); border-color: rgba(58,138,90,0.25); }
+
+.m1-pause-btn, .m1-stop-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: var(--dim);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.m1-pause-btn:hover, .m1-stop-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Card area */
+.m1-card-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  overflow: hidden;
+}
+
+.m1-card {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.m1-sentence-num {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.m1-english {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text);
+  min-height: 1.45em;
+  transition: opacity 0.3s ease;
+}
+
+.m1-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--border);
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+.m1-divider.active {
+  width: 56px;
+  background: var(--accent);
+}
+
+.m1-german {
+  font-family: var(--font-mono);
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+  color: var(--text);
+  min-height: 1.7em;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  word-break: break-word;
+}
+
+.m1-german.visible { opacity: 1; }
+
+/* Pause countdown ring */
+.m1-pause-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.m1-ring-svg {
+  width: 44px;
+  height: 44px;
+  transform: rotate(-90deg);
+}
+
+.m1-ring-track {
+  fill: none;
+  stroke: var(--bg-3);
+  stroke-width: 2.5;
+}
+
+.m1-ring-fill {
+  fill: none;
+  stroke: var(--success);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 113;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.m1-pause-label {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--success);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODE 3 — VERB DRILLS
+═══════════════════════════════════════════════════════════════════ */
+
+/* Menu screen */
+.m3-inner {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 40px;
+  display: flex; flex-direction: column; gap: 20px;
+  max-width: 520px; width: 100%; margin: 0 auto;
+}
+
+.m3-header { padding-bottom: 4px; }
+.m3-title  { font-family: var(--font-display); font-size: 30px; font-weight: 300; color: var(--text); }
+.m3-sub    { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; margin-top: 4px; }
+
+.m3-verbs-row {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.m3-verb-chip {
+  padding: 4px 10px; border-radius: 20px;
+  font-family: var(--font-mono); font-size: 11px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text-soft);
+}
+.m3-verb-chip.weak {
+  background: rgba(212,82,26,0.08); border-color: rgba(212,82,26,0.3);
+  color: var(--accent);
+}
+
+.m3-menu-cards { display: flex; flex-direction: column; gap: 12px; }
+.m3-menu-card  {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px; background: var(--bg-1);
+  border: 1px solid var(--border); border-radius: 12px;
+  cursor: pointer; text-align: left; transition: all 0.15s;
+  width: 100%;
+}
+.m3-menu-card:hover {
+  border-color: var(--accent); background: var(--bg-2);
+  transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212,82,26,0.08);
+}
+.m3-menu-icon  {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.m3-menu-body  { flex: 1; }
+.m3-menu-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.m3-menu-desc  { font-size: 11px; color: var(--muted); line-height: 1.4; }
+.m3-menu-arrow { font-size: 16px; color: var(--muted); }
+
+.m3-accuracy-wrap { display: flex; flex-direction: column; gap: 8px; }
+.m3-accuracy-row  {
+  display: flex; align-items: center; gap: 10px;
+}
+.m3-acc-verb  { font-family: var(--font-mono); font-size: 12px; color: var(--text-soft); width: 90px; flex-shrink: 0; }
+.m3-acc-track { flex: 1; height: 4px; background: var(--bg-3); border-radius: 2px; overflow: hidden; }
+.m3-acc-fill  { height: 100%; border-radius: 2px; background: var(--success); transition: width 0.5s ease; }
+.m3-acc-pct   { font-size: 10px; color: var(--muted); width: 30px; text-align: right; flex-shrink: 0; }
+
+/* Shared top row */
+.m3a-toprow, .m3b-toprow {
+  flex-shrink: 0; display: flex; align-items: center; gap: 12px;
+  padding: 12px 20px; border-bottom: 1px solid var(--border);
+  background: var(--bg-0);
+}
+.m3-back-btn {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  font-size: 11px; color: var(--muted); padding: 6px 10px; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.m3-back-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Umlaut bar */
+.umlaut-bar {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  padding: 10px 0;
+}
+.umlaut-key {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  padding: 6px 12px; border-radius: 6px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  color: var(--text); cursor: pointer; transition: all 0.12s;
+  user-select: none; -webkit-user-select: none;
+}
+.umlaut-key:hover  { background: var(--bg-3); border-color: var(--accent); }
+.umlaut-key:active { background: rgba(212,82,26,0.12); }
+
+/* Mode 3a — conjugation table */
+.m3a-verb-label { font-family: var(--font-mono); font-size: 18px; font-weight: 500; color: var(--text); flex: 1; }
+.m3a-verb-type  { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+.m3a-inner {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 16px 20px 40px; display: flex; flex-direction: column; gap: 16px;
+  max-width: 520px; width: 100%; margin: 0 auto;
+}
+
+.m3a-reminder {
+  padding: 10px 14px; background: rgba(212,82,26,0.06);
+  border: 1px solid rgba(212,82,26,0.2); border-radius: 8px;
+  font-size: 12px; color: var(--text-soft); line-height: 1.5;
+}
+
+/* Conjugation table */
+.conj-table  { width: 100%; border-collapse: collapse; }
+.conj-thead th {
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); padding: 6px 8px; text-align: left;
+  border-bottom: 1px solid var(--border); font-weight: 400;
+}
+.conj-person {
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+  padding: 7px 8px; white-space: nowrap; vertical-align: middle; width: 52px;
+}
+.conj-input-cell { padding: 4px 4px; }
+.conj-input {
+  width: 100%; padding: 7px 8px;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 6px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--text);
+  outline: none; transition: border-color 0.15s;
+  -webkit-appearance: none;
+}
+.conj-input:focus  { border-color: var(--accent); background: var(--bg-1); }
+.conj-input.correct { border-color: var(--success); background: rgba(58,138,90,0.06); color: var(--success); }
+.conj-input.wrong   { border-color: var(--danger);  background: rgba(192,80,58,0.06);  color: var(--danger);  }
+
+.conj-tense-header td {
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); padding: 12px 8px 4px; font-weight: 500;
+  border-top: 1px solid var(--border);
+}
+
+/* Results */
+.m3a-results-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+}
+.m3a-results-verb  { font-family: var(--font-mono); font-size: 22px; font-weight: 500; color: var(--text); }
+.m3a-score-badge   {
+  padding: 6px 16px; border-radius: 20px;
+  font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+}
+.m3a-score-badge.good { background: rgba(58,138,90,0.12); color: var(--success); border: 1px solid rgba(58,138,90,0.3); }
+.m3a-score-badge.ok   { background: rgba(212,82,26,0.10); color: var(--accent);  border: 1px solid rgba(212,82,26,0.25); }
+.m3a-score-badge.bad  { background: rgba(192,80,58,0.10); color: var(--danger);  border: 1px solid rgba(192,80,58,0.25); }
+
+/* Correct answer shown under wrong cell */
+.conj-correct-ans {
+  font-size: 11px; color: var(--success); padding: 2px 8px 6px;
+  font-family: var(--font-mono);
+}
+
+/* Mode 3b */
+.m3b-meta   { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.m3b-counter { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+.m3b-prog-track { height: 2px; background: var(--bg-3); border-radius: 1px; overflow: hidden; }
+.m3b-prog-fill  { height: 100%; background: var(--accent-2); border-radius: 1px; transition: width 0.4s; width: 0%; }
+
+.m3b-inner {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 16px 20px 40px; display: flex; flex-direction: column; gap: 16px;
+  max-width: 520px; width: 100%; margin: 0 auto;
+}
+.m3b-card  {
+  background: var(--bg-1); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px;
+}
+.m3b-verb-tag {
+  display: inline-block; margin-bottom: 10px;
+  padding: 3px 10px; border-radius: 20px;
+  font-family: var(--font-mono); font-size: 11px;
+  background: rgba(212,82,26,0.08); color: var(--accent);
+  border: 1px solid rgba(212,82,26,0.2);
+}
+.m3b-cue {
+  font-family: var(--font-display); font-size: 20px; font-weight: 300;
+  line-height: 1.45; color: var(--text);
+}
+.m3b-answer {
+  resize: none; min-height: 80px;
+  font-family: var(--font-mono); font-size: 14px; line-height: 1.5;
+}
+.m3b-feedback {
+  margin-top: 16px; padding: 14px;
+  background: var(--bg-2); border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 13px; line-height: 1.6; color: var(--text-soft);
+}
+.m3b-feedback .fb-correct { color: var(--success); font-weight: 500; }
+.m3b-feedback .fb-wrong   { color: var(--danger);  font-weight: 500; }
+.m3b-feedback .fb-ideal   { color: var(--text);    font-family: var(--font-mono); font-size: 13px; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODE 2 — CONVERSATION ROLEPLAY
+═══════════════════════════════════════════════════════════════════ */
+
+.m2-inner {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 40px;
+  display: flex; flex-direction: column; gap: 20px;
+  max-width: 520px; width: 100%; margin: 0 auto;
+}
+
+.m2-header { padding-bottom: 4px; }
+.m2-title  { font-family: var(--font-display); font-size: 30px; font-weight: 300; color: var(--text); }
+.m2-sub    { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; margin-top: 4px; }
+
+.m2-safari-note {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: rgba(58,143,196,0.06); border: 1px solid rgba(58,143,196,0.2);
+  border-radius: 8px;
+}
+.m2-safari-text { font-size: 11px; color: var(--muted); flex: 1; }
+
+.m2-sentences-note {
+  font-size: 11px; color: var(--muted);
+  padding: 8px 12px; background: var(--bg-2);
+  border-radius: 6px; border: 1px solid var(--border);
+  display: none;
+}
+
+/* How it works */
+.m2-how { display: flex; flex-direction: column; gap: 10px; }
+.m2-how-title {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 4px;
+}
+.m2-how-step {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text-soft);
+}
+.m2-how-num {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--bg-3); border: 1px solid var(--border);
+  font-size: 10px; font-family: var(--font-mono);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); flex-shrink: 0;
+}
+
+/* Play screen */
+#screen-mode2-play {
+  flex-direction: column; background: var(--bg-0);
+}
+#screen-mode2-play.active { display: flex; }
+.m2-play-topbar {
+  flex-shrink: 0; display: flex; align-items: center; gap: 10px;
+  padding: 12px 20px; border-bottom: 1px solid var(--border);
+  background: var(--bg-0);
+}
+.m2-play-scenario {
+  font-family: var(--font-mono); font-size: 13px; color: var(--text); flex: 1;
+}
+.m2-play-exchange {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.m2-stop-btn {
+  background: none; border: 1px solid rgba(192,80,58,0.4);
+  border-radius: 6px; padding: 6px 12px;
+  font-size: 11px; color: var(--danger); cursor: pointer; transition: all 0.15s;
+}
+.m2-stop-btn:hover { background: rgba(192,80,58,0.08); }
+
+/* Transcript */
+.m2-transcript {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 20px; display: flex; flex-direction: column; gap: 16px;
+}
+
+.m2-bubble {
+  display: flex; flex-direction: column; gap: 4px;
+  max-width: 84%;
+}
+.m2-bubble.character { align-self: flex-start; }
+.m2-bubble.user      { align-self: flex-end; }
+
+.m2-bubble-label {
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); padding: 0 4px;
+}
+.m2-bubble.user .m2-bubble-label { text-align: right; }
+
+.m2-bubble-text {
+  padding: 12px 14px; border-radius: 12px;
+  font-size: 14px; line-height: 1.55; color: var(--text);
+}
+.m2-bubble.character .m2-bubble-text {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+  font-family: var(--font-mono);
+}
+.m2-bubble.user .m2-bubble-text {
+  background: rgba(212,82,26,0.08); border: 1px solid rgba(212,82,26,0.2);
+  border-bottom-right-radius: 4px;
+  font-style: italic;
+}
+
+.m2-bubble-typing {
+  display: flex; align-items: center; gap: 4px;
+  padding: 14px; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 12px; border-bottom-left-radius: 4px; width: fit-content;
+}
+.m2-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--muted);
+  animation: bounce 1.2s ease-in-out infinite;
+}
+.m2-dot:nth-child(2) { animation-delay: 0.2s; }
+.m2-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+/* Mic bar */
+.m2-mic-bar {
+  flex-shrink: 0; display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-top: 1px solid var(--border);
+  background: var(--bg-0);
+}
+.m2-mic-orb {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg-3); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.m2-mic-orb::after {
+  content: "🎙"; font-size: 14px; line-height: 1;
+}
+.m2-mic-orb.listening {
+  background: rgba(212,82,26,0.1); border-color: var(--accent);
+  animation: mic-pulse 1.5s ease-in-out infinite;
+}
+.m2-mic-orb.speaking {
+  background: rgba(58,143,196,0.1); border-color: var(--accent-2);
+}
+.m2-mic-orb.thinking {
+  background: rgba(58,138,90,0.1); border-color: var(--success);
+}
+@keyframes mic-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(212,82,26,0.3); }
+  50%      { box-shadow: 0 0 0 8px rgba(212,82,26,0); }
+}
+.m2-mic-label {
+  font-size: 12px; color: var(--muted); flex: 1;
+  letter-spacing: 0.04em;
+}
+
+/* Summary screen */
+.m2-summary-header {
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+}
+.m2-summary-title {
+  font-family: var(--font-display); font-size: 26px; font-weight: 300; color: var(--text);
+}
+.m2-summary-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.m2-summary-section { display: flex; flex-direction: column; gap: 10px; }
+.m2-summary-label {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+}
+
+.m2-verb-row {
+  display: flex; align-items: center; gap: 10px; padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.m2-verb-name  { font-family: var(--font-mono); font-size: 13px; color: var(--text); width: 100px; }
+.m2-verb-used  { font-size: 11px; color: var(--text-soft); flex: 1; }
+.m2-verb-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+.m2-verb-badge.yes { background: rgba(58,138,90,0.1); color: var(--success); border: 1px solid rgba(58,138,90,0.3); }
+.m2-verb-badge.no  { background: var(--bg-3); color: var(--muted); border: 1px solid var(--border); }
+
+.m2-transcript-review {
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 320px; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 12px; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.m2-review-line { font-size: 12px; line-height: 1.5; color: var(--text-soft); }
+.m2-review-line strong { color: var(--text); }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   B1 ASSESSMENT
+═══════════════════════════════════════════════════════════════════ */
+
+.b1-inner {
+  flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 40px;
+  display: flex; flex-direction: column; gap: 20px;
+  max-width: 520px; width: 100%; margin: 0 auto;
+}
+
+.b1-header { padding-bottom: 4px; }
+.b1-title  { font-family: var(--font-display); font-size: 30px; font-weight: 300; color: var(--text); }
+.b1-sub    { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; margin-top: 4px; }
+.b1-note   { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+/* History sparkline */
+.b1-history-wrap {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px;
+}
+.b1-history-title {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.b1-sparkline { display: flex; align-items: flex-end; gap: 6px; height: 48px; }
+.b1-spark-bar {
+  flex: 1; border-radius: 3px 3px 0 0; min-width: 8px;
+  background: var(--accent); opacity: 0.6; transition: opacity 0.2s;
+  position: relative;
+}
+.b1-spark-bar:hover { opacity: 1; }
+.b1-spark-empty { flex: 1; min-width: 8px; background: var(--bg-3); border-radius: 3px; height: 4px; }
+.b1-history-no-data {
+  font-size: 12px; color: var(--muted); font-style: italic;
+  text-align: center; padding: 8px 0;
+}
+
+/* Check cards */
+.b1-checks { display: flex; flex-direction: column; gap: 10px; }
+.b1-check-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px; background: var(--bg-1);
+  border: 1px solid var(--border); border-radius: 10px;
+}
+.b1-check-icon { font-size: 22px; flex-shrink: 0; padding-top: 2px; }
+.b1-check-body { flex: 1; }
+.b1-check-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+.b1-check-desc  { font-size: 12px; color: var(--text-soft); margin-bottom: 4px; }
+.b1-check-criteria {
+  font-size: 10px; letter-spacing: 0.08em; color: var(--muted); font-style: italic;
+}
+.b1-check-status {
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  font-weight: 600; flex-shrink: 0; padding-top: 2px;
+}
+.b1-check-status.done { color: var(--success); }
+
+/* Writing screen */
+.b1-writing-header { display: flex; flex-direction: column; gap: 8px; }
+.b1-writing-label  {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+}
+.b1-writing-prompt-label {
+  font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
+}
+.b1-writing-prompt {
+  font-family: var(--font-display); font-size: 20px; font-weight: 300;
+  color: var(--text); line-height: 1.45;
+  padding: 14px; background: var(--bg-2);
+  border: 1px solid var(--border); border-radius: 8px;
+}
+.b1-write-area { resize: none; min-height: 120px; font-family: var(--font-mono); font-size: 14px; }
+.b1-write-feedback {
+  padding: 16px; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 8px; font-size: 13px; line-height: 1.65; color: var(--text-soft);
+}
+.b1-write-feedback .fb-score {
+  font-family: var(--font-mono); font-size: 18px; font-weight: 600; color: var(--text);
+  margin-bottom: 8px;
+}
+.b1-write-feedback .fb-breakdown { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+
+/* Results screen */
+.b1-results-header {
+  border-bottom: 1px solid var(--border); padding-bottom: 14px;
+}
+.b1-results-title {
+  font-family: var(--font-display); font-size: 26px; font-weight: 300; color: var(--text);
+}
+.b1-results-date { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.b1-score-cards { display: flex; gap: 10px; }
+.b1-score-card {
+  flex: 1; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px;
+}
+.b1-score-card-label {
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
+.b1-score-card-val {
+  font-family: var(--font-display); font-size: 32px; font-weight: 300; color: var(--text);
+  line-height: 1;
+}
+.b1-score-card-val sup { font-size: 16px; }
+.b1-score-card-bar { height: 3px; background: var(--bg-3); border-radius: 2px; overflow: hidden; }
+.b1-score-card-fill { height: 100%; border-radius: 2px; transition: width 0.6s ease; }
+
+.b1-composite-wrap {
+  text-align: center; padding: 20px;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px;
+}
+.b1-composite-label {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  margin-bottom: 6px;
+}
+.b1-composite-pct {
+  font-family: var(--font-display); font-size: 52px; font-weight: 300; color: var(--accent);
+  line-height: 1;
+}
+.b1-results-trend { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+.b1-feedback-wrap {
+  padding: 14px; background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 8px; font-size: 13px; color: var(--text-soft); line-height: 1.65;
+}
+.b1-feedback-wrap h4 {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px; font-weight: 400;
+}
+
+</style>
+</head>
+
+<body>
+<div id="app">
+
+  <!-- ── TOP BAR ───────────────────────────────────────────────── -->
+  <div class="topbar" id="topbar">
+    <div class="topbar-logo"><span style="color:var(--accent)">Convo</span><strong style="font-weight:600;color:var(--text)">90</strong><span id="topbar-lang">DE</span></div>
+    <div class="topbar-right">
+      <span class="topbar-week" id="topbar-week"></span>
+      <button class="btn-icon" onclick="openSettings()" title="Settings">⚙</button>
+    </div>
+  </div>
+
+  <!-- ── SCREENS ──────────────────────────────────────────────── -->
+  <div class="screens">
+
+    <!-- FIRST-RUN SETTINGS -->
+    <div class="screen active" id="screen-settings">
+      <div class="settings-inner">
+        <div class="settings-header">
+          <div class="settings-title">Welcome to<br><strong>Convo90</strong></div>
+          <div class="settings-sub">Enter your API keys to begin.<br>Stored locally — never leaves your device.</div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-group-label">API Keys</div>
+
+          <div class="field">
+            <div class="field-label">Anthropic API Key</div>
+            <input class="field-input" type="password" id="input-anthropic"
+              placeholder="sk-ant-api03-..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="field-hint">Used for sentence generation, conversation, grading & B1 assessment.</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">OpenAI API Key</div>
+            <input class="field-input" type="password" id="input-openai"
+              placeholder="sk-..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <div class="field-hint">Used for text-to-speech audio in Modes 1 & 2.</div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-group-label">Curriculum</div>
+
+          <div class="field">
+            <div class="field-label">Current Week</div>
+            <select class="field-input" id="input-week">
+              <option value="1">Week 1 — Introductions & greetings</option>
+              <option value="2">Week 2 — Daily routine</option>
+              <option value="3">Week 3 — Travel & transport</option>
+              <option value="4">Week 4 — Hotel & accommodation</option>
+              <option value="5">Week 5 — Food & restaurants</option>
+              <option value="6">Week 6 — Shopping</option>
+              <option value="7">Week 7 — Help & directions</option>
+              <option value="8">Week 8 — Preferences</option>
+              <option value="9">Week 9 — Past experiences</option>
+              <option value="10">Week 10 — Future plans</option>
+              <option value="11">Week 11 — Work & professional</option>
+              <option value="12">Week 12 — Health & wellbeing</option>
+              <option value="13">Week 13 — Football & sport</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Language</div>
+            <select class="field-input" id="input-lang">
+              <option value="de">German (Deutsch)</option>
+              <option value="sv" disabled>Swedish (coming soon)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn-primary" id="btn-save-settings" onclick="saveSettings()">
+            Save & Start
+          </button>
+          <div class="msg-error" id="settings-error"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOME DASHBOARD -->
+    <div class="screen" id="screen-home">
+      <div class="home-inner">
+
+        <!-- B1 Readiness -->
+        <div class="b1-card">
+          <div class="b1-label">B1 Readiness</div>
+          <div class="b1-score-row">
+            <div class="b1-percent" id="b1-percent">0<sup>%</sup></div>
+            <div class="b1-meta">
+              <div class="b1-trend plateau" id="b1-trend">— No data yet</div>
+              <div class="b1-week" id="b1-week-label">Week 1 of 13</div>
+            </div>
+          </div>
+          <div class="b1-bar-wrap">
+            <div class="b1-bar-track">
+              <div class="b1-bar-fill" id="b1-bar" style="width:0%"></div>
+            </div>
+            <div class="b1-bar-labels">
+              <span>A1</span><span>A2</span><span>B1</span>
+            </div>
+          </div>
+          <div class="b1-skills">
+            <div class="skill-item">
+              <div class="skill-name">Speaking</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill speaking" id="skill-speaking" style="width:0%"></div></div>
+              <div class="skill-score" id="skill-speaking-val">—</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Writing</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill writing" id="skill-writing" style="width:0%"></div></div>
+              <div class="skill-score" id="skill-writing-val">—</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Verbs</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill verbs" id="skill-verbs" style="width:0%"></div></div>
+              <div class="skill-score" id="skill-verbs-val">—</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Fluency</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill fluency" id="skill-fluency" style="width:0%"></div></div>
+              <div class="skill-score" id="skill-fluency-val">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today's session -->
+        <div class="today-card">
+          <div class="today-label">Today — Day <span id="today-day">1</span></div>
+          <div class="today-theme" id="today-theme">Introductions & greetings</div>
+          <div class="today-verbs">Focus: <span id="today-verbs">sein, heißen, kommen, wohnen, arbeiten</span></div>
+          <div class="today-actions">
+            <button class="mode-btn" onclick="navigate('mode1')">
+              <div class="mode-icon m1">🎧</div>
+              <div class="mode-info">
+                <div class="mode-name">Mode 1 — Audio Drilling</div>
+                <div class="mode-desc">100 sentences · EN→DE→DE→pause</div>
+              </div>
+              <div class="mode-status" id="m1-status">→</div>
+            </button>
+            <button class="mode-btn" onclick="navigate('mode2')">
+              <div class="mode-icon m2">🎙</div>
+              <div class="mode-info">
+                <div class="mode-name">Mode 2 — Conversation</div>
+                <div class="mode-desc">Roleplay scenario · open-ended</div>
+              </div>
+              <div class="mode-status" id="m2-status">→</div>
+            </button>
+            <button class="mode-btn" onclick="navigate('mode3', '3a')">
+              <div class="mode-icon m3a">📝</div>
+              <div class="mode-info">
+                <div class="mode-name">Mode 3a — Conjugation</div>
+                <div class="mode-desc">Full tables · present + perfect + past</div>
+              </div>
+              <div class="mode-status" id="m3a-status">→</div>
+            </button>
+            <button class="mode-btn" onclick="navigate('mode3', '3b')">
+              <div class="mode-icon m3b">✏️</div>
+              <div class="mode-info">
+                <div class="mode-name">Mode 3b — Sentences</div>
+                <div class="mode-desc">German cue · write your answer</div>
+              </div>
+              <div class="mode-status" id="m3b-status">→</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-value" id="stat-streak">0</div>
+            <div class="stat-label">Day streak</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-sessions">0</div>
+            <div class="stat-label">Sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="stat-words">0</div>
+            <div class="stat-label">Words seen</div>
+          </div>
+        </div>
+
+        <!-- Sunday assessment nudge (shown on Sundays) -->
+        <div class="assess-nudge" id="assess-nudge" style="display:none" onclick="navigate('b1')">
+          <div class="assess-nudge-icon">📊</div>
+          <div class="assess-nudge-text">
+            <div class="assess-nudge-title">Weekly B1 Assessment</div>
+            <div class="assess-nudge-sub">Sunday check-in — takes ~5 minutes</div>
+          </div>
+          <div style="color:var(--accent);font-size:14px">→</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODE 1: CONFIG -->
+    <div class="screen" id="screen-mode1">
+      <div class="m1-inner scrollable">
+
+        <div class="m1-config-header">
+          <div class="m1-config-title">Audio Drilling</div>
+          <div class="m1-config-sub">Choose your drill type below</div>
+        </div>
+
+        <!-- Mode selector -->
+        <div class="field-group">
+          <div class="field-group-label">Drill Type</div>
+          <div style="display:flex;gap:8px">
+            <button class="m1-mode-tab active" id="tab-1a" onclick="selectDrillMode('1a')">
+              <div style="font-size:13px;font-weight:600">1a — 100 Sentences</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">EN→DE→DE→pause</div>
+            </button>
+            <button class="m1-mode-tab" id="tab-1b" onclick="selectDrillMode('1b')">
+              <div style="font-size:13px;font-weight:600">1b — 3 Form Drill</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">Ich · Sprichst du · Wie viel</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-group-label">Session</div>
+          <div class="field">
+            <div class="field-label">Week</div>
+            <select class="field-input" id="m1-week">
+              <option value="1">Week 1 — Introductions</option>
+              <option value="2">Week 2 — Daily routine</option>
+              <option value="3">Week 3 — Travel</option>
+              <option value="4">Week 4 — Hotel</option>
+              <option value="5">Week 5 — Food</option>
+              <option value="6">Week 6 — Shopping</option>
+              <option value="7">Week 7 — Directions</option>
+              <option value="8">Week 8 — Preferences</option>
+              <option value="9">Week 9 — Past</option>
+              <option value="10">Week 10 — Future</option>
+              <option value="11">Week 11 — Work</option>
+              <option value="12">Week 12 — Health</option>
+              <option value="13">Week 13 — Football</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="field-label">Level</div>
+            <select class="field-input" id="m1-level">
+              <option value="A1">A1 — Complete beginner</option>
+              <option value="A2" selected>A2 — Elementary</option>
+              <option value="B1">B1 — Intermediate</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="field-label">Tense focus</div>
+            <select class="field-input" id="m1-tense">
+              <option value="present">Present only</option>
+              <option value="mixed" selected>Mixed (default)</option>
+              <option value="past">Past focus</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="field-label">Pause length</div>
+            <select class="field-input" id="m1-pause">
+              <option value="3">3 seconds</option>
+              <option value="4" selected>4 seconds</option>
+              <option value="6">6 seconds</option>
+              <option value="8">8 seconds</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="m1-cached-note" id="m1-cached-note" style="display:none">
+          <span class="tag green">✓ Today's sentences ready</span>
+          <span class="m1-cached-sub">Generated earlier today — tap to use or regenerate</span>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px" id="m1a-buttons">
+          <button class="btn-primary" id="btn-m1-start" onclick="startMode1()">
+            Generate &amp; Start 1a Session
+          </button>
+          <button class="btn-secondary" id="btn-m1-cached" onclick="startMode1Cached()" style="display:none">
+            Use Today's Sentences
+          </button>
+        </div>
+        <div style="display:none;flex-direction:column;gap:8px" id="m1b-buttons">
+          <button class="btn-primary" onclick="startMode1b()">
+            Generate &amp; Start 3 Form Drill
+          </button>
+          <button class="btn-secondary" id="btn-m1b-cached" onclick="startMode1bCached()" style="display:none">
+            Use Today's Verb Drills
+          </button>
+        </div>
+
+        <div class="vocab-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--noun)"></div>Noun</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--verb)"></div>Verb</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--b1-1)"></div>New word</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--b1-2)"></div>2nd sight</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--b1-3)"></div>3rd sight</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--b1-4)"></div>4th sight</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--text-soft)"></div>Learned</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MODE 1B: PLAYBACK -->
+    <div class="screen" id="screen-mode1b-play">
+
+      <div class="m1-progress-bar">
+        <div class="m1-progress-fill" id="m1b-progress-fill"></div>
+      </div>
+
+      <div class="m1-controls">
+        <div class="m1-counter" id="m1b-counter">1 / 15</div>
+        <div class="m1-phase-badge" id="m1b-phase-badge">Ich</div>
+        <button class="m1-pause-btn" id="m1b-pause-btn" onclick="togglePause1b()">⏸</button>
+        <button class="m1-stop-btn" onclick="stopMode1b()">✕</button>
+      </div>
+
+      <div class="m1-card-area">
+        <div class="m1-card">
+          <div class="m1b-stem" id="m1b-stem"></div>
+          <div class="m1b-line" id="m1b-line1" style="opacity:0"></div>
+          <div class="m1b-line" id="m1b-line2" style="opacity:0"></div>
+          <div class="m1b-line" id="m1b-line3" style="opacity:0"></div>
+          <div class="m1-pause-ring" id="m1b-pause-ring" style="display:none">
+            <svg viewBox="0 0 44 44" class="m1-ring-svg">
+              <circle cx="22" cy="22" r="18" class="m1-ring-track"/>
+              <circle cx="22" cy="22" r="18" class="m1-ring-fill" id="m1b-ring-fill"/>
+            </svg>
+            <div class="m1-pause-label">Your turn</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MODE 1: LOADING -->
+    <div class="screen" id="screen-mode1-loading">
+      <div class="m1-loading-wrap">
+        <div class="m1-loading-label" id="m1-loading-label">Generating sentences…</div>
+        <div class="m1-loading-track">
+          <div class="m1-loading-fill" id="m1-loading-fill"></div>
+        </div>
+        <div class="m1-loading-sub" id="m1-loading-sub">Batch 1 of 4</div>
+      </div>
+    </div>
+
+    <!-- MODE 1: PLAYBACK -->
+    <div class="screen" id="screen-mode1-play">
+
+      <!-- Progress bar -->
+      <div class="m1-progress-bar">
+        <div class="m1-progress-fill" id="m1-progress-fill"></div>
+      </div>
+
+      <!-- Controls row -->
+      <div class="m1-controls">
+        <div class="m1-counter" id="m1-counter">1 / 100</div>
+        <div class="m1-phase-badge" id="m1-phase-badge">English</div>
+        <button class="m1-pause-btn" id="m1-pause-btn" onclick="togglePause()">⏸</button>
+        <button class="m1-stop-btn" onclick="stopMode1()">✕</button>
+      </div>
+
+      <!-- Sentence display -->
+      <div class="m1-card-area">
+        <div class="m1-card">
+          <div class="m1-sentence-num" id="m1-sentence-num">#01</div>
+
+          <!-- English -->
+          <div class="m1-english" id="m1-english"></div>
+
+          <!-- Divider -->
+          <div class="m1-divider" id="m1-divider"></div>
+
+          <!-- German with colour coding -->
+          <div class="m1-german" id="m1-german"></div>
+
+          <!-- Pause countdown -->
+          <div class="m1-pause-ring" id="m1-pause-ring" style="display:none">
+            <svg viewBox="0 0 44 44" class="m1-ring-svg">
+              <circle cx="22" cy="22" r="18" class="m1-ring-track"/>
+              <circle cx="22" cy="22" r="18" class="m1-ring-fill" id="m1-ring-fill"/>
+            </svg>
+            <div class="m1-pause-label">Your turn</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MODE 2: CONFIG -->
+    <div class="screen" id="screen-mode2">
+      <div class="m2-inner scrollable">
+        <div class="m2-header">
+          <div class="m2-title">Conversation</div>
+          <div class="m2-sub">Speak German with a character. Open-ended roleplay.</div>
+        </div>
+
+        <div class="m2-safari-note">
+          <span class="tag">ℹ Safari only</span>
+          <span class="m2-safari-text">Mic requires Safari on iOS. Chrome on iPhone won't work.</span>
+        </div>
+
+        <div class="field-group">
+          <div class="field-group-label">Scenario</div>
+          <div class="field">
+            <div class="field-label">Type</div>
+            <select class="field-input" id="m2-scenario-type">
+              <option value="auto">Auto (matched to this week)</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="hotel">Hotel check-in</option>
+              <option value="taxi">Taxi</option>
+              <option value="shop">Shop / market</option>
+              <option value="street">Asking for directions</option>
+              <option value="colleague">Work colleague</option>
+              <option value="doctor">Doctor's appointment</option>
+              <option value="friend">Conversation with a friend</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="field-label">Difficulty</div>
+            <select class="field-input" id="m2-level">
+              <option value="A1">A1 — Very simple, slow</option>
+              <option value="A2" selected>A2 — Elementary</option>
+              <option value="B1">B1 — Intermediate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="m2-sentences-note" id="m2-sentences-note"></div>
+
+        <button class="btn-primary" onclick="startMode2()">Start Conversation</button>
+
+        <div class="m2-how">
+          <div class="m2-how-title">How it works</div>
+          <div class="m2-how-step"><span class="m2-how-num">1</span>Character speaks German via audio</div>
+          <div class="m2-how-step"><span class="m2-how-num">2</span>Mic activates — you respond in German</div>
+          <div class="m2-how-step"><span class="m2-how-num">3</span>Your speech is transcribed on-screen</div>
+          <div class="m2-how-step"><span class="m2-how-num">4</span>Character replies. Loop continues.</div>
+          <div class="m2-how-step"><span class="m2-how-num">5</span>Tap Stop when done — see your verb summary</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 2: LOADING -->
+    <div class="screen" id="screen-mode2-loading">
+      <div class="m1-loading-wrap">
+        <div class="m1-loading-label" id="m2-loading-label">Setting the scene…</div>
+        <div class="m1-loading-track">
+          <div class="m1-loading-fill" id="m2-loading-fill" style="width:0%"></div>
+        </div>
+        <div class="m1-loading-sub" id="m2-loading-sub">Claude is preparing your scenario</div>
+      </div>
+    </div>
+
+    <!-- MODE 2: PLAY -->
+    <div class="screen" id="screen-mode2-play">
+
+      <!-- Top bar -->
+      <div class="m2-play-topbar">
+        <div class="m2-play-scenario" id="m2-play-scenario">Restaurant</div>
+        <div class="m2-play-exchange" id="m2-play-exchange">Exchange 1</div>
+        <button class="m2-stop-btn" onclick="stopMode2()">Stop</button>
+      </div>
+
+      <!-- Transcript scroll area -->
+      <div class="m2-transcript" id="m2-transcript"></div>
+
+      <!-- Mic status bar -->
+      <div class="m2-mic-bar" id="m2-mic-bar">
+        <div class="m2-mic-orb" id="m2-mic-orb"></div>
+        <div class="m2-mic-label" id="m2-mic-label">Waiting…</div>
+      </div>
+
+    </div>
+
+    <!-- MODE 2: SUMMARY -->
+    <div class="screen" id="screen-mode2-summary">
+      <div class="m2-inner scrollable">
+        <div class="m2-summary-header">
+          <div class="m2-summary-title">Session complete</div>
+          <div class="m2-summary-sub" id="m2-summary-sub">4 exchanges · Restaurant</div>
+        </div>
+
+        <!-- Verb appearances -->
+        <div class="m2-summary-section">
+          <div class="m2-summary-label">Target verbs used</div>
+          <div id="m2-verb-summary"></div>
+        </div>
+
+        <!-- Full transcript -->
+        <div class="m2-summary-section">
+          <div class="m2-summary-label">Full transcript</div>
+          <div class="m2-transcript-review" id="m2-transcript-review"></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <button class="btn-primary" onclick="navigate('mode2')">New conversation</button>
+          <button class="btn-secondary" onclick="navigate('home')">Back to home</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 3: MENU -->
+    <div class="screen" id="screen-mode3">
+      <div class="m3-inner scrollable">
+        <div class="m3-header">
+          <div class="m3-title">Verb Drills</div>
+          <div class="m3-sub">Week <span id="m3-week-label">1</span> — <span id="m3-theme-label">Introductions</span></div>
+        </div>
+        <div class="m3-verbs-row" id="m3-verbs-row"></div>
+        <div class="m3-menu-cards">
+          <button class="m3-menu-card" onclick="startMode3a()">
+            <div class="m3-menu-icon" style="background:rgba(212,82,26,0.08)">📋</div>
+            <div class="m3-menu-body">
+              <div class="m3-menu-title">Conjugation Drill</div>
+              <div class="m3-menu-desc">Full table · all 6 persons · present + perfect + past</div>
+            </div>
+            <div class="m3-menu-arrow">→</div>
+          </button>
+          <button class="m3-menu-card" onclick="startMode3b()">
+            <div class="m3-menu-icon" style="background:rgba(58,143,196,0.08)">✏️</div>
+            <div class="m3-menu-body">
+              <div class="m3-menu-title">Sentence Drill</div>
+              <div class="m3-menu-desc">German cue → write your answer → Claude grades inline</div>
+            </div>
+            <div class="m3-menu-arrow">→</div>
+          </button>
+        </div>
+        <div class="m3-accuracy-wrap" id="m3-accuracy-wrap"></div>
+      </div>
+    </div>
+
+    <!-- MODE 3a: CONJUGATION DRILL -->
+    <div class="screen" id="screen-mode3a">
+      <div class="m3a-toprow">
+        <button class="m3-back-btn" onclick="navigate('mode3')">← Back</button>
+        <div class="m3a-verb-label" id="m3a-verb-label">sein</div>
+        <div class="m3a-verb-type" id="m3a-verb-type"></div>
+      </div>
+      <div class="m3a-inner scrollable">
+        <div class="umlaut-bar">
+          <span class="umlaut-key" onclick="insertUmlaut('ä')">ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ö')">ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ü')">ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ä')">Ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ö')">Ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ü')">Ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ß')">ß</span>
+        </div>
+        <div class="m3a-reminder" id="m3a-reminder" style="display:none"></div>
+        <div id="m3a-table-wrap"></div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
+          <button class="btn-primary" onclick="gradeConjugation()">Grade Table</button>
+          <button class="btn-secondary" onclick="navigate('mode3')">Back to menu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 3a: RESULTS -->
+    <div class="screen" id="screen-mode3a-results">
+      <div class="m3a-inner scrollable">
+        <div class="m3a-results-header">
+          <div class="m3a-results-verb" id="m3a-results-verb"></div>
+          <div class="m3a-score-badge" id="m3a-score-badge"></div>
+        </div>
+        <div id="m3a-results-table"></div>
+        <div class="m3a-reminder" id="m3a-results-reminder" style="display:none"></div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
+          <button class="btn-primary" id="btn-next-verb" onclick="nextVerb3a()">Next Verb →</button>
+          <button class="btn-secondary" onclick="navigate('mode3')">Back to menu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODE 3b: LOADING -->
+    <div class="screen" id="screen-mode3b-loading">
+      <div class="m1-loading-wrap">
+        <div class="m1-loading-label">Generating exercises…</div>
+        <div class="m1-loading-track">
+          <div class="m1-loading-fill" id="m3b-loading-fill" style="width:0%"></div>
+        </div>
+        <div class="m1-loading-sub" id="m3b-loading-sub">Asking Claude for this week's verbs</div>
+      </div>
+    </div>
+
+    <!-- MODE 3b: SENTENCE DRILL -->
+    <div class="screen" id="screen-mode3b">
+      <div class="m3b-toprow">
+        <button class="m3-back-btn" onclick="navigate('mode3')">← Back</button>
+        <div class="m3b-meta">
+          <span class="m3b-counter" id="m3b-counter">1 / 5</span>
+          <div class="m3b-prog-track"><div class="m3b-prog-fill" id="m3b-prog-fill"></div></div>
+        </div>
+      </div>
+      <div class="m3b-inner scrollable">
+        <div class="umlaut-bar">
+          <span class="umlaut-key" onclick="insertUmlaut('ä')">ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ö')">ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ü')">ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ä')">Ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ö')">Ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ü')">Ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ß')">ß</span>
+        </div>
+        <div class="m3b-card">
+          <div class="m3b-verb-tag" id="m3b-verb-tag"></div>
+          <div class="m3b-cue" id="m3b-cue"></div>
+          <div class="field" style="margin-top:16px">
+            <div class="field-label">Your answer in German</div>
+            <textarea class="field-input m3b-answer" id="m3b-answer" rows="3"
+              placeholder="Write your German answer here…"
+              spellcheck="false" autocorrect="off"></textarea>
+          </div>
+          <div class="m3b-feedback" id="m3b-feedback" style="display:none"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn-primary" id="btn-m3b-submit" onclick="submitM3b()">Grade Answer</button>
+          <button class="btn-secondary" id="btn-m3b-next" onclick="nextM3b()" style="display:none">Next →</button>
+          <div class="msg-error" id="m3b-error" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B1 ASSESSMENT: MENU -->
+    <div class="screen" id="screen-b1">
+      <div class="b1-inner scrollable">
+        <div class="b1-header">
+          <div class="b1-title">B1 Assessment</div>
+          <div class="b1-sub">Weekly check-in — speaking + writing · ~5 minutes</div>
+        </div>
+
+        <!-- Score history chart -->
+        <div class="b1-history-wrap" id="b1-history-wrap"></div>
+
+        <!-- Two checks -->
+        <div class="b1-checks">
+          <div class="b1-check-card" id="b1-check-speaking">
+            <div class="b1-check-icon">🎙</div>
+            <div class="b1-check-body">
+              <div class="b1-check-title">Speaking Check</div>
+              <div class="b1-check-desc">3–4 structured exchanges · Claude scores silently</div>
+              <div class="b1-check-criteria">Range · Accuracy · Fluency · Coherence</div>
+            </div>
+            <div class="b1-check-status" id="b1-speak-status">—</div>
+          </div>
+          <div class="b1-check-card" id="b1-check-writing">
+            <div class="b1-check-icon">✍️</div>
+            <div class="b1-check-body">
+              <div class="b1-check-title">Writing Check</div>
+              <div class="b1-check-desc">3–5 sentences on a given prompt</div>
+              <div class="b1-check-criteria">Grammar · Vocabulary · Sentence complexity</div>
+            </div>
+            <div class="b1-check-status" id="b1-write-status">—</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn-primary" onclick="startB1Speaking()">Start Speaking Check</button>
+          <button class="btn-secondary" onclick="startB1Writing()">Start Writing Check</button>
+          <button class="btn-secondary" onclick="navigate('home')">Back to home</button>
+        </div>
+
+        <div class="b1-note">Both checks are optional and independent. Results combine into your B1 readiness %.</div>
+      </div>
+    </div>
+
+    <!-- B1: SPEAKING (reuses Mode 2 conversation UI in assessment mode) -->
+    <div class="screen" id="screen-b1-speaking">
+      <div class="m2-play-topbar">
+        <div class="m2-play-scenario">B1 Speaking Check</div>
+        <div class="m2-play-exchange" id="b1-speak-exchange">Exchange 1 / 4</div>
+        <button class="m2-stop-btn" onclick="finishB1Speaking()">Finish</button>
+      </div>
+      <div class="m2-transcript" id="b1-speak-transcript"></div>
+      <div class="m2-mic-bar" id="b1-mic-bar">
+        <div class="m2-mic-orb" id="b1-mic-orb"></div>
+        <div class="m2-mic-label" id="b1-mic-label">Preparing…</div>
+      </div>
+    </div>
+
+    <!-- B1: WRITING -->
+    <div class="screen" id="screen-b1-writing">
+      <div class="b1-inner scrollable">
+        <div class="b1-writing-header">
+          <div class="b1-writing-label">Writing Check</div>
+          <div class="b1-writing-prompt-label">Your prompt</div>
+          <div class="b1-writing-prompt" id="b1-write-prompt">Loading…</div>
+        </div>
+        <div class="umlaut-bar">
+          <span class="umlaut-key" onclick="insertUmlaut('ä')">ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ö')">ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ü')">ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ä')">Ä</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ö')">Ö</span>
+          <span class="umlaut-key" onclick="insertUmlaut('Ü')">Ü</span>
+          <span class="umlaut-key" onclick="insertUmlaut('ß')">ß</span>
+        </div>
+        <div class="field">
+          <div class="field-label">Write 3–5 German sentences</div>
+          <textarea class="field-input b1-write-area" id="b1-write-answer" rows="6"
+            placeholder="Schreib deine Antwort hier…" spellcheck="false" autocorrect="off"></textarea>
+        </div>
+        <div class="b1-write-feedback" id="b1-write-feedback" style="display:none"></div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn-primary" id="btn-b1-submit-write" onclick="submitB1Writing()">Submit for Grading</button>
+          <button class="btn-secondary" id="btn-b1-write-done" onclick="navigate('b1')" style="display:none">Back to Assessment</button>
+        </div>
+        <div class="msg-error" id="b1-write-error" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- B1: WRITING LOADING -->
+    <div class="screen" id="screen-b1-writing-loading">
+      <div class="m1-loading-wrap">
+        <div class="m1-loading-label">Generating your prompt…</div>
+        <div class="m1-loading-track">
+          <div class="m1-loading-fill" id="b1-write-load-fill" style="width:40%"></div>
+        </div>
+        <div class="m1-loading-sub">Claude is preparing a writing task</div>
+      </div>
+    </div>
+
+    <!-- B1: RESULTS -->
+    <div class="screen" id="screen-b1-results">
+      <div class="b1-inner scrollable">
+        <div class="b1-results-header">
+          <div class="b1-results-title">Assessment complete</div>
+          <div class="b1-results-date" id="b1-results-date"></div>
+        </div>
+
+        <div class="b1-score-cards" id="b1-score-cards"></div>
+
+        <div class="b1-composite-wrap">
+          <div class="b1-composite-label">Updated B1 readiness</div>
+          <div class="b1-composite-pct" id="b1-results-composite"></div>
+          <div class="b1-results-trend" id="b1-results-trend"></div>
+        </div>
+
+        <div class="b1-feedback-wrap" id="b1-results-feedback"></div>
+
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <button class="btn-primary" onclick="navigate('home')">Back to home</button>
+          <button class="btn-secondary" onclick="navigate('b1')">Run another check</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /screens -->
+
+  <!-- ── BOTTOM NAV ────────────────────────────────────────────── -->
+  <nav class="bottomnav" id="bottomnav">
+    <button class="nav-item active" id="nav-home" onclick="navigate('home')">
+      <div class="nav-icon">⌂</div>
+      <div class="nav-label">Home</div>
+    </button>
+    <button class="nav-item" id="nav-mode1" onclick="navigate('mode1')">
+      <div class="nav-icon">🎧</div>
+      <div class="nav-label">Audio</div>
+    </button>
+    <button class="nav-item" id="nav-mode2" onclick="navigate('mode2')">
+      <div class="nav-icon">🎙</div>
+      <div class="nav-label">Speak</div>
+    </button>
+    <button class="nav-item" id="nav-mode3" onclick="navigate('mode3')">
+      <div class="nav-icon">📝</div>
+      <div class="nav-label">Verbs</div>
+    </button>
+    <button class="nav-item" id="nav-b1" onclick="navigate('b1')">
+      <div class="nav-icon">📊</div>
+      <div class="nav-label">B1</div>
+    </button>
+  </nav>
+
+</div><!-- /app -->
+
+<!-- ── SETTINGS OVERLAY ──────────────────────────────────────── -->
+<div class="overlay" id="overlay-settings" onclick="closeSettings(event)">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Settings</div>
+    <div class="sheet-body">
+
+      <div class="field">
+        <div class="field-label">Anthropic API Key</div>
+        <input class="field-input" type="password" id="edit-anthropic"
+          placeholder="sk-ant-api03-..." autocomplete="off" spellcheck="false">
+      </div>
+
+      <div class="field">
+        <div class="field-label">OpenAI API Key</div>
+        <input class="field-input" type="password" id="edit-openai"
+          placeholder="sk-..." autocomplete="off" spellcheck="false">
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">Current Week</div>
+        <select class="field-input" id="edit-week">
+          <option value="1">Week 1 — Introductions</option>
+          <option value="2">Week 2 — Daily routine</option>
+          <option value="3">Week 3 — Travel</option>
+          <option value="4">Week 4 — Hotel</option>
+          <option value="5">Week 5 — Food</option>
+          <option value="6">Week 6 — Shopping</option>
+          <option value="7">Week 7 — Directions</option>
+          <option value="8">Week 8 — Preferences</option>
+          <option value="9">Week 9 — Past</option>
+          <option value="10">Week 10 — Future</option>
+          <option value="11">Week 11 — Work</option>
+          <option value="12">Week 12 — Health</option>
+          <option value="13">Week 13 — Football</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <div class="field-label">Export Progress Ledger</div>
+        <button class="btn-secondary" onclick="exportLedger()">Download progress.json</button>
+      </div>
+
+    </div>
+    <div class="sheet-footer">
+      <button class="btn-primary" onclick="saveSettingsOverlay()">Save Changes</button>
+      <div class="msg-error" id="overlay-error"></div>
+      <div class="divider"></div>
+      <button class="danger-btn" onclick="confirmReset()">Reset all progress</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CURRICULUM DATA
+═══════════════════════════════════════════════════════════════════ -->
+<script id="curriculum" type="application/json">
+{
+  "weeks": [
+    { "week":1,  "theme":"Introductions & greetings",  "verbs":["sein","heißen","kommen","wohnen","arbeiten"],   "tenseScope":"full" },
+    { "week":2,  "theme":"Daily routine",               "verbs":["aufstehen","frühstücken","gehen","schlafen","machen"], "tenseScope":"full" },
+    { "week":3,  "theme":"Travel & transport",          "verbs":["fahren","nehmen","ankommen","abfahren","kaufen"],     "tenseScope":"present_perfect" },
+    { "week":4,  "theme":"Hotel & accommodation",       "verbs":["buchen","bezahlen","haben","brauchen","bleiben"],     "tenseScope":"present_perfect" },
+    { "week":5,  "theme":"Food & restaurants",          "verbs":["essen","trinken","bestellen","mögen","schmecken"],    "tenseScope":"present_perfect" },
+    { "week":6,  "theme":"Shopping",                    "verbs":["kaufen","kosten","suchen","finden","bezahlen"],       "tenseScope":"present_perfect" },
+    { "week":7,  "theme":"Help & directions",           "verbs":["fragen","zeigen","verstehen","erklären","kennen"],    "tenseScope":"present_perfect" },
+    { "week":8,  "theme":"Preferences",                 "verbs":["mögen","lieben","hassen","wollen","bevorzugen"],      "tenseScope":"present_perfect" },
+    { "week":9,  "theme":"Past experiences",            "verbs":["haben","sein","machen","sehen","erleben"],            "tenseScope":"present_perfect" },
+    { "week":10, "theme":"Future plans",                "verbs":["werden","wollen","planen","vorhaben","hoffen"],        "tenseScope":"present_perfect" },
+    { "week":11, "theme":"Work & professional",         "verbs":["arbeiten","treffen","besprechen","schicken","anrufen"], "tenseScope":"present_perfect" },
+    { "week":12, "theme":"Health & wellbeing",          "verbs":["fühlen","haben","brauchen","helfen","gehen"],         "tenseScope":"present_perfect" },
+    { "week":13, "theme":"Football & sport",            "verbs":["spielen","gewinnen","verlieren","trainieren","schauen"], "tenseScope":"present_perfect" }
+  ]
+}
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     APPLICATION LOGIC
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+// ── Curriculum ─────────────────────────────────────────────────────────────
+const CURRICULUM = JSON.parse(document.getElementById('curriculum').textContent);
+
+function getWeekData(week) {
+  return CURRICULUM.weeks.find(w => w.week === parseInt(week)) || CURRICULUM.weeks[0];
+}
+
+// ── Ledger (localStorage) ──────────────────────────────────────────────────
+const LS = {
+  KEYS:      'convo90_keys',
+  WEEK:      'convo90_week',
+  LANG:      'convo90_lang',
+  SENTENCES: (date) => `convo90_sentences_${date}`,
+  SENTENCES_PREV: 'convo90_sentences_prev',
+  VOCAB:     'convo90_vocab',
+  VERBS:     'convo90_verbs',
+  B1:        'convo90_b1',
+  ERRORS:    'convo90_errors',
+  STATS:     'convo90_stats',
+  SESSIONS:  'convo90_sessions',
+};
+
+function lsGet(key, fallback = null) {
+  try {
+    const v = localStorage.getItem(key);
+    return v !== null ? JSON.parse(v) : fallback;
+  } catch { return fallback; }
+}
+
+function lsSet(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+}
+
+function getKeys()    { return lsGet(LS.KEYS, {}); }
+function getCurrentWeek() { return parseInt(lsGet(LS.WEEK, 1)); }
+function getLang()    { return lsGet(LS.LANG, 'de'); }
+function getVocab()   { return lsGet(LS.VOCAB, {}); }
+function getVerbs()   { return lsGet(LS.VERBS, {}); }
+function getB1Data()  { return lsGet(LS.B1, []); }
+function getStats()   { return lsGet(LS.STATS, { streak: 0, sessions: 0, lastSession: null }); }
+
+function isSetup() {
+  const keys = getKeys();
+  return !!(keys.anthropic && keys.openai);
+}
+
+// ── Today's date ───────────────────────────────────────────────────────────
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function isSunday() {
+  return new Date().getDay() === 0;
+}
+
+// ── B1 composite score ─────────────────────────────────────────────────────
+function computeB1Score() {
+  const b1data = getB1Data();
+  const verbData = getVerbs();
+
+  // Speaking score: rolling average of last 3 assessments
+  const speaking = b1data.length
+    ? Math.round(b1data.slice(-3).reduce((s,d) => s + (d.speakingScore||0), 0) / Math.min(b1data.length, 3))
+    : 0;
+
+  // Writing score: rolling average
+  const writing = b1data.length
+    ? Math.round(b1data.slice(-3).reduce((s,d) => s + (d.writingScore||0), 0) / Math.min(b1data.length, 3))
+    : 0;
+
+  // Verb accuracy: average across all tracked verbs
+  const verbScores = Object.values(verbData).map(v => v.accuracy || 0);
+  const verbs = verbScores.length
+    ? Math.round(verbScores.reduce((s,v) => s+v, 0) / verbScores.length)
+    : 0;
+
+  // Fluency: from Mode 2 session logs
+  const sessions = lsGet(LS.SESSIONS, []);
+  const recentFluency = sessions.slice(-5).map(s => s.fluency || 0);
+  const fluency = recentFluency.length
+    ? Math.round(recentFluency.reduce((s,v) => s+v, 0) / recentFluency.length)
+    : 0;
+
+  // Composite (weighted)
+  const composite = Math.round(speaking * 0.3 + writing * 0.3 + verbs * 0.25 + fluency * 0.15);
+
+  return { composite, speaking, writing, verbs, fluency };
+}
+
+function getTrend() {
+  const b1data = getB1Data();
+  if (b1data.length < 2) return 'none';
+  const recent = b1data.slice(-3).map(d =>
+    ((d.speakingScore||0) + (d.writingScore||0)) / 2
+  );
+  if (recent.length < 2) return 'none';
+  const delta = recent[recent.length-1] - recent[0];
+  if (delta > 5)  return 'improving';
+  if (delta < -5) return 'attention';
+  return 'plateau';
+}
+
+// ── Settings ───────────────────────────────────────────────────────────────
+function saveSettings() {
+  const anthropic = document.getElementById('input-anthropic').value.trim();
+  const openai    = document.getElementById('input-openai').value.trim();
+  const week      = document.getElementById('input-week').value;
+  const lang      = document.getElementById('input-lang').value;
+  const errEl     = document.getElementById('settings-error');
+
+  if (!anthropic) { errEl.textContent = 'Anthropic API key is required.'; return; }
+  if (!openai)    { errEl.textContent = 'OpenAI API key is required.'; return; }
+
+  lsSet(LS.KEYS,  { anthropic, openai });
+  lsSet(LS.WEEK,  parseInt(week));
+  lsSet(LS.LANG,  lang);
+
+  errEl.textContent = '';
+  navigate('home');
+  refreshHome();
+}
+
+function saveSettingsOverlay() {
+  const anthropic = document.getElementById('edit-anthropic').value.trim();
+  const openai    = document.getElementById('edit-openai').value.trim();
+  const week      = document.getElementById('edit-week').value;
+  const errEl     = document.getElementById('overlay-error');
+
+  if (!anthropic || !openai) { errEl.textContent = 'Both keys are required.'; return; }
+
+  lsSet(LS.KEYS, { anthropic, openai });
+  lsSet(LS.WEEK, parseInt(week));
+
+  errEl.textContent = '';
+  closeSettings();
+  refreshHome();
+}
+
+function openSettings() {
+  const keys = getKeys();
+  document.getElementById('edit-anthropic').value = keys.anthropic || '';
+  document.getElementById('edit-openai').value    = keys.openai    || '';
+  document.getElementById('edit-week').value      = getCurrentWeek();
+  document.getElementById('overlay-settings').classList.add('active');
+}
+
+function closeSettings(e) {
+  if (!e || e.target === document.getElementById('overlay-settings')) {
+    document.getElementById('overlay-settings').classList.remove('active');
+  }
+}
+
+function confirmReset() {
+  if (confirm('Reset ALL progress? This cannot be undone.')) {
+    const keysToKeep = getKeys();
+    localStorage.clear();
+    lsSet(LS.KEYS, keysToKeep);
+    closeSettings();
+    refreshHome();
+  }
+}
+
+function exportLedger() {
+  const ledger = {
+    exported: new Date().toISOString(),
+    week: getCurrentWeek(),
+    vocab: getVocab(),
+    verbs: getVerbs(),
+    b1:    getB1Data(),
+    stats: getStats(),
+  };
+  const blob = new Blob([JSON.stringify(ledger, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = `convo90-progress-${today()}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+const SCREEN_MAP = {
+  home:  'screen-home',
+  mode1: 'screen-mode1',
+  mode2: 'screen-mode2',
+  mode3: 'screen-mode3',
+  b1:    'screen-b1',
+};
+
+const NAV_MAP = {
+  home:  'nav-home',
+  mode1: 'nav-mode1',
+  mode2: 'nav-mode2',
+  mode3: 'nav-mode3',
+  b1:    'nav-b1',
+};
+
+let currentScreen = 'settings';
+
+function navigate(screen, sub) {
+  // If not set up, always show settings
+  if (!isSetup() && screen !== 'settings') {
+    showScreen('settings');
+    return;
+  }
+
+  showScreen(screen);
+
+  // Update nav
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  const navEl = document.getElementById(NAV_MAP[screen]);
+  if (navEl) navEl.classList.add('active');
+
+  currentScreen = screen;
+
+  // Screen-specific init
+  if (screen === 'mode1') setTimeout(initMode1Screen, 0);
+  if (screen === 'mode3') setTimeout(initMode3Menu, 0);
+  if (screen === 'mode2') setTimeout(initMode2Screen, 0);
+  if (screen === 'b1') setTimeout(initB1Screen, 0);
+}
+
+function showScreen(screen) {
+  document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById(SCREEN_MAP[screen] || `screen-${screen}`);
+  if (target) target.classList.add('active');
+}
+
+// ── Home refresh ───────────────────────────────────────────────────────────
+function refreshHome() {
+  if (!isSetup()) return;
+
+  const week     = getCurrentWeek();
+  const weekData = getWeekData(week);
+  const scores   = computeB1Score();
+  const trend    = getTrend();
+  const stats    = getStats();
+
+  // Topbar
+  document.getElementById('topbar-week').textContent = `Week ${week}`;
+
+  // B1 card
+  document.getElementById('b1-percent').innerHTML = `${scores.composite}<sup>%</sup>`;
+  document.getElementById('b1-bar').style.width = `${scores.composite}%`;
+
+  const trendEl = document.getElementById('b1-trend');
+  if (trend === 'improving') {
+    trendEl.textContent = '↑ Improving';
+    trendEl.className = 'b1-trend';
+  } else if (trend === 'attention') {
+    trendEl.textContent = '↓ Needs attention';
+    trendEl.className = 'b1-trend attention';
+  } else {
+    trendEl.textContent = '— Building baseline';
+    trendEl.className = 'b1-trend plateau';
+  }
+
+  document.getElementById('b1-week-label').textContent = `Week ${week} of 13`;
+
+  // Skills
+  const fmt = v => v > 0 ? `${v}%` : '—';
+  document.getElementById('skill-speaking').style.width   = `${scores.speaking}%`;
+  document.getElementById('skill-writing').style.width    = `${scores.writing}%`;
+  document.getElementById('skill-verbs').style.width      = `${scores.verbs}%`;
+  document.getElementById('skill-fluency').style.width    = `${scores.fluency}%`;
+  document.getElementById('skill-speaking-val').textContent = fmt(scores.speaking);
+  document.getElementById('skill-writing-val').textContent  = fmt(scores.writing);
+  document.getElementById('skill-verbs-val').textContent    = fmt(scores.verbs);
+  document.getElementById('skill-fluency-val').textContent  = fmt(scores.fluency);
+
+  // Today's session
+  const dayInCurriculum = ((week - 1) * 5) + 1;
+  document.getElementById('today-day').textContent  = dayInCurriculum;
+  document.getElementById('today-theme').textContent = weekData.theme;
+  document.getElementById('today-verbs').textContent = weekData.verbs.join(', ');
+
+  // Stats
+  document.getElementById('stat-streak').textContent   = stats.streak   || 0;
+  document.getElementById('stat-sessions').textContent  = stats.sessions  || 0;
+  const vocab = getVocab();
+  document.getElementById('stat-words').textContent    = Object.keys(vocab).length;
+
+  // Sunday assessment nudge
+  document.getElementById('assess-nudge').style.display = isSunday() ? 'flex' : 'none';
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// VOCABULARY COLOUR ENGINE
+// ═══════════════════════════════════════════════════════════════════
+
+const KNOWN_VERBS = new Set([
+  'sein','ist','bin','bist','sind','seid','war','waren','warst','gewesen',
+  'haben','hat','habe','hast','habt','hatte','hatten','hattest','gehabt',
+  'werden','wird','werde','wirst','werdet','wurde','wurden','geworden',
+  'können','kann','kannst','konnte','konnten','gekonnt',
+  'müssen','muss','musst','müsst','musste','mussten','gemusst',
+  'wollen','will','willst','wollte','wollten','gewollt',
+  'sollen','soll','sollst','sollte','sollten','gesollt',
+  'dürfen','darf','darfst','dürft','durfte','durften','gedurft',
+  'mögen','mag','magst','mögt','mochte','mochten','gemocht',
+  'gehen','geht','gehe','gehst','ging','gingen','gegangen',
+  'kommen','kommt','komme','kommst','kam','kamen','gekommen',
+  'machen','macht','mache','machst','machte','machten','gemacht',
+  'sagen','sagt','sage','sagst','sagte','sagten','gesagt',
+  'sehen','sieht','sehe','siehst','sah','sahen','gesehen',
+  'geben','gibt','gebe','gibst','gab','gaben','gegeben',
+  'nehmen','nimmt','nehme','nimmst','nahm','nahmen','genommen',
+  'heißen','heiße','heißt','hieß','geheißen',
+  'fahren','fährt','fahre','fährst','fuhr','fuhren','gefahren',
+  'essen','isst','esse','aß','aßen','gegessen',
+  'trinken','trinkt','trinke','trinkst','trank','tranken','getrunken',
+  'kaufen','kauft','kaufe','kaufst','kaufte','kauften','gekauft',
+  'arbeiten','arbeitet','arbeite','arbeitest','arbeitete','gearbeitet',
+  'spielen','spielt','spiele','spielst','spielte','gespielt',
+  'sprechen','spricht','spreche','sprichst','sprach','sprachen','gesprochen',
+  'schreiben','schreibt','schreibe','schreibst','schrieb','geschrieben',
+  'lesen','liest','lese','las','lasen','gelesen',
+  'hören','hört','höre','hörst','hörte','gehört',
+  'fragen','fragt','frage','fragst','fragte','gefragt',
+  'verstehen','versteht','verstehe','verstehst','verstand','verstanden',
+  'zeigen','zeigt','zeige','zeigst','zeigte','gezeigt',
+  'helfen','hilft','helfe','hilfst','half','halfen','geholfen',
+  'brauchen','braucht','brauche','brauchst','brauchte','gebraucht',
+  'schlafen','schläft','schlafe','schläfst','schlief','geschlafen',
+  'bleiben','bleibt','bleibe','bleibst','blieb','blieben','geblieben',
+  'finden','findet','finde','findest','fand','fanden','gefunden',
+  'kennen','kennt','kenne','kennst','kannte','gekannt',
+  'wissen','weiß','weißt','wisst','wusste','gewusst',
+  'denken','denkt','denke','denkst','dachte','gedacht',
+  'glauben','glaubt','glaube','glaubst','glaubte','geglaubt',
+  'hoffen','hofft','hoffe','hoffst','hoffte','gehofft',
+  'gewinnen','gewinnt','gewinne','gewinnst','gewann','gewonnen',
+  'verlieren','verliert','verliere','verlierst','verlor','verloren',
+  'trainieren','trainiert','trainiere','trainierst','trainierte','trainiert',
+  'schauen','schaut','schaue','schaust','schaute','geschaut',
+  'fühlen','fühlt','fühle','fühlst','fühlte','gefühlt',
+  'treffen','trifft','treffe','triffst','traf','trafen','getroffen',
+  'buchen','bucht','buche','buchst','buchte','gebucht',
+  'bezahlen','bezahlt','bezahle','bezahlst','bezahlte','bezahlt',
+  'bestellen','bestellt','bestelle','bestellst','bestellte','bestellt',
+  'suchen','sucht','suche','suchst','suchte','gesucht',
+  'kosten','kostet','kostete','gekostet',
+  'planen','plant','plane','planst','plante','geplant',
+  'lieben','liebt','liebe','liebst','liebte','geliebt',
+  'hassen','hasst','hasse','hasste','gehasst',
+  'ankommen','kommt an','kam an','angekommen',
+  'abfahren','fährt ab','fuhr ab','abgefahren',
+  'aufstehen','steht auf','stehe auf','stand auf','aufgestanden',
+  'anrufen','ruft an','rief an','angerufen',
+  'besprechen','bespricht','besprach','besprochen',
+  'schicken','schickt','schicke','schickst','schickte','geschickt',
+]);
+
+const B1B2_WORDS = new Set([
+  'aber','also','als','am','an','auch','auf','aus','bei','bis','da','dann',
+  'dass','dein','dem','den','der','des','die','diese','dieser','dieses','diesem','diesen',
+  'doch','durch','ein','eine','einem','einen','einer','eines','es','für',
+  'gegen','gerne','gut','hier','ihm','ihn','ihnen','ihr','im',
+  'immer','in','ja','jetzt','kein','keine','keinen','mal','man','mehr','mein','meine',
+  'mit','nach','nicht','noch','nur','ob','oder','oft','ohne','schon','sehr',
+  'seit','so','über','um','und','uns','unter','vor','was','wenn',
+  'wer','wie','wieder','wir','wo','zu','zum','zur','zwischen',
+  'einfach','schnell','langsam','schön','groß','klein','neu','alt',
+  'schlecht','richtig','falsch','möglich','wichtig','interessant',
+  'heute','morgen','gestern','dort','manchmal','nie','immer',
+  'gern','leider','natürlich','vielleicht','wirklich','eigentlich',
+  'zuerst','danach','später','früher','lange','kurz',
+  'viel','wenig','weniger','genug','alle','alles','jeden','jede','jeder',
+  'weil','obwohl','damit','obwohl','während','bevor','nachdem',
+  'denn','trotzdem','deshalb','deswegen','sondern',
+]);
+
+const NOT_NOUNS = new Set([
+  'ich','du','er','sie','es','wir','ihr','Sie',
+  'Ich','Du','Er','Sie','Es','Wir','Ihr',
+]);
+
+function getWordClass(rawWord, isFirstWord, vocab) {
+  const stripped = rawWord.replace(/[.,!?;:"""''«»()\-–—]/g, '');
+  if (!stripped) return null;
+  const lower = stripped.toLowerCase();
+
+  // Verb check
+  if (KNOWN_VERBS.has(lower)) return 'verb';
+
+  // Noun: capitalised, not sentence-start, not a known pronoun
+  if (!isFirstWord && stripped.length > 1
+      && stripped[0] === stripped[0].toUpperCase()
+      && stripped[0] !== stripped[0].toLowerCase()
+      && !NOT_NOUNS.has(stripped)) {
+    return 'noun';
+  }
+
+  // B1/B2 progression
+  if (B1B2_WORDS.has(lower)) {
+    const count = vocab[lower] || 0;
+    if (count === 0) return 'b1-1';
+    if (count === 1) return 'b1-2';
+    if (count === 2) return 'b1-3';
+    if (count === 3) return 'b1-4';
+    return 'learned';
+  }
+
+  return null;
+}
+
+function colorizeGerman(text, vocab) {
+  const tokens = text.split(/(\s+)/);
+  let html = '';
+  let wordIdx = 0;
+
+  tokens.forEach(token => {
+    if (/^\s+$/.test(token)) { html += token; return; }
+
+    // Separate trailing punctuation
+    const m = token.match(/^(.*?)([.,!?;:»"'—–]*)$/);
+    const word  = m ? m[1] : token;
+    const punct = m ? m[2] : '';
+
+    const cls = getWordClass(word, wordIdx === 0, vocab);
+    wordIdx++;
+
+    if (!word) { html += token; return; }
+
+    switch (cls) {
+      case 'verb':    html += `<span class="w-verb">${word}</span>${punct}`; break;
+      case 'noun':    html += `<span class="w-noun">${word}</span>${punct}`; break;
+      case 'b1-1':    html += `<span class="w-b1-1">${word}</span>${punct}`; break;
+      case 'b1-2':    html += `<span class="w-b1-2">${word}</span>${punct}`; break;
+      case 'b1-3':    html += `<span class="w-b1-3">${word}</span>${punct}`; break;
+      case 'b1-4':    html += `<span class="w-b1-4">${word}</span>${punct}`; break;
+      default:        html += token;
+    }
+  });
+  return html;
+}
+
+function recordVocab(text, vocab) {
+  const tokens = text.split(/\s+/);
+  let newCount = 0;
+  tokens.forEach(t => {
+    const clean = t.replace(/[.,!?;:"""''«»()\-–—]/g, '').toLowerCase();
+    if (B1B2_WORDS.has(clean)) {
+      if (!(clean in vocab)) newCount++;
+      vocab[clean] = (vocab[clean] || 0) + 1;
+    }
+  });
+  return newCount;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 1 — SENTENCE GENERATION
+// ═══════════════════════════════════════════════════════════════════
+
+const SENTENCES_PER_BATCH = 25;
+const BATCHES = 4; // 4 × 25 = 100
+
+function buildM1Prompt(week, level, tense, batchNum, weekData, weakVerbs) {
+  const tenseInstr = {
+    present: 'present tense only (Präsens)',
+    mixed:   'mostly present tense, some Perfekt, occasional future with werden',
+    past:    'predominantly Perfekt and Präteritum',
+  }[tense] || 'mixed tenses';
+
+  const verbList = weekData.verbs.join(', ');
+  const weakNote = weakVerbs.length
+    ? `\nPriority verbs (learner is struggling — use extra): ${weakVerbs.join(', ')}`
+    : '';
+
+  return `Generate exactly ${SENTENCES_PER_BATCH} German sentence pairs for active recall drilling.
+Level: ${level}. Week ${week} theme: ${weekData.theme}.
+Focus verbs: ${verbList}.${weakNote}
+Tense: ${tenseInstr}.
+This is batch ${batchNum} of ${BATCHES} — vary the sentences, do not repeat from earlier batches.
+
+Rules:
+- Format exactly: EN: <english> | DE: <german>
+- One pair per line, numbered ${(batchNum-1)*SENTENCES_PER_BATCH+1} to ${batchNum*SENTENCES_PER_BATCH}
+- German: 6–12 words long
+- English: natural British English
+- Vary persons: ich, du, er/sie/es, wir, Sie
+- Mix statements, questions, negations
+- Use vocabulary appropriate for ${level}
+
+Output ONLY the numbered pairs. Nothing else. No preamble. No commentary.
+Example: 1. EN: Where do you come from? | DE: Woher kommen Sie?`;
+}
+
+function parseSentencePairs(text) {
+  const pairs = [];
+  for (const line of text.split('\n')) {
+    const m = line.match(/^\d+[\.\)]\s+EN:\s*(.+?)\s*\|\s*DE:\s*(.+)$/i);
+    if (m) pairs.push({ en: m[1].trim(), de: m[2].trim() });
+  }
+  return pairs;
+}
+
+async function callClaude(prompt) {
+  const keys = getKeys();
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': keys.anthropic, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 2000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error?.message || `API error ${res.status}`);
+  }
+  const data = await res.json();
+  return data.content.map(b => b.text || '').join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 1 — TTS
+// ═══════════════════════════════════════════════════════════════════
+
+const TTS_VOICE_EN = 'nova';
+const TTS_VOICE_DE = 'onyx';
+const TTS_MODEL    = 'tts-1';
+
+async function synthesise(text, voice) {
+  const keys = getKeys();
+  const res = await fetch('https://api.openai.com/v1/audio/speech', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${keys.openai}` },
+    body: JSON.stringify({ model: TTS_MODEL, voice, input: text, speed: 0.88 })
+  });
+  if (!res.ok) throw new Error(`TTS error ${res.status}`);
+  const blob = await res.blob();
+  return URL.createObjectURL(blob);
+}
+
+// Single reusable Audio element — iOS Safari requires this for autoplay after first gesture
+const _sharedAudio = new Audio();
+_sharedAudio.preload = 'auto';
+
+function playAudio(url) {
+  return new Promise((resolve) => {
+    const audio = _sharedAudio;
+    let resolved = false;
+    const done = () => { if (!resolved) { resolved = true; resolve(); } };
+
+    audio.onended = done;
+    audio.onerror = done;
+    audio.src = url;
+    audio.load();
+
+    const playPromise = audio.play();
+    if (playPromise) playPromise.catch(done);
+
+    m1State.currentAudio = audio;
+
+    // Duration-based fallback
+    audio.addEventListener('loadedmetadata', function onMeta() {
+      audio.removeEventListener('loadedmetadata', onMeta);
+      const dur = audio.duration;
+      if (dur && isFinite(dur)) setTimeout(done, (dur * 1000) + 600);
+    });
+
+    // Hard fallback
+    setTimeout(done, 30000);
+  });
+}
+
+function sleep(ms) {
+  return new Promise(resolve => {
+    m1State.pauseTimer = setTimeout(resolve, ms);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 1 — SESSION STATE & PLAYBACK ENGINE
+// ═══════════════════════════════════════════════════════════════════
+
+const m1State = {
+  sentences:    [],
+  currentIdx:   0,
+  paused:       false,
+  stopped:      false,
+  currentAudio: null,
+  pauseTimer:   null,
+  pauseSecs:    4,
+};
+
+function setPhase(label, cls) {
+  const el = document.getElementById('m1-phase-badge');
+  el.textContent = label;
+  el.className = `m1-phase-badge ${cls}`;
+}
+
+function updatePlaybackUI(idx) {
+  const total = m1State.sentences.length;
+  const pct   = (idx / total) * 100;
+  document.getElementById('m1-progress-fill').style.width = pct + '%';
+  document.getElementById('m1-counter').textContent = `${idx + 1} / ${total}`;
+  document.getElementById('m1-sentence-num').textContent = `#${String(idx + 1).padStart(2, '0')}`;
+
+  const s = m1State.sentences[idx];
+  document.getElementById('m1-english').textContent = s.en;
+
+  // Reset German
+  const germanEl = document.getElementById('m1-german');
+  germanEl.innerHTML = '';
+  germanEl.classList.remove('visible');
+  document.getElementById('m1-divider').classList.remove('active');
+  document.getElementById('m1-pause-ring').style.display = 'none';
+}
+
+function showGerman(idx) {
+  const s     = m1State.sentences[idx];
+  const vocab = getVocab();
+  recordVocab(s.de, vocab);
+  lsSet(LS.VOCAB, vocab);
+
+  const germanEl = document.getElementById('m1-german');
+  germanEl.innerHTML = colorizeGerman(s.de, vocab);
+  germanEl.classList.add('visible');
+  document.getElementById('m1-divider').classList.add('active');
+}
+
+function animatePauseRing(seconds) {
+  const ring = document.getElementById('m1-pause-ring');
+  const fill = document.getElementById('m1-ring-fill');
+  const circumference = 113;
+  ring.style.display = 'flex';
+  fill.style.strokeDashoffset = '0';
+
+  const start = Date.now();
+  const total = seconds * 1000;
+  const frame = () => {
+    if (m1State.stopped || m1State.paused) return;
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / total, 1);
+    fill.style.strokeDashoffset = circumference * progress;
+    if (progress < 1) requestAnimationFrame(frame);
+  };
+  requestAnimationFrame(frame);
+}
+
+async function runSentence(idx) {
+  if (m1State.stopped) return;
+
+  updatePlaybackUI(idx);
+
+  // Pre-synthesise all three clips
+  const s = m1State.sentences[idx];
+  let urlEN, urlDE;
+  try {
+    [urlEN, urlDE] = await Promise.all([
+      synthesise(s.en, TTS_VOICE_EN),
+      synthesise(s.de, TTS_VOICE_DE),
+    ]);
+  } catch (e) {
+    console.error('TTS failed:', e);
+    // Skip to next on TTS error
+    if (!m1State.stopped) runSentence(idx + 1);
+    return;
+  }
+
+  if (m1State.stopped) return;
+
+  // 1. English
+  setPhase('English', 'phase-en');
+  await playAudio(urlEN);
+  if (m1State.stopped) return;
+
+  // 2. German (first time) — reveal text
+  setPhase('Deutsch', 'phase-de');
+  showGerman(idx);
+  await playAudio(urlDE);
+  if (m1State.stopped) return;
+
+  // 3. German (second time)
+  setPhase('Deutsch ×2', 'phase-de2');
+  await playAudio(urlDE);
+  if (m1State.stopped) return;
+
+  // 4. Pause
+  setPhase('Ihr Versuch', 'phase-pause');
+  animatePauseRing(m1State.pauseSecs);
+  await sleep(m1State.pauseSecs * 1000);
+  if (m1State.stopped) return;
+
+  // Revoke URLs
+  URL.revokeObjectURL(urlEN);
+  URL.revokeObjectURL(urlDE);
+
+  // Advance
+  const nextIdx = idx + 1;
+  if (nextIdx >= m1State.sentences.length) {
+    finishMode1();
+  } else {
+    // Wait if paused
+    while (m1State.paused && !m1State.stopped) {
+      await sleep(200);
+    }
+    if (!m1State.stopped) runSentence(nextIdx);
+  }
+}
+
+function togglePause() {
+  m1State.paused = !m1State.paused;
+  const btn = document.getElementById('m1-pause-btn');
+  if (m1State.paused) {
+    btn.textContent = '▶';
+    if (m1State.currentAudio) m1State.currentAudio.pause();
+  } else {
+    btn.textContent = '⏸';
+    if (m1State.currentAudio) m1State.currentAudio.play().catch(() => {});
+  }
+}
+
+function stopMode1() {
+  m1State.stopped = true;
+  if (m1State.currentAudio) { m1State.currentAudio.pause(); m1State.currentAudio = null; }
+  if (m1State.pauseTimer)   { clearTimeout(m1State.pauseTimer); m1State.pauseTimer = null; }
+  navigate('mode1');
+}
+
+function finishMode1() {
+  // Update stats
+  const stats = getStats();
+  stats.sessions = (stats.sessions || 0) + 1;
+  const t = today();
+  if (stats.lastSession === t) {
+    // same day — no streak change
+  } else {
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    stats.streak = stats.lastSession === yesterday ? (stats.streak || 0) + 1 : 1;
+  }
+  stats.lastSession = t;
+  lsSet(LS.STATS, stats);
+  lsSet(`convo90_m1_done_${t}`, true);
+
+  navigate('home');
+  refreshHome();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 1 — ENTRY POINTS
+// ═══════════════════════════════════════════════════════════════════
+
+function initMode1Screen() {
+  const week = getCurrentWeek();
+  document.getElementById('m1-week').value = week;
+
+  // Check for today's cached 1a sentences
+  const cached = lsGet(LS.SENTENCES(today()));
+  const cachedNote = document.getElementById('m1-cached-note');
+  const cachedBtn  = document.getElementById('btn-m1-cached');
+  if (cached && cached.length >= 50) {
+    cachedNote.style.display = 'flex';
+    cachedBtn.style.display  = 'block';
+  } else {
+    cachedNote.style.display = 'none';
+    cachedBtn.style.display  = 'none';
+  }
+
+  // Check for today's cached 1b verbs
+  const cached1b  = lsGet(LS_M1B);
+  const btn1bCache = document.getElementById('btn-m1b-cached');
+  if (btn1bCache) btn1bCache.style.display = (cached1b && cached1b.length) ? 'block' : 'none';
+
+  // Default to 1a tab
+  selectDrillMode('1a');
+}
+
+async function startMode1() {
+  const week  = parseInt(document.getElementById('m1-week').value);
+  const level = document.getElementById('m1-level').value;
+  const tense = document.getElementById('m1-tense').value;
+  const pause = parseInt(document.getElementById('m1-pause').value);
+
+  // Show loading screen
+  showScreen('mode1-loading');
+  const fillEl  = document.getElementById('m1-loading-fill');
+  const labelEl = document.getElementById('m1-loading-label');
+  const subEl   = document.getElementById('m1-loading-sub');
+
+  const weekData  = getWeekData(week);
+  const verbData  = getVerbs();
+  const weakVerbs = Object.entries(verbData)
+    .filter(([, v]) => (v.accuracy || 100) < 60)
+    .map(([k]) => k)
+    .slice(0, 2);
+
+  let allPairs = [];
+
+  for (let b = 1; b <= BATCHES; b++) {
+    labelEl.textContent = 'Generating sentences…';
+    subEl.textContent   = `Batch ${b} of ${BATCHES}`;
+    fillEl.style.width  = `${((b - 1) / BATCHES) * 80}%`;
+
+    try {
+      const prompt = buildM1Prompt(week, level, tense, b, weekData, weakVerbs);
+      const text   = await callClaude(prompt);
+      const pairs  = parseSentencePairs(text);
+      allPairs     = allPairs.concat(pairs);
+    } catch (e) {
+      showScreen('mode1');
+      alert(`Generation failed: ${e.message}\n\nCheck your Anthropic API key in Settings.`);
+      return;
+    }
+  }
+
+  fillEl.style.width = '100%';
+  labelEl.textContent = 'Ready!';
+
+  // Store today's sentences
+  lsSet(LS.SENTENCES(today()), allPairs);
+  // Rotate prev
+  const prev = lsGet(LS.SENTENCES(today())) || [];
+  if (prev.length) lsSet(LS.SENTENCES_PREV, prev);
+
+  // Return to config screen — user taps "Use Today's Sentences" to start
+  await sleep(600);
+  showScreen('mode1');
+  initMode1Screen();
+}
+
+function startMode1Cached() {
+  const cached = lsGet(LS.SENTENCES(today()));
+  const pause  = parseInt(document.getElementById('m1-pause').value);
+  if (cached && cached.length) {
+    launchPlayback(cached, pause);
+  }
+}
+// ═══════════════════════════════════════════════════════════════════
+// MODE 1B — 3 FORM DRILL
+// ═══════════════════════════════════════════════════════════════════
+
+const LS_M1B = 'convo90_m1b_' + new Date().toISOString().slice(0,10);
+
+let m1bState = {
+  verbs: [],       // [{stem, ich, duQ, openQ}]
+  currentIdx: 0,
+  paused: false,
+  stopped: false,
+  pauseSecs: 4,
+  currentAudio: null,
+  pauseTimer: null,
+};
+
+function selectDrillMode(mode) {
+  document.getElementById('tab-1a').classList.toggle('active', mode === '1a');
+  document.getElementById('tab-1b').classList.toggle('active', mode === '1b');
+  document.getElementById('m1a-buttons').style.display = mode === '1a' ? 'flex' : 'none';
+  document.getElementById('m1b-buttons').style.display = mode === '1b' ? 'flex' : 'none';
+}
+
+function buildM1bPrompt(week, weekData) {
+  const verbs = weekData.verbs.slice(0, 8).join(', ');
+  return `Generate exactly 12 three-form verb drills for German learners (Week ${week}: ${weekData.theme}).
+
+For each verb, produce:
+- stem: the infinitive
+- ich: a complete statement using "Ich [conjugated verb]..." with a natural completion (6-10 words)
+- duQ: a yes/no question using "[Conjugated verb] du...?" matching the ich sentence meaning
+- openQ: an open question using a question word (Wie viel, Wann, Wo, Was, Warum etc.) that would elicit the ich sentence as an answer
+
+Use these verbs where possible: ${verbs}
+Mix present and perfect tenses. Keep language at A2 level. Vary completions naturally.
+
+Output ONLY valid JSON array, no markdown, no commentary:
+[
+  {
+    "stem": "sprechen",
+    "ich": "Ich spreche ein bisschen Deutsch.",
+    "duQ": "Sprichst du ein bisschen Deutsch?",
+    "openQ": "Wie viel Deutsch sprichst du?"
+  }
+]`;
+}
+
+async function startMode1b() {
+  const week     = parseInt(document.getElementById('m1-week').value);
+  const pause    = parseInt(document.getElementById('m1-pause').value);
+  const weekData = getWeekData(week);
+
+  showScreen('mode1-loading');
+  const labelEl = document.getElementById('m1-loading-label');
+  const subEl   = document.getElementById('m1-loading-sub');
+  const fillEl  = document.getElementById('m1-loading-fill');
+
+  labelEl.textContent = 'Generating 3 Form Drills…';
+  subEl.textContent   = 'Building verb matrix';
+  fillEl.style.width  = '20%';
+
+  try {
+    const prompt = buildM1bPrompt(week, weekData);
+    const raw    = await callClaude(prompt);
+    const clean  = raw.replace(/```json|```/g, '').trim();
+    const verbs  = JSON.parse(clean);
+    fillEl.style.width = '100%';
+    labelEl.textContent = 'Ready!';
+    lsSet(LS_M1B, verbs);
+    await sleep(500);
+    launchMode1b(verbs, pause);
+  } catch(e) {
+    showScreen('mode1');
+    alert('3 Form Drill generation failed: ' + e.message);
+  }
+}
+
+function startMode1bCached() {
+  const cached = lsGet(LS_M1B);
+  const pause  = parseInt(document.getElementById('m1-pause').value);
+  if (cached && cached.length) launchMode1b(cached, pause);
+}
+
+function launchMode1b(verbs, pauseSecs) {
+  m1bState = { verbs, currentIdx: 0, paused: false, stopped: false,
+               pauseSecs, currentAudio: null, pauseTimer: null };
+  showScreen('mode1b-play');
+  runVerb(0);
+}
+
+function updateM1bProgress(idx) {
+  const total = m1bState.verbs.length;
+  document.getElementById('m1b-progress-fill').style.width = `${(idx / total) * 100}%`;
+  document.getElementById('m1b-counter').textContent = `${idx + 1} / ${total}`;
+}
+
+async function runVerb(idx) {
+  if (m1bState.stopped) return;
+  const v = m1bState.verbs[idx];
+  updateM1bProgress(idx);
+
+  // Reset display
+  const stemEl  = document.getElementById('m1b-stem');
+  const line1   = document.getElementById('m1b-line1');
+  const line2   = document.getElementById('m1b-line2');
+  const line3   = document.getElementById('m1b-line3');
+  stemEl.textContent  = v.stem;
+  line1.textContent   = '';
+  line2.textContent   = '';
+  line3.textContent   = '';
+  line1.style.opacity = '0';
+  line2.style.opacity = '0';
+  line3.style.opacity = '0';
+  document.getElementById('m1b-pause-ring').style.display = 'none';
+
+  // Pre-synthesise all three
+  let url1, url2, url3;
+  try {
+    [url1, url2, url3] = await Promise.all([
+      synthesise(v.ich,   TTS_VOICE_DE),
+      synthesise(v.duQ,   TTS_VOICE_DE),
+      synthesise(v.openQ, TTS_VOICE_DE),
+    ]);
+  } catch(e) {
+    if (!m1bState.stopped) runVerb(idx + 1);
+    return;
+  }
+
+  if (m1bState.stopped) return;
+
+  // Cup 1 — ich
+  document.getElementById('m1b-phase-badge').textContent = 'Ich';
+  line1.textContent   = v.ich;
+  line1.style.opacity = '1';
+  line1.classList.add('active');
+  await playAudio1b(url1);
+  if (m1bState.stopped) return;
+  await pauseWithRing1b();
+  line1.classList.remove('active');
+  if (m1bState.stopped) return;
+
+  // Cup 2 — du Y/N
+  document.getElementById('m1b-phase-badge').textContent = 'Du?';
+  line2.textContent   = v.duQ;
+  line2.style.opacity = '1';
+  line2.classList.add('active');
+  await playAudio1b(url2);
+  if (m1bState.stopped) return;
+  await pauseWithRing1b();
+  line2.classList.remove('active');
+  if (m1bState.stopped) return;
+
+  // Cup 3 — open question
+  document.getElementById('m1b-phase-badge').textContent = 'Wie/Was/Wann?';
+  line3.textContent   = v.openQ;
+  line3.style.opacity = '1';
+  line3.classList.add('active');
+  await playAudio1b(url3);
+  if (m1bState.stopped) return;
+  await pauseWithRing1b();
+  line3.classList.remove('active');
+  if (m1bState.stopped) return;
+
+  // Brief pause with all visible
+  await sleep(1200);
+
+  URL.revokeObjectURL(url1);
+  URL.revokeObjectURL(url2);
+  URL.revokeObjectURL(url3);
+
+  const next = idx + 1;
+  if (next >= m1bState.verbs.length) {
+    finishMode1b();
+  } else {
+    // Wait if paused
+    while (m1bState.paused && !m1bState.stopped) await sleep(200);
+    if (!m1bState.stopped) runVerb(next);
+  }
+}
+
+function pauseWithRing1b() {
+  return new Promise(resolve => {
+    const ring = document.getElementById('m1b-pause-ring');
+    const fill = document.getElementById('m1b-ring-fill');
+    const circumference = 113;
+    ring.style.display = 'flex';
+    fill.style.strokeDashoffset = '0';
+    const start = Date.now();
+    const total = m1bState.pauseSecs * 1000;
+    const frame = () => {
+      if (m1bState.stopped) { ring.style.display = 'none'; resolve(); return; }
+      if (m1bState.paused)  { requestAnimationFrame(frame); return; }
+      const elapsed  = Date.now() - start;
+      const progress = Math.min(elapsed / total, 1);
+      fill.style.strokeDashoffset = circumference * progress;
+      if (progress < 1) requestAnimationFrame(frame);
+      else { ring.style.display = 'none'; resolve(); }
+    };
+    requestAnimationFrame(frame);
+  });
+}
+
+const _sharedAudio1b = new Audio();
+_sharedAudio1b.preload = 'auto';
+
+function playAudio1b(url) {
+  return new Promise((resolve) => {
+    const audio = _sharedAudio1b;
+    let resolved = false;
+    const done = () => { if (!resolved) { resolved = true; resolve(); } };
+    audio.onended = done;
+    audio.onerror = done;
+    audio.src = url;
+    audio.load();
+    const p = audio.play();
+    if (p) p.catch(done);
+    m1bState.currentAudio = audio;
+    audio.addEventListener('loadedmetadata', function onMeta() {
+      audio.removeEventListener('loadedmetadata', onMeta);
+      const dur = audio.duration;
+      if (dur && isFinite(dur)) setTimeout(done, (dur * 1000) + 600);
+    });
+    setTimeout(done, 30000);
+  });
+}
+
+function togglePause1b() {
+  m1bState.paused = !m1bState.paused;
+  const btn = document.getElementById('m1b-pause-btn');
+  if (m1bState.paused) {
+    if (m1bState.currentAudio) m1bState.currentAudio.pause();
+    btn.textContent = '▶';
+  } else {
+    if (m1bState.currentAudio) m1bState.currentAudio.play().catch(() => {});
+    btn.textContent = '⏸';
+  }
+}
+
+function stopMode1b() {
+  m1bState.stopped = true;
+  if (m1bState.currentAudio) { m1bState.currentAudio.pause(); m1bState.currentAudio.src = ''; }
+  if (m1bState.pauseTimer) clearTimeout(m1bState.pauseTimer);
+  navigate('mode1');
+}
+
+function finishMode1b() {
+  navigate('home');
+}
+
+
+function launchPlayback(sentences, pauseSecs) {
+  m1State.sentences  = sentences;
+  m1State.currentIdx = 0;
+  m1State.paused     = false;
+  m1State.stopped    = false;
+  m1State.pauseSecs  = pauseSecs;
+  m1State.currentAudio = null;
+
+  document.getElementById('m1-pause-btn').textContent = '⏸';
+  showScreen('mode1-play');
+  runSentence(0);
+}
+
+
+// ═══════════════════════════════════════════════════════════════════
+// CONJUGATION DATA
+// ═══════════════════════════════════════════════════════════════════
+
+// Correct conjugations for known verbs
+// Format: verb -> { present: [ich,du,er,wir,ihr,Sie], perfect: [ich...], past: [ich...] }
+// present/perfect/past arrays are [ich, du, er/sie/es, wir, ihr, Sie/sie]
+const CONJ_DATA = {
+  sein: {
+    present: ['bin','bist','ist','sind','seid','sind'],
+    perfect: ['bin gewesen','bist gewesen','ist gewesen','sind gewesen','seid gewesen','sind gewesen'],
+    past:    ['war','warst','war','waren','wart','waren'],
+  },
+  haben: {
+    present: ['habe','hast','hat','haben','habt','haben'],
+    perfect: ['habe gehabt','hast gehabt','hat gehabt','haben gehabt','habt gehabt','haben gehabt'],
+    past:    ['hatte','hattest','hatte','hatten','hattet','hatten'],
+  },
+  werden: {
+    present: ['werde','wirst','wird','werden','werdet','werden'],
+    perfect: ['bin geworden','bist geworden','ist geworden','sind geworden','seid geworden','sind geworden'],
+    past:    ['wurde','wurdest','wurde','wurden','wurdet','wurden'],
+  },
+  können: {
+    present: ['kann','kannst','kann','können','könnt','können'],
+    perfect: ['habe gekonnt','hast gekonnt','hat gekonnt','haben gekonnt','habt gekonnt','haben gekonnt'],
+    past:    ['konnte','konntest','konnte','konnten','konntet','konnten'],
+  },
+  müssen: {
+    present: ['muss','musst','muss','müssen','müsst','müssen'],
+    perfect: ['habe gemusst','hast gemusst','hat gemusst','haben gemusst','habt gemusst','haben gemusst'],
+    past:    ['musste','musstest','musste','mussten','musstet','mussten'],
+  },
+  wollen: {
+    present: ['will','willst','will','wollen','wollt','wollen'],
+    perfect: ['habe gewollt','hast gewollt','hat gewollt','haben gewollt','habt gewollt','haben gewollt'],
+    past:    ['wollte','wolltest','wollte','wollten','wolltet','wollten'],
+  },
+  sollen: {
+    present: ['soll','sollst','soll','sollen','sollt','sollen'],
+    perfect: ['habe gesollt','hast gesollt','hat gesollt','haben gesollt','habt gesollt','haben gesollt'],
+    past:    ['sollte','solltest','sollte','sollten','solltet','sollten'],
+  },
+  dürfen: {
+    present: ['darf','darfst','darf','dürfen','dürft','dürfen'],
+    perfect: ['habe gedurft','hast gedurft','hat gedurft','haben gedurft','habt gedurft','haben gedurft'],
+    past:    ['durfte','durftest','durfte','durften','durftet','durften'],
+  },
+  mögen: {
+    present: ['mag','magst','mag','mögen','mögt','mögen'],
+    perfect: ['habe gemocht','hast gemocht','hat gemocht','haben gemocht','habt gemocht','haben gemocht'],
+    past:    ['mochte','mochtest','mochte','mochten','mochtet','mochten'],
+  },
+  gehen: {
+    present: ['gehe','gehst','geht','gehen','geht','gehen'],
+    perfect: ['bin gegangen','bist gegangen','ist gegangen','sind gegangen','seid gegangen','sind gegangen'],
+    past:    ['ging','gingst','ging','gingen','gingt','gingen'],
+  },
+  kommen: {
+    present: ['komme','kommst','kommt','kommen','kommt','kommen'],
+    perfect: ['bin gekommen','bist gekommen','ist gekommen','sind gekommen','seid gekommen','sind gekommen'],
+    past:    ['kam','kamst','kam','kamen','kamt','kamen'],
+  },
+  machen: {
+    present: ['mache','machst','macht','machen','macht','machen'],
+    perfect: ['habe gemacht','hast gemacht','hat gemacht','haben gemacht','habt gemacht','haben gemacht'],
+    past:    ['machte','machtest','machte','machten','machtet','machten'],
+  },
+  fahren: {
+    present: ['fahre','fährst','fährt','fahren','fahrt','fahren'],
+    perfect: ['bin gefahren','bist gefahren','ist gefahren','sind gefahren','seid gefahren','sind gefahren'],
+    past:    ['fuhr','fuhrst','fuhr','fuhren','fuhrt','fuhren'],
+  },
+  nehmen: {
+    present: ['nehme','nimmst','nimmt','nehmen','nehmt','nehmen'],
+    perfect: ['habe genommen','hast genommen','hat genommen','haben genommen','habt genommen','haben genommen'],
+    past:    ['nahm','nahmst','nahm','nahmen','nahmt','nahmen'],
+  },
+  essen: {
+    present: ['esse','isst','isst','essen','esst','essen'],
+    perfect: ['habe gegessen','hast gegessen','hat gegessen','haben gegessen','habt gegessen','haben gegessen'],
+    past:    ['aß','aßest','aß','aßen','aßt','aßen'],
+  },
+  trinken: {
+    present: ['trinke','trinkst','trinkt','trinken','trinkt','trinken'],
+    perfect: ['habe getrunken','hast getrunken','hat getrunken','haben getrunken','habt getrunken','haben getrunken'],
+    past:    ['trank','trankst','trank','tranken','trankt','tranken'],
+  },
+  kaufen: {
+    present: ['kaufe','kaufst','kauft','kaufen','kauft','kaufen'],
+    perfect: ['habe gekauft','hast gekauft','hat gekauft','haben gekauft','habt gekauft','haben gekauft'],
+    past:    ['kaufte','kauftest','kaufte','kauften','kauftet','kauften'],
+  },
+  arbeiten: {
+    present: ['arbeite','arbeitest','arbeitet','arbeiten','arbeitet','arbeiten'],
+    perfect: ['habe gearbeitet','hast gearbeitet','hat gearbeitet','haben gearbeitet','habt gearbeitet','haben gearbeitet'],
+    past:    ['arbeitete','arbeitetest','arbeitete','arbeiteten','arbeitetet','arbeiteten'],
+  },
+  schlafen: {
+    present: ['schlafe','schläfst','schläft','schlafen','schlaft','schlafen'],
+    perfect: ['habe geschlafen','hast geschlafen','hat geschlafen','haben geschlafen','habt geschlafen','haben geschlafen'],
+    past:    ['schlief','schliefst','schlief','schliefen','schlieft','schliefen'],
+  },
+  sehen: {
+    present: ['sehe','siehst','sieht','sehen','seht','sehen'],
+    perfect: ['habe gesehen','hast gesehen','hat gesehen','haben gesehen','habt gesehen','haben gesehen'],
+    past:    ['sah','sahst','sah','sahen','saht','sahen'],
+  },
+  sprechen: {
+    present: ['spreche','sprichst','spricht','sprechen','sprecht','sprechen'],
+    perfect: ['habe gesprochen','hast gesprochen','hat gesprochen','haben gesprochen','habt gesprochen','haben gesprochen'],
+    past:    ['sprach','sprachst','sprach','sprachen','spracht','sprachen'],
+  },
+  geben: {
+    present: ['gebe','gibst','gibt','geben','gebt','geben'],
+    perfect: ['habe gegeben','hast gegeben','hat gegeben','haben gegeben','habt gegeben','haben gegeben'],
+    past:    ['gab','gabst','gab','gaben','gabt','gaben'],
+  },
+  bleiben: {
+    present: ['bleibe','bleibst','bleibt','bleiben','bleibt','bleiben'],
+    perfect: ['bin geblieben','bist geblieben','ist geblieben','sind geblieben','seid geblieben','sind geblieben'],
+    past:    ['blieb','bliebst','blieb','blieben','bliebt','blieben'],
+  },
+  wissen: {
+    present: ['weiß','weißt','weiß','wissen','wisst','wissen'],
+    perfect: ['habe gewusst','hast gewusst','hat gewusst','haben gewusst','habt gewusst','haben gewusst'],
+    past:    ['wusste','wusstest','wusste','wussten','wusstet','wussten'],
+  },
+  kennen: {
+    present: ['kenne','kennst','kennt','kennen','kennt','kennen'],
+    perfect: ['habe gekannt','hast gekannt','hat gekannt','haben gekannt','habt gekannt','haben gekannt'],
+    past:    ['kannte','kanntest','kannte','kannten','kanntet','kannten'],
+  },
+  finden: {
+    present: ['finde','findest','findet','finden','findet','finden'],
+    perfect: ['habe gefunden','hast gefunden','hat gefunden','haben gefunden','habt gefunden','haben gefunden'],
+    past:    ['fand','fandst','fand','fanden','fandet','fanden'],
+  },
+  schreiben: {
+    present: ['schreibe','schreibst','schreibt','schreiben','schreibt','schreiben'],
+    perfect: ['habe geschrieben','hast geschrieben','hat geschrieben','haben geschrieben','habt geschrieben','haben geschrieben'],
+    past:    ['schrieb','schriebst','schrieb','schrieben','schriebt','schrieben'],
+  },
+  lesen: {
+    present: ['lese','liest','liest','lesen','lest','lesen'],
+    perfect: ['habe gelesen','hast gelesen','hat gelesen','haben gelesen','habt gelesen','haben gelesen'],
+    past:    ['las','last','las','lasen','last','lasen'],
+  },
+  spielen: {
+    present: ['spiele','spielst','spielt','spielen','spielt','spielen'],
+    perfect: ['habe gespielt','hast gespielt','hat gespielt','haben gespielt','habt gespielt','haben gespielt'],
+    past:    ['spielte','spieltest','spielte','spielten','spieltet','spielten'],
+  },
+  fragen: {
+    present: ['frage','fragst','fragt','fragen','fragt','fragen'],
+    perfect: ['habe gefragt','hast gefragt','hat gefragt','haben gefragt','habt gefragt','haben gefragt'],
+    past:    ['fragte','fragtest','fragte','fragten','fragtet','fragten'],
+  },
+  zeigen: {
+    present: ['zeige','zeigst','zeigt','zeigen','zeigt','zeigen'],
+    perfect: ['habe gezeigt','hast gezeigt','hat gezeigt','haben gezeigt','habt gezeigt','haben gezeigt'],
+    past:    ['zeigte','zeigtest','zeigte','zeigten','zeigtet','zeigten'],
+  },
+  helfen: {
+    present: ['helfe','hilfst','hilft','helfen','helft','helfen'],
+    perfect: ['habe geholfen','hast geholfen','hat geholfen','haben geholfen','habt geholfen','haben geholfen'],
+    past:    ['half','halfst','half','halfen','halft','halfen'],
+  },
+  hören: {
+    present: ['höre','hörst','hört','hören','hört','hören'],
+    perfect: ['habe gehört','hast gehört','hat gehört','haben gehört','habt gehört','haben gehört'],
+    past:    ['hörte','hörtest','hörte','hörten','hörtet','hörten'],
+  },
+  verstehen: {
+    present: ['verstehe','verstehst','versteht','verstehen','versteht','verstehen'],
+    perfect: ['habe verstanden','hast verstanden','hat verstanden','haben verstanden','habt verstanden','haben verstanden'],
+    past:    ['verstand','verstandst','verstand','verstanden','verstandet','verstanden'],
+  },
+  buchen: {
+    present: ['buche','buchst','bucht','buchen','bucht','buchen'],
+    perfect: ['habe gebucht','hast gebucht','hat gebucht','haben gebucht','habt gebucht','haben gebucht'],
+    past:    ['buchte','buchtest','buchte','buchten','buchtet','buchten'],
+  },
+  bezahlen: {
+    present: ['bezahle','bezahlst','bezahlt','bezahlen','bezahlt','bezahlen'],
+    perfect: ['habe bezahlt','hast bezahlt','hat bezahlt','haben bezahlt','habt bezahlt','haben bezahlt'],
+    past:    ['bezahlte','bezahltest','bezahlte','bezahlten','bezahltet','bezahlten'],
+  },
+  brauchen: {
+    present: ['brauche','brauchst','braucht','brauchen','braucht','brauchen'],
+    perfect: ['habe gebraucht','hast gebraucht','hat gebraucht','haben gebraucht','habt gebraucht','haben gebraucht'],
+    past:    ['brauchte','brauchtest','brauchte','brauchten','brauchtet','brauchten'],
+  },
+  suchen: {
+    present: ['suche','suchst','sucht','suchen','sucht','suchen'],
+    perfect: ['habe gesucht','hast gesucht','hat gesucht','haben gesucht','habt gesucht','haben gesucht'],
+    past:    ['suchte','suchtest','suchte','suchten','suchtet','suchten'],
+  },
+  gewinnen: {
+    present: ['gewinne','gewinnst','gewinnt','gewinnen','gewinnt','gewinnen'],
+    perfect: ['habe gewonnen','hast gewonnen','hat gewonnen','haben gewonnen','habt gewonnen','haben gewonnen'],
+    past:    ['gewann','gewannst','gewann','gewannen','gewannt','gewannen'],
+  },
+  verlieren: {
+    present: ['verliere','verlierst','verliert','verlieren','verliert','verlieren'],
+    perfect: ['habe verloren','hast verloren','hat verloren','haben verloren','habt verloren','haben verloren'],
+    past:    ['verlor','verlorst','verlor','verloren','verlort','verloren'],
+  },
+  treffen: {
+    present: ['treffe','triffst','trifft','treffen','trefft','treffen'],
+    perfect: ['habe getroffen','hast getroffen','hat getroffen','haben getroffen','habt getroffen','haben getroffen'],
+    past:    ['traf','trafst','traf','trafen','traft','trafen'],
+  },
+  fühlen: {
+    present: ['fühle','fühlst','fühlt','fühlen','fühlt','fühlen'],
+    perfect: ['habe gefühlt','hast gefühlt','hat gefühlt','haben gefühlt','habt gefühlt','haben gefühlt'],
+    past:    ['fühlte','fühltest','fühlte','fühlten','fühltet','fühlten'],
+  },
+  schauen: {
+    present: ['schaue','schaust','schaut','schauen','schaut','schauen'],
+    perfect: ['habe geschaut','hast geschaut','hat geschaut','haben geschaut','habt geschaut','haben geschaut'],
+    past:    ['schaute','schautest','schaute','schauten','schautet','schauten'],
+  },
+};
+
+const VERB_REMINDERS = {
+  sein:      '⚠ Highly irregular. war / warst / war in Präteritum.',
+  werden:    '⚠ ich werde + infinitive = future tense.',
+  wollen:    '⚠ ich will ≠ "I will" — means "I want to". False friend!',
+  müssen:    '⚠ nicht müssen = don\'t have to (≠ must not).',
+  dürfen:    '⚠ dürfen nicht = must not (prohibition).',
+  nehmen:    '⚠ du nimmst / er nimmt — vowel change e→i.',
+  wissen:    '⚠ ich weiß (irregular). Use for facts, not people/places.',
+  kennen:    '⚠ Use for people/places. Facts → wissen.',
+  helfen:    '⚠ Takes DATIVE: ich helfe dir (not dich).',
+  bezahlen:  '⚠ Inseparable be-: participle is bezahlt (not *gebezahlt).',
+  verstehen: '⚠ Inseparable ver-: participle is verstanden.',
+};
+
+const PERSONS = ['ich','du','er/sie/es','wir','ihr','Sie/sie'];
+const TENSES  = [
+  { key: 'present', label: 'Präsens (Present)' },
+  { key: 'perfect', label: 'Perfekt (Perfect)' },
+  { key: 'past',    label: 'Präteritum (Simple Past)' },
+];
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 3 — MENU
+// ═══════════════════════════════════════════════════════════════════
+
+function initMode3Menu() {
+  const week = getCurrentWeek();
+  const wd   = getWeekData(week);
+  document.getElementById('m3-week-label').textContent  = week;
+  document.getElementById('m3-theme-label').textContent = wd.theme;
+
+  // Verb chips
+  const verbData = getVerbs();
+  const row = document.getElementById('m3-verbs-row');
+  row.innerHTML = '';
+  wd.verbs.forEach(v => {
+    const acc = verbData[v]?.accuracy;
+    const weak = acc !== undefined && acc < 60;
+    const chip = document.createElement('span');
+    chip.className = 'm3-verb-chip' + (weak ? ' weak' : '');
+    chip.textContent = v;
+    row.appendChild(chip);
+  });
+
+  // Accuracy bars
+  const wrap = document.getElementById('m3-accuracy-wrap');
+  wrap.innerHTML = '';
+  const relevant = wd.verbs.filter(v => verbData[v]);
+  if (relevant.length) {
+    const label = document.createElement('div');
+    label.style.cssText = 'font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px';
+    label.textContent = 'Verb accuracy';
+    wrap.appendChild(label);
+    relevant.forEach(v => {
+      const acc = Math.round(verbData[v]?.accuracy || 0);
+      const row = document.createElement('div');
+      row.className = 'm3-accuracy-row';
+      row.innerHTML = `
+        <div class="m3-acc-verb">${v}</div>
+        <div class="m3-acc-track"><div class="m3-acc-fill" style="width:${acc}%;background:${acc>=70?'var(--success)':acc>=40?'var(--accent)':'var(--danger)'}"></div></div>
+        <div class="m3-acc-pct">${acc}%</div>`;
+      wrap.appendChild(row);
+    });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 3a — CONJUGATION DRILL
+// ═══════════════════════════════════════════════════════════════════
+
+const m3aState = { verbs: [], verbIdx: 0, userInputs: {} };
+
+function startMode3a() {
+  const week = getCurrentWeek();
+  const wd   = getWeekData(week);
+  // Only drill verbs we have data for; fall back to all if none
+  const drillable = wd.verbs.filter(v => CONJ_DATA[v]);
+  m3aState.verbs   = drillable.length ? drillable : wd.verbs;
+  m3aState.verbIdx = 0;
+  renderConjTable(0);
+  showScreen('mode3a');
+}
+
+function renderConjTable(idx) {
+  const verb = m3aState.verbs[idx];
+  document.getElementById('m3a-verb-label').textContent = verb;
+
+  // Verb type tag
+  const meta = VERB_META_JS[verb];
+  document.getElementById('m3a-verb-type').textContent =
+    meta ? `${meta[0].toUpperCase()} · aux: ${meta[1]}` : '';
+
+  // Reminder
+  const rem = document.getElementById('m3a-reminder');
+  if (VERB_REMINDERS[verb]) {
+    rem.textContent = VERB_REMINDERS[verb];
+    rem.style.display = 'block';
+  } else {
+    rem.style.display = 'none';
+  }
+
+  // Build table
+  const wrap = document.getElementById('m3a-table-wrap');
+  wrap.innerHTML = '';
+  const table = document.createElement('table');
+  table.className = 'conj-table';
+
+  const thead = table.createTHead();
+  const hrow  = thead.insertRow();
+  ['Person','Präsens','Perfekt','Präteritum'].forEach(h => {
+    const th = document.createElement('th');
+    th.textContent = h;
+    hrow.appendChild(th);
+  });
+
+  const tbody = table.createTBody();
+  PERSONS.forEach((person, pi) => {
+    const tr = tbody.insertRow();
+    const td0 = tr.insertCell();
+    td0.className = 'conj-person';
+    td0.textContent = person;
+    TENSES.forEach(tense => {
+      const td = tr.insertCell();
+      td.className = 'conj-input-cell';
+      const inp = document.createElement('input');
+      inp.type = 'text';
+      inp.className = 'conj-input';
+      inp.id = `ci_${tense.key}_${pi}`;
+      inp.autocomplete = 'off';
+      inp.autocorrect = 'off';
+      inp.spellcheck = false;
+      // Restore any saved value
+      inp.value = (m3aState.userInputs[`${verb}_${tense.key}_${pi}`] || '');
+      inp.addEventListener('input', () => {
+        m3aState.userInputs[`${verb}_${tense.key}_${pi}`] = inp.value;
+      });
+      // Enter → next cell
+      inp.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const nextPi = pi < PERSONS.length - 1 ? pi + 1 : 0;
+          const nextTense = pi < PERSONS.length - 1 ? tense.key : TENSES[(TENSES.findIndex(t=>t.key===tense.key)+1)%TENSES.length].key;
+          const next = document.getElementById(`ci_${nextTense}_${nextPi}`);
+          if (next) next.focus();
+        }
+      });
+      td.appendChild(inp);
+    });
+  });
+
+  wrap.appendChild(table);
+  m3aState.userInputs = {}; // reset for new verb
+}
+
+function gradeConjugation() {
+  const verb   = m3aState.verbs[m3aState.verbIdx];
+  const data   = CONJ_DATA[verb];
+  if (!data) { alert('No conjugation data for ' + verb); return; }
+
+  let correct = 0, total = 0;
+
+  PERSONS.forEach((_, pi) => {
+    TENSES.forEach(tense => {
+      const inp   = document.getElementById(`ci_${tense.key}_${pi}`);
+      if (!inp) return;
+      const user  = inp.value.trim().toLowerCase();
+      const right = (data[tense.key]?.[pi] || '').toLowerCase();
+      total++;
+      if (user === right) {
+        inp.classList.add('correct');
+        inp.classList.remove('wrong');
+        correct++;
+      } else {
+        inp.classList.add('wrong');
+        inp.classList.remove('correct');
+      }
+    });
+  });
+
+  // Update ledger
+  const pct = Math.round((correct / total) * 100);
+  const verbData = getVerbs();
+  if (!verbData[verb]) verbData[verb] = { accuracy: pct, sessions: 0, lastSeen: getCurrentWeek() };
+  verbData[verb].accuracy = Math.round((verbData[verb].accuracy + pct) / 2);
+  verbData[verb].sessions = (verbData[verb].sessions || 0) + 1;
+  verbData[verb].lastSeen = getCurrentWeek();
+  lsSet(LS.VERBS, verbData);
+
+  // Log error patterns for very weak areas
+  if (pct < 60) {
+    const errors = lsGet(LS.ERRORS) || [];
+    errors.push(`${verb}: conjugation accuracy ${pct}%`);
+    lsSet(LS.ERRORS, errors.slice(-20));
+  }
+
+  // Show results screen
+  showResults3a(verb, correct, total, data);
+}
+
+function showResults3a(verb, correct, total, data) {
+  const pct = Math.round((correct / total) * 100);
+  document.getElementById('m3a-results-verb').textContent = verb;
+  const badge = document.getElementById('m3a-score-badge');
+  badge.textContent = `${correct}/${total} — ${pct}%`;
+  badge.className = 'm3a-score-badge ' + (pct >= 80 ? 'good' : pct >= 50 ? 'ok' : 'bad');
+
+  const rem2 = document.getElementById('m3a-results-reminder');
+  if (VERB_REMINDERS[verb]) {
+    rem2.textContent = VERB_REMINDERS[verb];
+    rem2.style.display = 'block';
+  } else {
+    rem2.style.display = 'none';
+  }
+
+  // Rebuild table read-only with answers
+  const wrap = document.getElementById('m3a-results-table');
+  wrap.innerHTML = '';
+  const table = document.createElement('table');
+  table.className = 'conj-table';
+
+  const thead = table.createTHead();
+  const hrow  = thead.insertRow();
+  ['Person','Präsens','Perfekt','Präteritum'].forEach(h => {
+    const th = document.createElement('th'); th.textContent = h; hrow.appendChild(th);
+  });
+
+  const tbody = table.createTBody();
+  PERSONS.forEach((person, pi) => {
+    const tr = tbody.insertRow();
+    const td0 = tr.insertCell();
+    td0.className = 'conj-person';
+    td0.textContent = person;
+    TENSES.forEach(tense => {
+      const td   = tr.insertCell();
+      td.className = 'conj-input-cell';
+      const user  = (document.getElementById(`ci_${tense.key}_${pi}`)?.value || '').trim();
+      const right = (data[tense.key]?.[pi] || '');
+      const ok    = user.toLowerCase() === right.toLowerCase();
+      const inp   = document.createElement('input');
+      inp.type     = 'text';
+      inp.readOnly = true;
+      inp.value    = user || '—';
+      inp.className = 'conj-input ' + (ok ? 'correct' : 'wrong');
+      td.appendChild(inp);
+      if (!ok) {
+        const hint = document.createElement('div');
+        hint.className = 'conj-correct-ans';
+        hint.textContent = '✓ ' + right;
+        td.appendChild(hint);
+      }
+    });
+  });
+
+  wrap.appendChild(table);
+
+  // Next verb button
+  const nextBtn = document.getElementById('btn-next-verb');
+  if (m3aState.verbIdx < m3aState.verbs.length - 1) {
+    nextBtn.style.display = 'block';
+    nextBtn.textContent = `Next: ${m3aState.verbs[m3aState.verbIdx + 1]} →`;
+  } else {
+    nextBtn.style.display = 'none';
+  }
+
+  showScreen('mode3a-results');
+}
+
+function nextVerb3a() {
+  m3aState.verbIdx++;
+  m3aState.userInputs = {};
+  renderConjTable(m3aState.verbIdx);
+  showScreen('mode3a');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 3b — SENTENCE DRILL
+// ═══════════════════════════════════════════════════════════════════
+
+const m3bState = { exercises: [], idx: 0, graded: false };
+
+async function startMode3b() {
+  showScreen('mode3b-loading');
+  const fill = document.getElementById('m3b-loading-fill');
+  fill.style.width = '20%';
+
+  const week    = getCurrentWeek();
+  const wd      = getWeekData(week);
+  const errors  = (lsGet(LS.ERRORS) || []).slice(-3).join('; ');
+  const errorNote = errors ? `\nFocus extra on these error patterns: ${errors}` : '';
+
+  const prompt = `Generate exactly 5 German sentence drill exercises for language learners.
+Level: A2. Week ${week} theme: ${wd.theme}. Focus verbs: ${wd.verbs.join(', ')}.${errorNote}
+
+Each exercise: show an English sentence as a cue, the learner must write the German translation.
+Format each as:
+VERB: <the main focus verb>
+CUE: <English sentence — natural British English>
+---
+One exercise per block, separated by blank lines. 5 exercises total.
+Vary the verbs across exercises. Use the target verbs as the conjugated verb in the answer.
+Keep sentences A2 level: 6–10 words in German.`;
+
+  try {
+    fill.style.width = '60%';
+    const raw = await callClaude(prompt);
+    fill.style.width = '90%';
+    const exercises = parseM3bExercises(raw);
+    if (exercises.length < 3) throw new Error('Too few exercises parsed');
+    m3bState.exercises = exercises;
+    m3bState.idx       = 0;
+    m3bState.graded    = false;
+    fill.style.width   = '100%';
+    await sleep(300);
+    renderM3b();
+    showScreen('mode3b');
+  } catch (e) {
+    showScreen('mode3');
+    alert('Could not generate exercises: ' + e.message);
+  }
+}
+
+function parseM3bExercises(text) {
+  const blocks = text.split(/\n\s*\n/).filter(b => b.trim());
+  const exs = [];
+  for (const block of blocks) {
+    const verbM = block.match(/VERB:\s*(.+)/i);
+    const cueM  = block.match(/CUE:\s*(.+)/i);
+    if (cueM) {
+      exs.push({
+        verb: verbM ? verbM[1].trim() : '',
+        cue:  cueM[1].trim(),
+      });
+    }
+  }
+  return exs;
+}
+
+function renderM3b() {
+  const ex    = m3bState.exercises[m3bState.idx];
+  const total = m3bState.exercises.length;
+
+  document.getElementById('m3b-counter').textContent = `${m3bState.idx + 1} / ${total}`;
+  document.getElementById('m3b-prog-fill').style.width = `${(m3bState.idx / total) * 100}%`;
+  document.getElementById('m3b-verb-tag').textContent = ex.verb;
+  document.getElementById('m3b-cue').textContent = ex.cue;
+  document.getElementById('m3b-answer').value = '';
+  document.getElementById('m3b-feedback').style.display = 'none';
+  document.getElementById('m3b-feedback').innerHTML = '';
+  document.getElementById('m3b-error').style.display = 'none';
+  document.getElementById('btn-m3b-submit').style.display = 'block';
+  document.getElementById('btn-m3b-next').style.display   = 'none';
+  m3bState.graded = false;
+}
+
+async function submitM3b() {
+  const answer = document.getElementById('m3b-answer').value.trim();
+  if (!answer) {
+    const err = document.getElementById('m3b-error');
+    err.textContent = 'Write your answer first.';
+    err.style.display = 'block';
+    return;
+  }
+  document.getElementById('m3b-error').style.display = 'none';
+
+  const ex    = m3bState.exercises[m3bState.idx];
+  const btn   = document.getElementById('btn-m3b-submit');
+  btn.textContent = 'Grading…';
+  btn.disabled    = true;
+
+  const prompt = `You are grading a German language exercise for an A2 learner.
+
+English cue: "${ex.cue}"
+Focus verb: ${ex.verb}
+Learner's answer: "${answer}"
+
+Grade the answer. Respond in this exact format:
+RESULT: correct|partial|wrong
+IDEAL: <the ideal German sentence>
+FEEDBACK: <1-2 sentences of friendly, specific feedback in English. If wrong/partial, explain the key error.>`;
+
+  try {
+    const raw      = await callClaude(prompt);
+    const resultM  = raw.match(/RESULT:\s*(correct|partial|wrong)/i);
+    const idealM   = raw.match(/IDEAL:\s*(.+)/i);
+    const feedbackM= raw.match(/FEEDBACK:\s*([\s\S]+)/i);
+
+    const result   = resultM?.[1]?.toLowerCase() || 'unknown';
+    const ideal    = idealM?.[1]?.trim() || '';
+    const feedback = feedbackM?.[1]?.trim() || '';
+
+    // Update ledger with error patterns
+    if (result === 'wrong' || result === 'partial') {
+      const errors = lsGet(LS.ERRORS) || [];
+      errors.push(`${ex.verb}: sentence drill — ${result}`);
+      lsSet(LS.ERRORS, errors.slice(-20));
+    }
+    // Update verb accuracy
+    const verbData = getVerbs();
+    if (ex.verb) {
+      if (!verbData[ex.verb]) verbData[ex.verb] = { accuracy: 50, sessions: 0, lastSeen: getCurrentWeek() };
+      const delta = result === 'correct' ? 10 : result === 'partial' ? -5 : -15;
+      verbData[ex.verb].accuracy = Math.max(0, Math.min(100, (verbData[ex.verb].accuracy || 50) + delta));
+      verbData[ex.verb].lastSeen = getCurrentWeek();
+      lsSet(LS.VERBS, verbData);
+    }
+
+    // Show feedback
+    const icon = result === 'correct' ? '✓' : result === 'partial' ? '◑' : '✗';
+    const cls  = result === 'correct' ? 'fb-correct' : result === 'partial' ? '' : 'fb-wrong';
+    const fb   = document.getElementById('m3b-feedback');
+    fb.innerHTML = `
+      <div class="${cls}" style="margin-bottom:8px;font-size:14px">${icon} ${result.charAt(0).toUpperCase()+result.slice(1)}</div>
+      ${ideal ? `<div class="fb-ideal" style="margin-bottom:8px">✎ ${ideal}</div>` : ''}
+      ${feedback ? `<div>${feedback}</div>` : ''}`;
+    fb.style.display = 'block';
+
+    btn.textContent  = 'Grade Answer';
+    btn.disabled     = false;
+    btn.style.display = 'none';
+    document.getElementById('btn-m3b-next').style.display = 'block';
+    m3bState.graded = true;
+
+  } catch (e) {
+    btn.textContent = 'Grade Answer';
+    btn.disabled    = false;
+    const err = document.getElementById('m3b-error');
+    err.textContent = 'Grading failed: ' + e.message;
+    err.style.display = 'block';
+  }
+}
+
+function nextM3b() {
+  if (m3bState.idx < m3bState.exercises.length - 1) {
+    m3bState.idx++;
+    renderM3b();
+  } else {
+    // All done — update progress fill to 100% briefly
+    document.getElementById('m3b-prog-fill').style.width = '100%';
+    setTimeout(() => navigate('mode3'), 600);
+  }
+}
+
+// Umlaut insertion (shared by 3a and 3b)
+let _lastFocus = null;
+document.addEventListener('focusin', e => {
+  if (e.target.matches('input[type=text], textarea')) _lastFocus = e.target;
+});
+
+function insertUmlaut(char) {
+  const el = _lastFocus;
+  if (!el) return;
+  const s = el.selectionStart, e2 = el.selectionEnd;
+  el.value = el.value.slice(0, s) + char + el.value.slice(e2);
+  el.selectionStart = el.selectionEnd = s + char.length;
+  el.focus();
+  el.dispatchEvent(new Event('input'));
+}
+
+// Light JS copy of Python VERB_META for the conjugation type tag
+const VERB_META_JS = {
+  sein:['auxiliary','sein'], haben:['auxiliary','haben'], werden:['auxiliary','sein'],
+  können:['modal','haben'], müssen:['modal','haben'], wollen:['modal','haben'],
+  sollen:['modal','haben'], dürfen:['modal','haben'], mögen:['modal','haben'],
+  gehen:['irregular','sein'], kommen:['irregular','sein'], fahren:['irregular','sein'],
+  bleiben:['irregular','sein'],
+  machen:['regular','haben'], kaufen:['regular','haben'], arbeiten:['regular','haben'],
+  spielen:['regular','haben'], fragen:['regular','haben'], zeigen:['regular','haben'],
+  hören:['regular','haben'], suchen:['regular','haben'], brauchen:['regular','haben'],
+  buchen:['regular','haben'], bezahlen:['regular','haben'], fühlen:['regular','haben'],
+  schauen:['regular','haben'],
+  nehmen:['irregular','haben'], essen:['irregular','haben'], trinken:['irregular','haben'],
+  schlafen:['irregular','haben'], sehen:['irregular','haben'], geben:['irregular','haben'],
+  sprechen:['irregular','haben'], schreiben:['irregular','haben'], lesen:['irregular','haben'],
+  helfen:['irregular','haben'], verstehen:['irregular','haben'], finden:['irregular','haben'],
+  wissen:['irregular','haben'], kennen:['irregular','haben'], treffen:['irregular','haben'],
+  gewinnen:['irregular','haben'], verlieren:['irregular','haben'],
+};
+
+
+
+// ═══════════════════════════════════════════════════════════════════
+// MODE 2 — CONVERSATION ROLEPLAY
+// ═══════════════════════════════════════════════════════════════════
+
+const SCENARIO_THEMES = {
+  1:  'friend', 2: 'friend', 3: 'taxi',
+  4:  'hotel',  5: 'restaurant', 6: 'shop',
+  7:  'street', 8: 'friend', 9: 'friend',
+  10: 'friend', 11: 'colleague', 12: 'doctor', 13: 'friend',
+};
+
+const SCENARIO_LABELS = {
+  restaurant: 'Restaurant', hotel: 'Hotel', taxi: 'Taxi',
+  shop: 'Shop', street: 'Asking directions', colleague: 'Work colleague',
+  doctor: "Doctor's", friend: 'Casual conversation',
+};
+
+const m2State = {
+  scenario: null,
+  history:  [],          // [{role:'character'|'user', text}]
+  exchanges: 0,
+  targetVerbs: [],
+  verbAppearances: {},   // verb -> {appeared, correct}
+  stopped: false,
+  recognition: null,
+  characterName: '',
+  scenarioLabel: '',
+};
+
+// ── Config screen init ──────────────────────────────────────────────
+
+function initMode2Screen() {
+  const week = getCurrentWeek();
+  const wd   = getWeekData(week);
+
+  // Check for today's Mode 1 sentences
+  const hasSentences = !!(lsGet(LS.SENTENCES(today())) || lsGet(LS.SENTENCES_PREV));
+  const note = document.getElementById('m2-sentences-note');
+  if (hasSentences) {
+    note.textContent = "Today's Mode 1 sentences will seed the scenario vocabulary.";
+    note.style.display = 'block';
+  }
+}
+
+// ── Scenario generation ─────────────────────────────────────────────
+
+async function startMode2() {
+  showScreen('mode2-loading');
+  const fillEl  = document.getElementById('m2-loading-fill');
+  const labelEl = document.getElementById('m2-loading-label');
+  const subEl   = document.getElementById('m2-loading-sub');
+
+  fillEl.style.width = '15%';
+
+  const week  = getCurrentWeek();
+  const wd    = getWeekData(week);
+  const level = document.getElementById('m2-level').value;
+  let   stype = document.getElementById('m2-scenario-type').value;
+  if (stype === 'auto') stype = SCENARIO_THEMES[week] || 'friend';
+
+  // Seed sentences (first 5 of today's pool if available)
+  const pool = lsGet(LS.SENTENCES(today())) || lsGet(LS.SENTENCES_PREV) || [];
+  const seedSentences = pool.slice(0, 5).map(p => p.de).join('\n');
+  const seedNote = seedSentences
+    ? `\nDraw vocabulary naturally from these example sentences from today's session:\n${seedSentences}`
+    : '';
+
+  const prompt = `You are setting up a German conversation roleplay scenario.
+
+Scenario type: ${stype}
+Learner level: ${level}
+Week ${week} theme: ${wd.theme}
+Target verbs this week: ${wd.verbs.join(', ')}${seedNote}
+
+Respond with a JSON object only (no markdown, no explanation):
+{
+  "characterName": "Name of the character (e.g. Kellner Thomas, Rezeptionist Maria)",
+  "scenarioDescription": "1 sentence in English setting the scene for the learner",
+  "characterSpeaksFirst": true or false,
+  "openingLine": "The character's opening German line (if characterSpeaksFirst is true, else null)",
+  "systemPrompt": "Instructions for Claude playing this character: personality, speech level, how to weave in the target verbs naturally, when to gently correct the learner"
+}`;
+
+  try {
+    fillEl.style.width = '50%';
+    labelEl.textContent = 'Building scenario…';
+    const raw = await callClaude(prompt);
+
+    // Parse JSON (strip any stray markdown)
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const cfg = JSON.parse(clean);
+    fillEl.style.width = '90%';
+
+    m2State.scenario        = cfg;
+    m2State.history         = [];
+    m2State.exchanges       = 0;
+    m2State.stopped         = false;
+    m2State.targetVerbs     = wd.verbs;
+    m2State.verbAppearances = {};
+    m2State.characterName   = cfg.characterName;
+    m2State.scenarioLabel   = SCENARIO_LABELS[stype] || stype;
+    wd.verbs.forEach(v => { m2State.verbAppearances[v] = { appeared: false, correct: false }; });
+
+    fillEl.style.width = '100%';
+    await sleep(300);
+
+    // Show play screen
+    document.getElementById('m2-play-scenario').textContent = m2State.scenarioLabel;
+    document.getElementById('m2-play-exchange').textContent = '';
+    document.getElementById('m2-transcript').innerHTML = '';
+
+    showScreen('mode2-play');
+
+    // Show scenario description as system note
+    appendBubble('system', cfg.scenarioDescription);
+
+    if (cfg.characterSpeaksFirst && cfg.openingLine) {
+      await characterSays(cfg.openingLine);
+    } else {
+      activateMic();
+    }
+
+  } catch (e) {
+    showScreen('mode2');
+    alert('Could not start scenario: ' + e.message + '\n\nCheck your Anthropic API key.');
+  }
+}
+
+// ── Conversation loop ───────────────────────────────────────────────
+
+async function characterSays(text) {
+  if (m2State.stopped) return;
+
+  m2State.exchanges++;
+  document.getElementById('m2-play-exchange').textContent = `Exchange ${m2State.exchanges}`;
+
+  // Add to history
+  m2State.history.push({ role: 'character', text });
+
+  // Show typing indicator
+  const typing = appendTypingIndicator();
+  setMicState('speaking', `${m2State.characterName} is speaking…`);
+
+  // TTS
+  try {
+    const url = await synthesise(text, 'nova');
+    typing.remove();
+    appendBubble('character', text, m2State.characterName);
+    await playAudio(url);
+    URL.revokeObjectURL(url);
+  } catch (e) {
+    typing.remove();
+    appendBubble('character', text, m2State.characterName);
+  }
+
+  if (!m2State.stopped) activateMic();
+}
+
+async function getCharacterReply(userText) {
+  if (m2State.stopped) return;
+  setMicState('thinking', 'Claude is thinking…');
+
+  // Build conversation history for Claude
+  const historyMessages = m2State.history.map(h => ({
+    role: h.role === 'character' ? 'assistant' : 'user',
+    content: h.text,
+  }));
+
+  // System prompt instructs Claude to play the character
+  const systemPrompt = m2State.scenario.systemPrompt +
+    `\n\nIMPORTANT RULES:\n` +
+    `- Speak ONLY in German, appropriate for ${document.getElementById('m2-level')?.value || 'A2'} level\n` +
+    `- Keep replies to 1-3 sentences\n` +
+    `- Naturally use some of these target verbs where possible: ${m2State.targetVerbs.join(', ')}\n` +
+    `- Do NOT switch to English\n` +
+    `- Do NOT correct the learner mid-conversation\n` +
+    `- Keep the scenario going naturally`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': getKeys().anthropic,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 200,
+        system: systemPrompt,
+        messages: [...historyMessages, { role: 'user', content: userText }],
+      }),
+    });
+    const data = await res.json();
+    const reply = data.content?.map(b => b.text || '').join('').trim();
+    if (reply) await characterSays(reply);
+  } catch (e) {
+    setMicState('listening', 'Error — tap Stop to end');
+    console.error('Character reply failed:', e);
+  }
+}
+
+// ── Verb analysis ───────────────────────────────────────────────────
+
+async function analyseVerbUsage(userText) {
+  // Quick client-side check first (fast)
+  const lower = userText.toLowerCase();
+  m2State.targetVerbs.forEach(verb => {
+    if (lower.includes(verb)) {
+      m2State.verbAppearances[verb].appeared = true;
+    }
+  });
+
+  // For correctness we'd need Claude — skip for now to save tokens
+  // Mark appeared verbs as correct (optimistic) — Mode 3 catches errors
+  m2State.targetVerbs.forEach(verb => {
+    if (m2State.verbAppearances[verb].appeared) {
+      m2State.verbAppearances[verb].correct = true;
+    }
+  });
+}
+
+// ── Web Speech API ──────────────────────────────────────────────────
+
+function activateMic() {
+  if (m2State.stopped) return;
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    setMicState('listening', 'Speech not supported — use Safari on iPhone');
+    return;
+  }
+
+  setMicState('listening', 'Listening… speak in German');
+
+  const rec = new SpeechRecognition();
+  rec.lang = 'de-DE';
+  rec.continuous = false;
+  rec.interimResults = false;
+  rec.maxAlternatives = 1;
+
+  m2State.recognition = rec;
+
+  rec.onresult = async (event) => {
+    const transcript = event.results[0][0].transcript.trim();
+    if (!transcript) { activateMic(); return; }
+
+    // Add user bubble
+    m2State.history.push({ role: 'user', text: transcript });
+    appendBubble('user', transcript, 'You');
+
+    // Analyse verb usage
+    await analyseVerbUsage(transcript);
+
+    // Get character reply
+    await getCharacterReply(transcript);
+  };
+
+  rec.onerror = (e) => {
+    if (e.error === 'no-speech') {
+      setMicState('listening', 'No speech detected — try again');
+      if (!m2State.stopped) setTimeout(activateMic, 1500);
+    } else if (e.error !== 'aborted') {
+      setMicState('listening', `Mic error: ${e.error}`);
+    }
+  };
+
+  rec.onend = () => {
+    // If we didn't get a result and not stopped, restart
+    if (!m2State.stopped && m2State.recognition === rec) {
+      // Only restart if we haven't already processed a result
+    }
+  };
+
+  rec.start();
+}
+
+function stopMode2() {
+  m2State.stopped = true;
+  if (m2State.recognition) {
+    try { m2State.recognition.stop(); } catch(e) {}
+    m2State.recognition = null;
+  }
+  // Stop any playing audio
+  if (m1State.currentAudio) { try { m1State.currentAudio.pause(); } catch(e) {} }
+
+  showSummary();
+}
+
+// ── Summary ─────────────────────────────────────────────────────────
+
+function showSummary() {
+  const exchanges = m2State.exchanges;
+  document.getElementById('m2-summary-sub').textContent =
+    `${exchanges} exchange${exchanges !== 1 ? 's' : ''} · ${m2State.scenarioLabel}`;
+
+  // Verb summary
+  const verbWrap = document.getElementById('m2-verb-summary');
+  verbWrap.innerHTML = '';
+  let usedCount = 0;
+  m2State.targetVerbs.forEach(verb => {
+    const info = m2State.verbAppearances[verb] || {};
+    if (info.appeared) usedCount++;
+    const row = document.createElement('div');
+    row.className = 'm2-verb-row';
+    row.innerHTML = `
+      <div class="m2-verb-name">${verb}</div>
+      <div class="m2-verb-used">${info.appeared ? 'Used in conversation' : 'Not used'}</div>
+      <div class="m2-verb-badge ${info.appeared ? 'yes' : 'no'}">${info.appeared ? '✓' : '—'}</div>`;
+    verbWrap.appendChild(row);
+  });
+
+  // Update verb ledger — boost accuracy for used verbs
+  const verbData = getVerbs();
+  m2State.targetVerbs.forEach(verb => {
+    const info = m2State.verbAppearances[verb] || {};
+    if (!verbData[verb]) verbData[verb] = { accuracy: 50, sessions: 0, lastSeen: getCurrentWeek() };
+    if (info.appeared) {
+      verbData[verb].accuracy = Math.min(100, (verbData[verb].accuracy || 50) + 8);
+    }
+    verbData[verb].sessions = (verbData[verb].sessions || 0) + 1;
+    verbData[verb].lastSeen = getCurrentWeek();
+  });
+  lsSet(LS.VERBS, verbData);
+
+  // Store session for B1 dashboard
+  const sessions = lsGet('convo90_sessions') || [];
+  sessions.push({
+    date: today(),
+    scenario: m2State.scenarioLabel,
+    exchanges,
+    verbsUsed: usedCount,
+    verbsTarget: m2State.targetVerbs.length,
+    fluency: Math.round((usedCount / Math.max(1, m2State.targetVerbs.length)) * 100),
+  });
+  lsSet('convo90_sessions', sessions.slice(-50));
+
+  // Transcript review
+  const review = document.getElementById('m2-transcript-review');
+  review.innerHTML = '';
+  m2State.history.forEach(h => {
+    const line = document.createElement('div');
+    line.className = 'm2-review-line';
+    const label = h.role === 'character' ? m2State.characterName : 'You';
+    line.innerHTML = `<strong>${label}:</strong> ${h.text}`;
+    review.appendChild(line);
+  });
+
+  showScreen('mode2-summary');
+}
+
+// ── UI helpers ──────────────────────────────────────────────────────
+
+function appendBubble(role, text, label) {
+  const transcript = document.getElementById('m2-transcript');
+
+  if (role === 'system') {
+    const sys = document.createElement('div');
+    sys.style.cssText = 'text-align:center;font-size:11px;color:var(--muted);padding:4px 0;letter-spacing:0.04em;font-style:italic';
+    sys.textContent = text;
+    transcript.appendChild(sys);
+    transcript.scrollTop = transcript.scrollHeight;
+    return;
+  }
+
+  const wrap = document.createElement('div');
+  wrap.className = `m2-bubble ${role}`;
+
+  const lbl = document.createElement('div');
+  lbl.className = 'm2-bubble-label';
+  lbl.textContent = label || role;
+
+  const bubble = document.createElement('div');
+  bubble.className = 'm2-bubble-text';
+  bubble.textContent = text;
+
+  wrap.appendChild(lbl);
+  wrap.appendChild(bubble);
+  transcript.appendChild(wrap);
+  transcript.scrollTop = transcript.scrollHeight;
+  return wrap;
+}
+
+function appendTypingIndicator() {
+  const transcript = document.getElementById('m2-transcript');
+  const wrap = document.createElement('div');
+  wrap.className = 'm2-bubble character';
+  wrap.innerHTML = `
+    <div class="m2-bubble-label">${m2State.characterName}</div>
+    <div class="m2-bubble-typing">
+      <div class="m2-dot"></div><div class="m2-dot"></div><div class="m2-dot"></div>
+    </div>`;
+  transcript.appendChild(wrap);
+  transcript.scrollTop = transcript.scrollHeight;
+  return wrap;
+}
+
+function setMicState(state, label) {
+  const orb = document.getElementById('m2-mic-orb');
+  const lbl = document.getElementById('m2-mic-label');
+  orb.className = `m2-mic-orb ${state}`;
+  lbl.textContent = label;
+}
+
+
+
+// ═══════════════════════════════════════════════════════════════════
+// B1 ASSESSMENT
+// ═══════════════════════════════════════════════════════════════════
+
+const b1State = {
+  speakingScore:  null,
+  writingScore:   null,
+  writingFeedback: '',
+  speakHistory:   [],
+  exchanges:      0,
+  maxExchanges:   4,
+  topic:          '',
+  stopped:        false,
+  recognition:    null,
+};
+
+// ── Menu init ───────────────────────────────────────────────────────
+
+function initB1Screen() {
+  const b1data = getB1Data();
+
+  // Sparkline
+  renderB1Sparkline(b1data);
+
+  // Check statuses — show today's scores if done
+  const todayData = b1data.find(d => d.date === today());
+  const speakEl = document.getElementById('b1-speak-status');
+  const writeEl = document.getElementById('b1-write-status');
+  if (todayData?.speakingScore != null) {
+    speakEl.textContent = `${todayData.speakingScore}%`;
+    speakEl.classList.add('done');
+  } else {
+    speakEl.textContent = '—';
+    speakEl.classList.remove('done');
+  }
+  if (todayData?.writingScore != null) {
+    writeEl.textContent = `${todayData.writingScore}%`;
+    writeEl.classList.add('done');
+  } else {
+    writeEl.textContent = '—';
+    writeEl.classList.remove('done');
+  }
+}
+
+function renderB1Sparkline(b1data) {
+  const wrap = document.getElementById('b1-history-wrap');
+  if (!b1data.length) {
+    wrap.innerHTML = `
+      <div class="b1-history-title">Assessment history</div>
+      <div class="b1-history-no-data">No assessments yet — complete your first check below.</div>`;
+    return;
+  }
+
+  const recent = b1data.slice(-8);
+  const maxScore = 100;
+  wrap.innerHTML = `<div class="b1-history-title">Assessment history (last ${recent.length})</div>
+    <div class="b1-sparkline" id="b1-sparkline"></div>`;
+  const sparkline = document.getElementById('b1-sparkline');
+
+  // Pad to 8 bars
+  const padded = Array(Math.max(0, 8 - recent.length)).fill(null).concat(recent);
+  padded.forEach(d => {
+    const bar = document.createElement('div');
+    if (!d) {
+      bar.className = 'b1-spark-empty';
+    } else {
+      const composite = Math.round(((d.speakingScore||0) + (d.writingScore||0)) / 2);
+      const h = Math.max(6, Math.round((composite / maxScore) * 48));
+      bar.className = 'b1-spark-bar';
+      bar.style.height = h + 'px';
+      bar.title = `${d.date}: ${composite}%`;
+    }
+    sparkline.appendChild(bar);
+  });
+}
+
+// ── B1 Speaking Check ───────────────────────────────────────────────
+
+async function startB1Speaking() {
+  const week = getCurrentWeek();
+  const wd   = getWeekData(week);
+
+  b1State.speakHistory = [];
+  b1State.exchanges    = 0;
+  b1State.stopped      = false;
+  b1State.topic        = wd.theme;
+
+  document.getElementById('b1-speak-transcript').innerHTML = '';
+  showScreen('b1-speaking');
+
+  // Generate first assessor question
+  const prompt = `You are conducting a B1 German speaking assessment. The learner is studying week ${week}: "${wd.theme}".
+Ask a natural, open-ended question IN GERMAN to start a conversation on this topic.
+Keep the question simple (A2/B1 level). Output only the German question, nothing else.`;
+
+  try {
+    setBMicState('thinking', 'Preparing assessment…');
+    const question = (await callClaude(prompt)).trim();
+    b1State.speakHistory.push({ role: 'assessor', text: question });
+    b1State.exchanges = 1;
+    document.getElementById('b1-speak-exchange').textContent = `Exchange ${b1State.exchanges} / ${b1State.maxExchanges}`;
+
+    // Play question
+    const typing = appendB1Bubble('character', null, 'Examiner');
+    setBMicState('speaking', 'Examiner is speaking…');
+    try {
+      const url = await synthesise(question, 'nova');
+      typing.querySelector('.m2-bubble-typing')?.replaceWith(makeTextNode(question));
+      await playAudio(url);
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      typing.querySelector('.m2-bubble-typing')?.replaceWith(makeTextNode(question));
+    }
+
+    activateB1Mic();
+  } catch(e) {
+    showScreen('b1');
+    alert('Could not start speaking check: ' + e.message);
+  }
+}
+
+function makeTextNode(text) {
+  const div = document.createElement('div');
+  div.className = 'm2-bubble-text';
+  div.style.fontFamily = 'var(--font-mono)';
+  div.textContent = text;
+  return div;
+}
+
+function activateB1Mic() {
+  if (b1State.stopped) return;
+  setBMicState('listening', 'Listening… speak in German');
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    setBMicState('listening', 'Speech not supported — use Safari on iPhone');
+    return;
+  }
+
+  const rec = new SpeechRecognition();
+  rec.lang = 'de-DE';
+  rec.continuous = false;
+  rec.interimResults = false;
+  b1State.recognition = rec;
+
+  rec.onresult = async (event) => {
+    const transcript = event.results[0][0].transcript.trim();
+    if (!transcript) { activateB1Mic(); return; }
+
+    b1State.speakHistory.push({ role: 'learner', text: transcript });
+    appendB1BubbleText('user', transcript, 'You');
+
+    if (b1State.exchanges >= b1State.maxExchanges) {
+      finishB1Speaking();
+      return;
+    }
+
+    // Get next assessor question
+    setBMicState('thinking', 'Examiner is thinking…');
+    await getB1NextQuestion(transcript);
+  };
+
+  rec.onerror = (e) => {
+    if (e.error === 'no-speech') {
+      setBMicState('listening', 'No speech detected — try again');
+      if (!b1State.stopped) setTimeout(activateB1Mic, 1500);
+    }
+  };
+
+  rec.start();
+}
+
+async function getB1NextQuestion(lastAnswer) {
+  const historyText = b1State.speakHistory
+    .map(h => `${h.role === 'assessor' ? 'Examiner' : 'Learner'}: ${h.text}`)
+    .join('\n');
+
+  const prompt = `You are conducting a B1 German speaking assessment on topic: "${b1State.topic}".
+Conversation so far:
+${historyText}
+
+Ask a short follow-up question IN GERMAN (A2/B1 level) to continue the assessment. 
+Output only the German question. Keep it brief and natural.`;
+
+  try {
+    const question = (await callClaude(prompt)).trim();
+    b1State.speakHistory.push({ role: 'assessor', text: question });
+    b1State.exchanges++;
+    document.getElementById('b1-speak-exchange').textContent =
+      `Exchange ${b1State.exchanges} / ${b1State.maxExchanges}`;
+
+    const typing = appendB1Bubble('character', null, 'Examiner');
+    setBMicState('speaking', 'Examiner is speaking…');
+    try {
+      const url = await synthesise(question, 'nova');
+      typing.querySelector('.m2-bubble-typing')?.replaceWith(makeTextNode(question));
+      await playAudio(url);
+      URL.revokeObjectURL(url);
+    } catch(e) {
+      typing.querySelector('.m2-bubble-typing')?.replaceWith(makeTextNode(question));
+    }
+
+    activateB1Mic();
+  } catch(e) {
+    setBMicState('listening', 'Error — tap Finish to continue');
+  }
+}
+
+async function finishB1Speaking() {
+  b1State.stopped = true;
+  if (b1State.recognition) { try { b1State.recognition.stop(); } catch(e) {} }
+  if (m1State.currentAudio) { try { m1State.currentAudio.pause(); } catch(e) {} }
+
+  if (!b1State.speakHistory.length) { navigate('b1'); return; }
+
+  setBMicState('thinking', 'Claude is scoring your performance…');
+
+  const transcript = b1State.speakHistory
+    .map(h => `${h.role === 'assessor' ? 'Examiner' : 'Learner'}: ${h.text}`)
+    .join('\n');
+
+  const scoringPrompt = `Score this B1 German speaking assessment exchange.
+
+Topic: ${b1State.topic}
+Transcript:
+${transcript}
+
+Score the LEARNER only (not the examiner). Criteria: Range (25%), Accuracy (25%), Fluency (25%), Coherence (25%).
+Consider this is an A2-B1 learner, not a native speaker.
+
+Respond as JSON only (no markdown):
+{
+  "speakingScore": <0-100>,
+  "range": <0-100>,
+  "accuracy": <0-100>,
+  "fluency": <0-100>,
+  "coherence": <0-100>,
+  "feedback": "<2-3 sentences of constructive feedback in English>"
+}`;
+
+  try {
+    const raw   = await callClaude(scoringPrompt);
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    b1State.speakingScore = result.speakingScore;
+    saveB1Score({ speakingScore: result.speakingScore, speakingFeedback: result.feedback });
+    showB1Results('speaking', result);
+  } catch(e) {
+    navigate('b1');
+    alert('Scoring failed: ' + e.message);
+  }
+}
+
+// ── B1 Writing Check ────────────────────────────────────────────────
+
+async function startB1Writing() {
+  showScreen('b1-writing-loading');
+  document.getElementById('b1-write-load-fill').style.width = '30%';
+
+  const week = getCurrentWeek();
+  const wd   = getWeekData(week);
+
+  const prompt = `Generate a B1 German writing assessment prompt for a learner studying: "${wd.theme}".
+The prompt should invite 3-5 German sentences on a personal or practical topic related to the theme.
+Make it achievable for an A2-B1 learner.
+Output ONLY the English prompt (1 sentence). Nothing else.`;
+
+  try {
+    document.getElementById('b1-write-load-fill').style.width = '70%';
+    const writingPrompt = (await callClaude(prompt)).trim();
+    document.getElementById('b1-write-load-fill').style.width = '100%';
+    await sleep(200);
+
+    document.getElementById('b1-write-prompt').textContent = writingPrompt;
+    document.getElementById('b1-write-answer').value = '';
+    document.getElementById('b1-write-feedback').style.display = 'none';
+    document.getElementById('btn-b1-submit-write').style.display = 'block';
+    document.getElementById('btn-b1-write-done').style.display = 'none';
+    document.getElementById('b1-write-error').style.display = 'none';
+    showScreen('b1-writing');
+  } catch(e) {
+    showScreen('b1');
+    alert('Could not generate prompt: ' + e.message);
+  }
+}
+
+async function submitB1Writing() {
+  const answer = document.getElementById('b1-write-answer').value.trim();
+  if (!answer) {
+    const err = document.getElementById('b1-write-error');
+    err.textContent = 'Write your answer first.';
+    err.style.display = 'block';
+    return;
+  }
+  document.getElementById('b1-write-error').style.display = 'none';
+
+  const btn = document.getElementById('btn-b1-submit-write');
+  btn.textContent = 'Grading…';
+  btn.disabled    = true;
+
+  const writingPrompt = document.getElementById('b1-write-prompt').textContent;
+
+  const scoringPrompt = `Grade this B1 German writing sample from an A2-B1 learner.
+
+Prompt (what they were asked): "${writingPrompt}"
+Their response: "${answer}"
+
+Score against B1 writing criteria:
+- Grammar accuracy (33%)
+- Vocabulary range (33%)
+- Sentence complexity (34%)
+
+Respond as JSON only (no markdown):
+{
+  "writingScore": <0-100>,
+  "grammar": <0-100>,
+  "vocabulary": <0-100>,
+  "complexity": <0-100>,
+  "feedback": "<2-3 sentences of constructive feedback in English, noting specific strengths and errors>",
+  "corrected": "<corrected/ideal version of their response in German>"
+}`;
+
+  try {
+    const raw    = await callClaude(scoringPrompt);
+    const clean  = raw.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    b1State.writingScore    = result.writingScore;
+    b1State.writingFeedback = result.feedback;
+
+    saveB1Score({ writingScore: result.writingScore, writingFeedback: result.feedback });
+
+    // Show inline feedback
+    const fb = document.getElementById('b1-write-feedback');
+    fb.innerHTML = `
+      <div class="fb-score">${result.writingScore}<sup>%</sup></div>
+      <div class="fb-breakdown">Grammar ${result.grammar}% · Vocab ${result.vocabulary}% · Complexity ${result.complexity}%</div>
+      ${result.feedback ? `<div style="margin-bottom:10px">${result.feedback}</div>` : ''}
+      ${result.corrected ? `<div style="font-family:var(--font-mono);font-size:12px;color:var(--success);padding:10px;background:rgba(58,138,90,0.06);border-radius:6px;border:1px solid rgba(58,138,90,0.2)">✓ ${result.corrected}</div>` : ''}`;
+    fb.style.display = 'block';
+
+    btn.style.display = 'none';
+    document.getElementById('btn-b1-write-done').style.display = 'block';
+
+    showB1Results('writing', result);
+  } catch(e) {
+    btn.textContent = 'Submit for Grading';
+    btn.disabled    = false;
+    const err = document.getElementById('b1-write-error');
+    err.textContent = 'Grading failed: ' + e.message;
+    err.style.display = 'block';
+  }
+}
+
+// ── Results ─────────────────────────────────────────────────────────
+
+function showB1Results(mode, result) {
+  const scores   = computeB1Score();
+  const b1data   = getB1Data();
+  const todayData = b1data.find(d => d.date === today()) || {};
+
+  document.getElementById('b1-results-date').textContent = today();
+
+  // Score cards
+  const cards = document.getElementById('b1-score-cards');
+  const speakScore = todayData.speakingScore ?? (mode === 'speaking' ? result.speakingScore : null);
+  const writeScore = todayData.writingScore  ?? (mode === 'writing'  ? result.writingScore  : null);
+
+  cards.innerHTML = '';
+  const makeCard = (label, score, colour) => {
+    const val = score != null ? score : '—';
+    const pct = score != null ? score : 0;
+    const card = document.createElement('div');
+    card.className = 'b1-score-card';
+    card.innerHTML = `
+      <div class="b1-score-card-label">${label}</div>
+      <div class="b1-score-card-val">${val}${score != null ? '<sup>%</sup>' : ''}</div>
+      <div class="b1-score-card-bar">
+        <div class="b1-score-card-fill" style="width:${pct}%;background:${colour}"></div>
+      </div>`;
+    return card;
+  };
+  cards.appendChild(makeCard('Speaking', speakScore, 'var(--accent)'));
+  cards.appendChild(makeCard('Writing',  writeScore, 'var(--accent-2)'));
+
+  // Composite
+  document.getElementById('b1-results-composite').innerHTML = `${scores.composite}<sup>%</sup>`;
+
+  const trend = getTrend();
+  const trendEl = document.getElementById('b1-results-trend');
+  trendEl.textContent = trend === 'improving' ? '↑ Improving' : trend === 'attention' ? '↓ Needs attention' : '— Building baseline';
+
+  // Feedback
+  const feedbackEl = document.getElementById('b1-results-feedback');
+  const fb = mode === 'speaking' ? result.feedback : result.feedback;
+  feedbackEl.innerHTML = fb ? `<h4>Feedback</h4>${fb}` : '';
+
+  showScreen('b1-results');
+  refreshHome();
+}
+
+// ── Ledger helpers ──────────────────────────────────────────────────
+
+function saveB1Score(update) {
+  const b1data = getB1Data();
+  const idx    = b1data.findIndex(d => d.date === today());
+  if (idx >= 0) {
+    Object.assign(b1data[idx], update);
+  } else {
+    b1data.push({ date: today(), ...update });
+  }
+  lsSet(LS.B1, b1data);
+}
+
+// ── UI helpers (reuse Mode 2 bubble styles) ─────────────────────────
+
+function appendB1Bubble(role, text, label) {
+  const transcript = document.getElementById('b1-speak-transcript');
+  const wrap = document.createElement('div');
+  wrap.className = `m2-bubble ${role}`;
+
+  const lbl = document.createElement('div');
+  lbl.className = 'm2-bubble-label';
+  lbl.textContent = label;
+
+  if (text === null) {
+    // Typing indicator
+    wrap.innerHTML = `
+      <div class="m2-bubble-label">${label}</div>
+      <div class="m2-bubble-typing">
+        <div class="m2-dot"></div><div class="m2-dot"></div><div class="m2-dot"></div>
+      </div>`;
+  } else {
+    const bubble = document.createElement('div');
+    bubble.className = 'm2-bubble-text';
+    bubble.style.fontFamily = 'var(--font-mono)';
+    bubble.textContent = text;
+    wrap.appendChild(lbl);
+    wrap.appendChild(bubble);
+  }
+
+  transcript.appendChild(wrap);
+  transcript.scrollTop = transcript.scrollHeight;
+  return wrap;
+}
+
+function appendB1BubbleText(role, text, label) {
+  const transcript = document.getElementById('b1-speak-transcript');
+  const wrap = document.createElement('div');
+  wrap.className = `m2-bubble ${role}`;
+  wrap.innerHTML = `
+    <div class="m2-bubble-label">${label}</div>
+    <div class="m2-bubble-text" style="font-style:italic">${text}</div>`;
+  transcript.appendChild(wrap);
+  transcript.scrollTop = transcript.scrollHeight;
+}
+
+function setBMicState(state, label) {
+  const orb = document.getElementById('b1-mic-orb');
+  const lbl = document.getElementById('b1-mic-label');
+  if (orb) { orb.className = `m2-mic-orb ${state}`; }
+  if (lbl) { lbl.textContent = label; }
+}
+
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+(function init() {
+  console.log('Convo90 boot v3 — ' + new Date().toISOString());
+
+  // Force hide every screen
+  document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+
+  if (isSetup()) {
+    showScreen('home');
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    const navEl = document.getElementById('nav-home');
+    if (navEl) navEl.classList.add('active');
+    refreshHome();
+  } else {
+    showScreen('settings');
+  }
+})();
+
+// ── Navigate override to init screens ─────────────────────────────────────
+const _baseNavigate = navigate;
+// Patch: on navigate to mode1, init config screen
+document.querySelectorAll('[onclick*="mode1"]').forEach(el => {
+  // already wired via onclick attributes
+});
+
+// Add SCREEN_MAP entries for new mode1 sub-screens
+SCREEN_MAP['mode1-loading']    = 'screen-mode1-loading';
+SCREEN_MAP['mode1-play']       = 'screen-mode1-play';
+SCREEN_MAP['mode1b-play']      = 'screen-mode1b-play';
+SCREEN_MAP['mode3a']           = 'screen-mode3a';
+SCREEN_MAP['mode3a-results']   = 'screen-mode3a-results';
+SCREEN_MAP['mode3b-loading']   = 'screen-mode3b-loading';
+SCREEN_MAP['mode3b']           = 'screen-mode3b';
+SCREEN_MAP['mode2-loading']    = 'screen-mode2-loading';
+SCREEN_MAP['mode2-play']       = 'screen-mode2-play';
+SCREEN_MAP['mode2-summary']    = 'screen-mode2-summary';
+SCREEN_MAP['b1-speaking']      = 'screen-b1-speaking';
+SCREEN_MAP['b1-writing']       = 'screen-b1-writing';
+SCREEN_MAP['b1-writing-loading'] = 'screen-b1-writing-loading';
+SCREEN_MAP['b1-results']       = 'screen-b1-results';
+</script>
+
+</body>
+</html>
