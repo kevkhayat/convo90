@@ -1388,7 +1388,7 @@ select.field-input {
 .conj-input {
   width: 100%; padding: 7px 8px;
   background: var(--bg-2); border: 1px solid var(--border); border-radius: 6px;
-  font-family: var(--font-mono); font-size: 13px; color: var(--text);
+  font-family: var(--font-mono); font-size: 15px; color: var(--text);
   outline: none; transition: border-color 0.15s;
   -webkit-appearance: none;
 }
@@ -1445,14 +1445,27 @@ select.field-input {
   border: 1px solid rgba(212,82,26,0.2);
 }
 .m3b-cue {
-  font-family: var(--font-display); font-size: 20px; font-weight: 300;
+  font-family: var(--font-display); font-size: 24px; font-weight: 300;
   line-height: 1.45; color: var(--text);
 }
 .m3b-answer {
   resize: none; min-height: 80px;
-  font-family: var(--font-mono); font-size: 14px; line-height: 1.5;
+  font-family: var(--font-mono); font-size: 16px; line-height: 1.5;
 }
-.m3b-feedback {
+.m3b-hint {
+  min-height: 22px; margin-top: 8px;
+  font-family: var(--font-mono); font-size: 15px;
+  color: var(--muted); letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+.m3b-hint .hint-word {
+  display: inline-block; margin-right: 4px;
+  opacity: 0; animation: hint-fade-in 0.4s ease forwards;
+}
+@keyframes hint-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
   margin-top: 16px; padding: 14px;
   background: var(--bg-2); border-radius: 8px;
   border: 1px solid var(--border);
@@ -1555,7 +1568,7 @@ select.field-input {
 
 .m2-bubble-text {
   padding: 12px 14px; border-radius: 12px;
-  font-size: 14px; line-height: 1.55; color: var(--text);
+  font-size: 16px; line-height: 1.55; color: var(--text);
 }
 .m2-bubble.character .m2-bubble-text {
   background: var(--bg-2); border: 1px solid var(--border);
@@ -1593,6 +1606,15 @@ select.field-input {
   display: flex; align-items: center; justify-content: center;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
+}
+.m2-mic-orb.ready {
+  background: rgba(212,82,26,0.06); border-color: var(--accent);
+  animation: mic-ready 2s ease-in-out infinite;
+}
+@keyframes mic-ready {
+  0%,100% { box-shadow: 0 0 0 0 rgba(212,82,26,0.2); }
+  50%      { box-shadow: 0 0 0 6px rgba(212,82,26,0); }
 }
 .m2-mic-orb::after {
   content: "🎙"; font-size: 14px; line-height: 1;
@@ -1717,7 +1739,7 @@ select.field-input {
   font-size: 11px; color: var(--muted); letter-spacing: 0.06em;
 }
 .b1-writing-prompt {
-  font-family: var(--font-display); font-size: 20px; font-weight: 300;
+  font-family: var(--font-display); font-size: 24px; font-weight: 300;
   color: var(--text); line-height: 1.45;
   padding: 14px; background: var(--bg-2);
   border: 1px solid var(--border); border-radius: 8px;
@@ -1779,135 +1801,6 @@ select.field-input {
 .b1-feedback-wrap h4 {
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 6px; font-weight: 400;
-}
-
-/* ═══════════════════════════════════════════════════════════════════
-   ADD VOCAB MODAL
-═══════════════════════════════════════════════════════════════════ */
-.vocab-modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(30,29,26,0.55);
-  z-index: 200;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: max(var(--safe-bottom), 0px);
-}
-.vocab-modal-overlay.open {
-  display: flex;
-  animation: modalIn 0.22s ease;
-}
-@keyframes modalIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.vocab-modal {
-  background: var(--bg-0);
-  border: 1px solid var(--border-mid);
-  border-radius: 16px 16px 0 0;
-  padding: 24px 20px 20px;
-  width: 100%;
-  max-width: 560px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.vocab-modal-title {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: 0.01em;
-}
-.vocab-modal-sub {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: -8px;
-}
-.vocab-modal textarea {
-  width: 100%;
-  min-height: 130px;
-  background: var(--bg-2);
-  border: 1px solid var(--border-mid);
-  border-radius: 8px;
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.6;
-  padding: 12px 14px;
-  outline: none;
-  resize: none;
-  -webkit-appearance: none;
-  transition: border-color 0.15s;
-}
-.vocab-modal textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(212,82,26,0.12);
-}
-.vocab-modal textarea::placeholder {
-  color: var(--muted);
-  font-size: 11px;
-}
-.vocab-modal-actions {
-  display: flex;
-  gap: 10px;
-}
-.btn-vocab-cancel {
-  flex: 1;
-  background: var(--bg-2);
-  border: 1px solid var(--border-mid);
-  border-radius: 6px;
-  color: var(--dim);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 13px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.btn-vocab-submit {
-  flex: 2;
-  background: var(--accent);
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 13px;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-.btn-vocab-submit:active { opacity: 0.8; }
-
-/* Add Vocab home button */
-.add-vocab-btn {
-  width: 100%;
-  background: var(--bg-1);
-  border: 1px dashed var(--border-mid);
-  border-radius: 8px;
-  color: var(--dim);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 11px 16px;
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-  margin-top: 4px;
-}
-.add-vocab-btn:active {
-  background: var(--bg-2);
-  border-color: var(--accent);
-  color: var(--accent);
 }
 
 </style>
@@ -2079,7 +1972,6 @@ select.field-input {
               <div class="mode-status" id="m3b-status">→</div>
             </button>
           </div>
-          <button class="add-vocab-btn" onclick="openVocabModal()">＋ Add Vocab</button>
         </div>
 
         <!-- Stats -->
@@ -2108,21 +2000,6 @@ select.field-input {
           <div style="color:var(--accent);font-size:14px">→</div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- ADD VOCAB MODAL -->
-    <div class="vocab-modal-overlay" id="vocab-modal-overlay" onclick="vocabOverlayClick(event)">
-      <div class="vocab-modal">
-        <div class="vocab-modal-title">Add Vocab</div>
-        <div class="vocab-modal-sub">Paste text from any source — German, mixed, or English with German phrases</div>
-        <textarea id="vocab-modal-textarea"
-          placeholder="e.g. Das kommt mir spanisch vor — that seems fishy / odd&#10;Ich drücke dir die Daumen — I'm keeping my fingers crossed&#10;Na ja, das geht so — well, it's so-so"
-          maxlength="2000"></textarea>
-        <div class="vocab-modal-actions">
-          <button class="btn-vocab-cancel" onclick="closeVocabModal()">Cancel</button>
-          <button class="btn-vocab-submit" onclick="submitVocab()">Add to session</button>
-        </div>
       </div>
     </div>
 
@@ -2536,6 +2413,7 @@ select.field-input {
         <div class="m3b-card">
           <div class="m3b-verb-tag" id="m3b-verb-tag"></div>
           <div class="m3b-cue" id="m3b-cue"></div>
+          <div class="m3b-hint" id="m3b-hint"></div>
           <div class="field" style="margin-top:16px">
             <div class="field-label">Your answer in German</div>
             <textarea class="field-input m3b-answer" id="m3b-answer" rows="3"
@@ -2812,7 +2690,6 @@ const LS = {
   ERRORS:    'convo90_errors',
   STATS:     'convo90_stats',
   SESSIONS:  'convo90_sessions',
-  VOCAB_SEEDS: 'convo90_vocab_seeds',
 };
 
 function lsGet(key, fallback = null) {
@@ -3262,11 +3139,9 @@ function buildM1Prompt(week, level, tense, batchNum, weekData, weakVerbs) {
     ? `\nPriority verbs (learner is struggling — use extra): ${weakVerbs.join(', ')}`
     : '';
 
-  const seedsNote = getVocabSeedsPromptFragment();
-
   return `Generate exactly ${SENTENCES_PER_BATCH} German sentence pairs for active recall drilling.
 Level: ${level}. Week ${week} theme: ${weekData.theme}.
-Focus verbs: ${verbList}.${weakNote}${seedsNote}
+Focus verbs: ${verbList}.${weakNote}
 Tense: ${tenseInstr}.
 This is batch ${batchNum} of ${BATCHES} — vary the sentences, do not repeat from earlier batches.
 
@@ -4198,6 +4073,15 @@ function startMode3a() {
   showScreen('mode3a');
 }
 
+function getVerbRound(verb) {
+  const key = `convo90_m3a_rounds_${verb}`;
+  return parseInt(localStorage.getItem(key) || '0', 10);
+}
+function incrementVerbRound(verb) {
+  const key = `convo90_m3a_rounds_${verb}`;
+  localStorage.setItem(key, String(getVerbRound(verb) + 1));
+}
+
 function renderConjTable(idx) {
   const verb = m3aState.verbs[idx];
   document.getElementById('m3a-verb-label').textContent = verb;
@@ -4216,6 +4100,9 @@ function renderConjTable(idx) {
     rem.style.display = 'none';
   }
 
+  const round = getVerbRound(verb);
+  const data  = CONJ_DATA[verb]; // may be undefined
+
   // Build table
   const wrap = document.getElementById('m3a-table-wrap');
   wrap.innerHTML = '';
@@ -4229,6 +4116,16 @@ function renderConjTable(idx) {
     th.textContent = h;
     hrow.appendChild(th);
   });
+
+  // Round 0 badge
+  let roundBadge = document.getElementById('m3a-round-badge');
+  if (!roundBadge) {
+    roundBadge = document.createElement('div');
+    roundBadge.id = 'm3a-round-badge';
+    roundBadge.style.cssText = 'font-size:11px;color:var(--muted);margin-bottom:6px;text-align:right;';
+    wrap.parentNode.insertBefore(roundBadge, wrap);
+  }
+  roundBadge.textContent = round === 0 ? 'Round 1 — answers shown as placeholders' : `Round ${round + 1}`;
 
   const tbody = table.createTBody();
   PERSONS.forEach((person, pi) => {
@@ -4246,6 +4143,10 @@ function renderConjTable(idx) {
       inp.autocomplete = 'off';
       inp.autocorrect = 'off';
       inp.spellcheck = false;
+      // Round 0: show correct answer as placeholder
+      if (round === 0 && data) {
+        inp.placeholder = data[tense.key]?.[pi] || '';
+      }
       // Restore any saved value
       inp.value = (m3aState.userInputs[`${verb}_${tense.key}_${pi}`] || '');
       inp.addEventListener('input', () => {
@@ -4302,6 +4203,9 @@ function gradeConjugation() {
   verbData[verb].sessions = (verbData[verb].sessions || 0) + 1;
   verbData[verb].lastSeen = getCurrentWeek();
   lsSet(LS.VERBS, verbData);
+
+  // Increment round counter for this verb
+  incrementVerbRound(verb);
 
   // Log error patterns for very weak areas
   if (pct < 60) {
@@ -4412,6 +4316,7 @@ Each exercise: show an English sentence as a cue, the learner must write the Ger
 Format each as:
 VERB: <the main focus verb>
 CUE: <English sentence — natural British English>
+ANSWER: <the correct German sentence>
 ---
 One exercise per block, separated by blank lines. 5 exercises total.
 Vary the verbs across exercises. Use the target verbs as the conjugated verb in the answer.
@@ -4440,12 +4345,14 @@ function parseM3bExercises(text) {
   const blocks = text.split(/\n\s*\n/).filter(b => b.trim());
   const exs = [];
   for (const block of blocks) {
-    const verbM = block.match(/VERB:\s*(.+)/i);
-    const cueM  = block.match(/CUE:\s*(.+)/i);
+    const verbM   = block.match(/VERB:\s*(.+)/i);
+    const cueM    = block.match(/CUE:\s*(.+)/i);
+    const answerM = block.match(/ANSWER:\s*(.+)/i);
     if (cueM) {
       exs.push({
-        verb: verbM ? verbM[1].trim() : '',
-        cue:  cueM[1].trim(),
+        verb:   verbM   ? verbM[1].trim()   : '',
+        cue:    cueM[1].trim(),
+        answer: answerM ? answerM[1].trim() : '',
       });
     }
   }
@@ -4467,6 +4374,30 @@ function renderM3b() {
   document.getElementById('btn-m3b-submit').style.display = 'block';
   document.getElementById('btn-m3b-next').style.display   = 'none';
   m3bState.graded = false;
+
+  // Ghost word reveal
+  const hintDiv = document.getElementById('m3b-hint');
+  hintDiv.innerHTML = '';
+  if (m3bState._hintTimers) m3bState._hintTimers.forEach(clearTimeout);
+  m3bState._hintTimers = [];
+
+  const week = getCurrentWeek();
+  // Wk1: 8s, Wk2: 14s, Wk3: 20s, Wk4+: off
+  const revealDelay = week === 1 ? 8000 : week === 2 ? 14000 : week === 3 ? 20000 : null;
+
+  if (revealDelay !== null && ex.answer) {
+    const words = ex.answer.split(/\s+/).filter(Boolean);
+    words.forEach((word, i) => {
+      const t = setTimeout(() => {
+        if (m3bState.graded) return; // don't reveal after submit
+        const span = document.createElement('span');
+        span.className = 'hint-word';
+        span.textContent = word;
+        hintDiv.appendChild(span);
+      }, revealDelay + i * 600);
+      m3bState._hintTimers.push(t);
+    });
+  }
 }
 
 async function submitM3b() {
@@ -4536,6 +4467,9 @@ FEEDBACK: <1-2 sentences of friendly, specific feedback in English. If wrong/par
     btn.style.display = 'none';
     document.getElementById('btn-m3b-next').style.display = 'block';
     m3bState.graded = true;
+    // Stop any pending ghost word reveals and clear hint
+    if (m3bState._hintTimers) m3bState._hintTimers.forEach(clearTimeout);
+    document.getElementById('m3b-hint').innerHTML = '';
 
   } catch (e) {
     btn.textContent = 'Grade Answer';
@@ -4662,14 +4596,12 @@ async function startMode2() {
     ? `\nDraw vocabulary naturally from these example sentences from today's session:\n${seedSentences}`
     : '';
 
-  const vocabSeedsNote = getVocabSeedsPromptFragment();
-
   const prompt = `You are setting up a German conversation roleplay scenario.
 
 Scenario type: ${stype}
 Learner level: ${level}
 Week ${week} theme: ${wd.theme}
-Target verbs this week: ${wd.verbs.join(', ')}${seedNote}${vocabSeedsNote}
+Target verbs this week: ${wd.verbs.join(', ')}${seedNote}
 
 Respond with a JSON object only (no markdown, no explanation):
 {
@@ -4831,48 +4763,61 @@ function activateMic() {
     return;
   }
 
-  setMicState('listening', 'Listening… speak in German');
+  // iOS Safari requires rec.start() inside a user gesture context.
+  // We show "Tap to speak →" and only call rec.start() on orb tap.
+  setMicState('ready', 'Tap to speak →');
 
-  const rec = new SpeechRecognition();
-  rec.lang = 'de-DE';
-  rec.continuous = false;
-  rec.interimResults = false;
-  rec.maxAlternatives = 1;
+  const orb = document.getElementById('m2-mic-orb');
 
-  m2State.recognition = rec;
+  // Remove any previous tap handler
+  if (m2State._orbTapHandler) {
+    orb.removeEventListener('click', m2State._orbTapHandler);
+    m2State._orbTapHandler = null;
+  }
 
-  rec.onresult = async (event) => {
-    const transcript = event.results[0][0].transcript.trim();
-    if (!transcript) { activateMic(); return; }
+  function onOrbTap() {
+    orb.removeEventListener('click', onOrbTap);
+    m2State._orbTapHandler = null;
 
-    // Add user bubble
-    m2State.history.push({ role: 'user', text: transcript });
-    appendBubble('user', transcript, 'You');
+    if (m2State.stopped) return;
 
-    // Analyse verb usage
-    await analyseVerbUsage(transcript);
+    const rec = new SpeechRecognition();
+    rec.lang = 'de-DE';
+    rec.continuous = false;
+    rec.interimResults = false;
+    rec.maxAlternatives = 1;
 
-    // Get character reply
-    await getCharacterReply(transcript);
-  };
+    m2State.recognition = rec;
+    setMicState('listening', 'Listening… speak in German');
 
-  rec.onerror = (e) => {
-    if (e.error === 'no-speech') {
-      setMicState('listening', 'No speech detected — try again');
-      if (!m2State.stopped) setTimeout(activateMic, 1500);
-    } else if (e.error !== 'aborted') {
-      setMicState('listening', `Mic error: ${e.error}`);
-    }
-  };
+    rec.onresult = async (event) => {
+      const transcript = event.results[0][0].transcript.trim();
+      if (!transcript) { activateMic(); return; }
 
-  rec.onend = () => {
-    // If we didn't get a result and not stopped, restart
-    if (!m2State.stopped && m2State.recognition === rec) {
-      // Only restart if we haven't already processed a result
-    }
-  };
+      m2State.history.push({ role: 'user', text: transcript });
+      appendBubble('user', transcript, 'You');
 
-  rec.start();
+      await analyseVerbUsage(transcript);
+      await getCharacterReply(transcript);
+    };
+
+    rec.onerror = (e) => {
+      if (e.error === 'no-speech') {
+        setMicState('ready', 'No speech — tap to try again');
+        activateMic();
+      } else if (e.error !== 'aborted') {
+        setMicState('ready', `Mic error: ${e.error} — tap to retry`);
+        activateMic();
+      }
+    };
+
+    rec.onend = () => {};
+
+    rec.start();
+  }
+
+  m2State._orbTapHandler = onOrbTap;
+  orb.addEventListener('click', onOrbTap);
 }
 
 function stopMode2() {
@@ -5467,47 +5412,6 @@ function setBMicState(state, label) {
   const lbl = document.getElementById('b1-mic-label');
   if (orb) { orb.className = `m2-mic-orb ${state}`; }
   if (lbl) { lbl.textContent = label; }
-}
-
-
-// ═══════════════════════════════════════════════════════════════════
-// ADD VOCAB MODAL
-// ═══════════════════════════════════════════════════════════════════
-
-function openVocabModal() {
-  document.getElementById('vocab-modal-textarea').value = '';
-  document.getElementById('vocab-modal-overlay').classList.add('open');
-  setTimeout(() => document.getElementById('vocab-modal-textarea').focus(), 100);
-}
-
-function closeVocabModal() {
-  document.getElementById('vocab-modal-overlay').classList.remove('open');
-}
-
-function vocabOverlayClick(e) {
-  if (e.target === document.getElementById('vocab-modal-overlay')) closeVocabModal();
-}
-
-function submitVocab() {
-  const text = document.getElementById('vocab-modal-textarea').value.trim();
-  if (!text) { closeVocabModal(); return; }
-
-  // Append to store (accumulate across submits)
-  const existing = lsGet(LS.VOCAB_SEEDS, '');
-  const combined = existing ? existing + '\n' + text : text;
-  // Keep store under 3000 chars — trim from the top if needed
-  const trimmed = combined.length > 3000 ? combined.slice(combined.length - 3000) : combined;
-  lsSet(LS.VOCAB_SEEDS, trimmed);
-
-  closeVocabModal();
-}
-
-function getVocabSeedsPromptFragment() {
-  const seeds = lsGet(LS.VOCAB_SEEDS, '');
-  if (!seeds) return '';
-  // Truncate to ~1500 chars for prompt safety
-  const snippet = seeds.length > 1500 ? seeds.slice(seeds.length - 1500) : seeds;
-  return `\nThe learner has added the following vocabulary from their reading or listening this week. Extract any German words, phrases, or expressions from it and weave them naturally into sentences where they fit — don't force every item, treat this as colour:\n---\n${snippet}\n---`;
 }
 
 
