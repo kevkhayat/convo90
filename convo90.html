@@ -1818,7 +1818,7 @@ select.field-input {
 
   <!-- ── TOP BAR ───────────────────────────────────────────────── -->
   <div class="topbar" id="topbar">
-    <div class="topbar-logo"><span style="color:var(--accent)">Convo</span><strong style="font-weight:600;color:var(--text)">90</strong><span id="topbar-lang">DE</span></div>
+    <div class="topbar-logo"><span style="color:var(--accent)">Convo</span><strong style="font-weight:600;color:var(--text)">90</strong><span id="topbar-lang">DE</span> <span style="font-size:10px;color:var(--muted);font-family:var(--font-mono);margin-left:4px">v2.3</span></div>
     <div class="topbar-right">
       <span class="topbar-week" id="topbar-week"></span>
       <button class="btn-icon" onclick="openSettings()" title="Settings">⚙</button>
@@ -3238,9 +3238,7 @@ function playAudio(url) {
     audio.load();
 
     const playPromise = audio.play();
-    if (playPromise) playPromise.catch(done);
-
-    m1State.currentAudio = audio;
+    if (playPromise) playPromise.catch(err => { console.warn('[Audio] play() rejected:', err.message); done(); });
 
     // Duration-based fallback
     audio.addEventListener('loadedmetadata', function onMeta() {
@@ -4189,8 +4187,8 @@ function renderConjTable(idx) {
       inp.id = `ci_${tense.key}_${pi}`;
       inp.autocomplete = 'off';
       inp.autocorrect = 'off';
-      inp.spellcheck = false;
       inp.setAttribute('autocapitalize', 'none');
+      inp.spellcheck = false;
       // Round 0: show correct answer as placeholder
       if (round === 0 && data) {
         inp.placeholder = data[tense.key]?.[pi] || '';
@@ -4200,7 +4198,7 @@ function renderConjTable(idx) {
       inp.addEventListener('input', () => {
         m3aState.userInputs[`${verb}_${tense.key}_${pi}`] = inp.value;
       });
-      // Tab / Enter: down within tense column, then to top of next tense; Shift reverses
+      // Tab / Enter: down within tense column; Shift reverses
       inp.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === 'Tab') {
           e.preventDefault();
@@ -4640,6 +4638,11 @@ function initMode2Screen() {
 // ── Scenario generation ─────────────────────────────────────────────
 
 async function startMode2() {
+  // Unlock _sharedAudio immediately while we have gesture context
+  // iOS requires audio.play() to be called synchronously within a user gesture
+  _sharedAudio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=';
+  _sharedAudio.play().catch(() => {});
+
   showScreen('mode2-loading');
   const fillEl  = document.getElementById('m2-loading-fill');
   const labelEl = document.getElementById('m2-loading-label');
@@ -4843,7 +4846,7 @@ function activateMic() {
     m2State._orbTapHandler = null;
     if (m2State.stopped) return;
 
-    console.log('[Mic] Orb tapped — creating SpeechRecognition');
+    console.log('[Mic] Orb tapped — starting recognition');
     let resultReceived = false;
 
     const rec = new SpeechRecognition();
@@ -4851,7 +4854,6 @@ function activateMic() {
     rec.continuous = false;
     rec.interimResults = false;
     rec.maxAlternatives = 1;
-
     m2State.recognition = rec;
 
     rec.onstart = () => {
@@ -4873,7 +4875,7 @@ function activateMic() {
     rec.onerror = (e) => {
       console.warn('[Mic] onerror:', e.error);
       if (e.error === 'no-speech') {
-        setMicState('ready', 'No speech heard — tap to try again');
+        setMicState('ready', 'No speech — tap to try again');
         activateMic();
       } else if (e.error === 'not-allowed' || e.error === 'permission-denied') {
         setMicState('listening', '⚠️ Mic blocked — Settings → Safari → Microphone');
