@@ -271,6 +271,12 @@ body {
 }
 .m1b-line:last-of-type { border-bottom: none; }
 .m1b-line.active { color: var(--accent); }
+.m1b-en {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--muted); font-style: italic;
+  padding: 2px 0 8px 0; line-height: 1.4;
+  transition: opacity 0.3s ease;
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    SCREEN: SETTINGS (first run)
@@ -1374,7 +1380,8 @@ select.field-input {
 }
 
 /* Conjugation table */
-.conj-table  { width: 100%; border-collapse: collapse; }
+.conj-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.conj-table  { width: max-content; min-width: 100%; border-collapse: collapse; }
 .conj-thead th {
   font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted); padding: 6px 8px; text-align: left;
@@ -1384,9 +1391,9 @@ select.field-input {
   font-family: var(--font-mono); font-size: 12px; color: var(--muted);
   padding: 7px 8px; white-space: nowrap; vertical-align: middle; width: 52px;
 }
-.conj-input-cell { padding: 4px 4px; }
+.conj-input-cell { padding: 4px 4px; min-width: 110px; }
 .conj-input {
-  width: 100%; padding: 7px 8px;
+  width: 100%; min-width: 100px; padding: 7px 8px;
   background: var(--bg-2); border: 1px solid var(--border); border-radius: 6px;
   font-family: var(--font-mono); font-size: 15px; color: var(--text);
   outline: none; transition: border-color 0.15s;
@@ -2072,6 +2079,12 @@ select.field-input {
               <option value="8">8 seconds</option>
             </select>
           </div>
+          <div class="field" id="m1b-en-toggle-row" style="display:none">
+            <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+              <input type="checkbox" id="m1b-show-english" style="width:18px;height:18px;cursor:pointer">
+              <span class="field-label" style="margin:0">Show English translations (3 Form Drill)</span>
+            </label>
+          </div>
         </div>
 
         <div class="m1-cached-note" id="m1-cached-note" style="display:none">
@@ -2127,8 +2140,11 @@ select.field-input {
         <div class="m1-card">
           <div class="m1b-stem" id="m1b-stem"></div>
           <div class="m1b-line" id="m1b-line1" style="opacity:0"></div>
+          <div class="m1b-en" id="m1b-en1" style="opacity:0"></div>
           <div class="m1b-line" id="m1b-line2" style="opacity:0"></div>
+          <div class="m1b-en" id="m1b-en2" style="opacity:0"></div>
           <div class="m1b-line" id="m1b-line3" style="opacity:0"></div>
+          <div class="m1b-en" id="m1b-en3" style="opacity:0"></div>
           <div class="m1-pause-ring" id="m1b-pause-ring" style="display:none">
             <svg viewBox="0 0 44 44" class="m1-ring-svg">
               <circle cx="22" cy="22" r="18" class="m1-ring-track"/>
@@ -3437,6 +3453,15 @@ function initMode1Screen() {
   const btn1bCache = document.getElementById('btn-m1b-cached');
   if (btn1bCache) btn1bCache.style.display = (cached1b && cached1b.length) ? 'block' : 'none';
 
+  // Restore English toggle state
+  const enToggle = document.getElementById('m1b-show-english');
+  if (enToggle) {
+    enToggle.checked = getM1bShowEnglish();
+    enToggle.addEventListener('change', () => {
+      localStorage.setItem('convo90_m1b_show_english', enToggle.checked ? 'true' : 'false');
+    });
+  }
+
   // Default to 1a tab
   selectDrillMode('1a');
 }
@@ -3522,6 +3547,11 @@ function selectDrillMode(mode) {
   document.getElementById('tab-1b').classList.toggle('active', mode === '1b');
   document.getElementById('m1a-buttons').style.display = mode === '1a' ? 'flex' : 'none';
   document.getElementById('m1b-buttons').style.display = mode === '1b' ? 'flex' : 'none';
+  document.getElementById('m1b-en-toggle-row').style.display = mode === '1b' ? 'block' : 'none';
+}
+
+function getM1bShowEnglish() {
+  return localStorage.getItem('convo90_m1b_show_english') === 'true';
 }
 
 function buildM1bPrompt(week, weekData) {
@@ -3533,6 +3563,9 @@ For each verb, produce:
 - ich: a complete statement using "Ich [conjugated verb]..." with a natural completion (6-10 words)
 - duQ: a yes/no question using "[Conjugated verb] du...?" matching the ich sentence meaning
 - openQ: an open question using a question word (Wie viel, Wann, Wo, Was, Warum etc.) that would elicit the ich sentence as an answer
+- ichEn: natural British English translation of ich
+- duQEn: natural British English translation of duQ
+- openQEn: natural British English translation of openQ
 
 Use these verbs where possible: ${verbs}
 Mix present and perfect tenses. Keep language at A2 level. Vary completions naturally.
@@ -3543,7 +3576,10 @@ Output ONLY valid JSON array, no markdown, no commentary:
     "stem": "sprechen",
     "ich": "Ich spreche ein bisschen Deutsch.",
     "duQ": "Sprichst du ein bisschen Deutsch?",
-    "openQ": "Wie viel Deutsch sprichst du?"
+    "openQ": "Wie viel Deutsch sprichst du?",
+    "ichEn": "I speak a little German.",
+    "duQEn": "Do you speak a little German?",
+    "openQEn": "How much German do you speak?"
   }
 ]`;
 }
@@ -3602,11 +3638,17 @@ async function runVerb(idx) {
   const v = m1bState.verbs[idx];
   updateM1bProgress(idx);
 
+  const showEn = getM1bShowEnglish();
+
   // Reset display
   const stemEl  = document.getElementById('m1b-stem');
   const line1   = document.getElementById('m1b-line1');
   const line2   = document.getElementById('m1b-line2');
   const line3   = document.getElementById('m1b-line3');
+  const en1     = document.getElementById('m1b-en1');
+  const en2     = document.getElementById('m1b-en2');
+  const en3     = document.getElementById('m1b-en3');
+
   stemEl.textContent  = v.stem;
   line1.textContent   = '';
   line2.textContent   = '';
@@ -3614,6 +3656,9 @@ async function runVerb(idx) {
   line1.style.opacity = '0';
   line2.style.opacity = '0';
   line3.style.opacity = '0';
+  en1.textContent = ''; en1.style.opacity = '0';
+  en2.textContent = ''; en2.style.opacity = '0';
+  en3.textContent = ''; en3.style.opacity = '0';
   document.getElementById('m1b-pause-ring').style.display = 'none';
 
   // Pre-synthesise all three
@@ -3636,6 +3681,7 @@ async function runVerb(idx) {
   line1.textContent   = v.ich;
   line1.style.opacity = '1';
   line1.classList.add('active');
+  if (showEn && v.ichEn) { en1.textContent = v.ichEn; en1.style.opacity = '1'; }
   await playAudio1b(url1);
   if (m1bState.stopped) return;
   await pauseWithRing1b();
@@ -3647,6 +3693,7 @@ async function runVerb(idx) {
   line2.textContent   = v.duQ;
   line2.style.opacity = '1';
   line2.classList.add('active');
+  if (showEn && v.duQEn) { en2.textContent = v.duQEn; en2.style.opacity = '1'; }
   await playAudio1b(url2);
   if (m1bState.stopped) return;
   await pauseWithRing1b();
@@ -3658,6 +3705,7 @@ async function runVerb(idx) {
   line3.textContent   = v.openQ;
   line3.style.opacity = '1';
   line3.classList.add('active');
+  if (showEn && v.openQEn) { en3.textContent = v.openQEn; en3.style.opacity = '1'; }
   await playAudio1b(url3);
   if (m1bState.stopped) return;
   await pauseWithRing1b();
@@ -3675,7 +3723,6 @@ async function runVerb(idx) {
   if (next >= m1bState.verbs.length) {
     finishMode1b();
   } else {
-    // Wait if paused
     while (m1bState.paused && !m1bState.stopped) await sleep(200);
     if (!m1bState.stopped) runVerb(next);
   }
@@ -4143,6 +4190,7 @@ function renderConjTable(idx) {
       inp.autocomplete = 'off';
       inp.autocorrect = 'off';
       inp.spellcheck = false;
+      inp.setAttribute('autocapitalize', 'none');
       // Round 0: show correct answer as placeholder
       if (round === 0 && data) {
         inp.placeholder = data[tense.key]?.[pi] || '';
@@ -4152,13 +4200,29 @@ function renderConjTable(idx) {
       inp.addEventListener('input', () => {
         m3aState.userInputs[`${verb}_${tense.key}_${pi}`] = inp.value;
       });
-      // Enter → next cell
+      // Tab / Enter: down within tense column, then to top of next tense; Shift reverses
       inp.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' || e.key === 'Tab') {
           e.preventDefault();
-          const nextPi = pi < PERSONS.length - 1 ? pi + 1 : 0;
-          const nextTense = pi < PERSONS.length - 1 ? tense.key : TENSES[(TENSES.findIndex(t=>t.key===tense.key)+1)%TENSES.length].key;
-          const next = document.getElementById(`ci_${nextTense}_${nextPi}`);
+          let nextPi, nextTenseKey;
+          if (!e.shiftKey) {
+            if (pi < PERSONS.length - 1) {
+              nextPi = pi + 1; nextTenseKey = tense.key;
+            } else {
+              nextPi = 0;
+              const ti = TENSES.findIndex(t => t.key === tense.key);
+              nextTenseKey = TENSES[(ti + 1) % TENSES.length].key;
+            }
+          } else {
+            if (pi > 0) {
+              nextPi = pi - 1; nextTenseKey = tense.key;
+            } else {
+              nextPi = PERSONS.length - 1;
+              const ti = TENSES.findIndex(t => t.key === tense.key);
+              nextTenseKey = TENSES[(ti - 1 + TENSES.length) % TENSES.length].key;
+            }
+          }
+          const next = document.getElementById(`ci_${nextTenseKey}_${nextPi}`);
           if (next) next.focus();
         }
       });
@@ -4166,7 +4230,7 @@ function renderConjTable(idx) {
     });
   });
 
-  wrap.appendChild(table);
+  const scrollWrap = document.createElement("div"); scrollWrap.className = "conj-table-scroll"; scrollWrap.appendChild(table); wrap.appendChild(scrollWrap);
   m3aState.userInputs = {}; // reset for new verb
 }
 
@@ -4759,17 +4823,16 @@ function activateMic() {
 
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRecognition) {
-    setMicState('listening', 'Speech not supported — use Safari on iPhone');
+    setMicState('listening', '⚠️ Speech API not available — use Safari on iPhone');
+    console.warn('[Mic] SpeechRecognition not available');
     return;
   }
 
-  // iOS Safari requires rec.start() inside a user gesture context.
-  // We show "Tap to speak →" and only call rec.start() on orb tap.
-  setMicState('ready', 'Tap to speak →');
+  setMicState('ready', 'Tap orb to speak →');
+  console.log('[Mic] Ready — waiting for tap');
 
   const orb = document.getElementById('m2-mic-orb');
 
-  // Remove any previous tap handler
   if (m2State._orbTapHandler) {
     orb.removeEventListener('click', m2State._orbTapHandler);
     m2State._orbTapHandler = null;
@@ -4778,8 +4841,10 @@ function activateMic() {
   function onOrbTap() {
     orb.removeEventListener('click', onOrbTap);
     m2State._orbTapHandler = null;
-
     if (m2State.stopped) return;
+
+    console.log('[Mic] Orb tapped — creating SpeechRecognition');
+    let resultReceived = false;
 
     const rec = new SpeechRecognition();
     rec.lang = 'de-DE';
@@ -4788,32 +4853,52 @@ function activateMic() {
     rec.maxAlternatives = 1;
 
     m2State.recognition = rec;
-    setMicState('listening', 'Listening… speak in German');
+
+    rec.onstart = () => {
+      console.log('[Mic] onstart — mic open');
+      setMicState('listening', 'Listening… speak now');
+    };
 
     rec.onresult = async (event) => {
+      resultReceived = true;
       const transcript = event.results[0][0].transcript.trim();
+      console.log('[Mic] Result:', transcript);
       if (!transcript) { activateMic(); return; }
-
       m2State.history.push({ role: 'user', text: transcript });
       appendBubble('user', transcript, 'You');
-
       await analyseVerbUsage(transcript);
       await getCharacterReply(transcript);
     };
 
     rec.onerror = (e) => {
+      console.warn('[Mic] onerror:', e.error);
       if (e.error === 'no-speech') {
-        setMicState('ready', 'No speech — tap to try again');
+        setMicState('ready', 'No speech heard — tap to try again');
         activateMic();
+      } else if (e.error === 'not-allowed' || e.error === 'permission-denied') {
+        setMicState('listening', '⚠️ Mic blocked — Settings → Safari → Microphone');
       } else if (e.error !== 'aborted') {
-        setMicState('ready', `Mic error: ${e.error} — tap to retry`);
+        setMicState('ready', `⚠️ ${e.error} — tap to retry`);
         activateMic();
       }
     };
 
-    rec.onend = () => {};
+    rec.onend = () => {
+      console.log('[Mic] onend. resultReceived:', resultReceived);
+      if (!resultReceived && !m2State.stopped) {
+        setMicState('ready', 'Tap orb to speak →');
+        activateMic();
+      }
+    };
 
-    rec.start();
+    try {
+      rec.start();
+      console.log('[Mic] rec.start() called');
+    } catch (err) {
+      console.error('[Mic] rec.start() threw:', err);
+      setMicState('ready', `⚠️ ${err.message} — tap to retry`);
+      activateMic();
+    }
   }
 
   m2State._orbTapHandler = onOrbTap;
